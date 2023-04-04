@@ -22,7 +22,7 @@ const Home: React.FC = () => {
       ))}
       </div>
       </div>
-      <Guidelines topic="Guidelines" steps={guidelineData.guidelines} />
+      {/* <Guidelines topic="Guidelines" steps={guidelineData.guidelines} /> */}
       <Footer />
     </Container>
   );
