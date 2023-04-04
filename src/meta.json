@@ -2,34 +2,22 @@
   "name": "project-lunas-frontend",
   "plugins": [
     {
-      "name": "TailwindCSS",
-      "description": "A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.",
-      "url": "https://tailwindcss.com/docs"
+      "name": "Answers from actual users",
+      "description": "See what real users say about products.",
+      "url": "/icons/answers-icon.svg",
+      "dmUrl": "/icons/answers-icon-dark.svg"
     },
     {
-      "name": "CSS / styled-jsx",
-      "description": "CRA comes with built-in support for CSS and CSS Modules.",
-      "url": "https://create-react-app.dev/docs/adding-a-stylesheets"
+      "name": "Most suitable answers always on top",
+      "description": "Voting option enables to finds the most suitable answer all the time.",
+      "url": "/icons/vote-icon.svg",
+      "dmUrl": "/icons/vote-icon-dark.svg"
     },
     {
-      "name": "React Redux",
-      "description": "Redux helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test.",
-      "url": "https://redux.js.org/introduction/getting-started"
-    },
-    {
-      "name": "next-i18next",
-      "description": "react-i18next is a powerful internationalization framework for React / React Native which is based on i18next. Check out the history of i18next and when react-i18next was introduced.",
-      "url": "https://react.i18next.com"
-    },
-    {
-      "name": "eslint",
-      "description": "",
-      "url": ""
-    },
-    {
-      "name": "jest",
-      "description": "",
-      "url": ""
+      "name": "Overall idea saves time",
+      "description": "Save more time by seeing the big picture.",
+      "url": "/icons/pros-cons-icon.svg",
+      "dmUrl": "/icons/pros-cons-icon-dark.svg"
     }
   ]
 }
