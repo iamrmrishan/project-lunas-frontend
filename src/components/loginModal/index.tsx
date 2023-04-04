@@ -53,7 +53,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
           &#8203;
         </span>
         <div
-          className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden transform transition-all sm:align-middle sm:max-w-5xl sm:w-full dark:bg-black"
+          className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden transform transition-all sm:align-middle sm:max-w-lg md:max-w-5xl sm:w-full dark:bg-black"
           role="dialog"
           aria-modal="true"
           aria-labelledby="modal-title"
@@ -66,14 +66,16 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
               aria-labelledby="modal-title"
             >
               <div className="bg-white px-4 py-8 sm:p-6 sm:pb-4 dark:bg-black">
-              <div className="flex items-center space-x-60">
-                <h3
-                  className="text-4xl leading-6 font-extrabold text-gray-900 mb-4 dark:text-white"
-                  id="modal-title"
-                >
-                  Login
-                </h3>
-                <GoogleConnectButton onClick={() => alert('Google Connect button clicked!')} />
+                <div className="flex flex-col items-center space-y-4 md:flex-row md:space-y-0 md:space-x-16">
+                  <h3
+                    className="text-4xl leading-6 font-extrabold text-gray-900 mb-4 dark:text-white"
+                    id="modal-title"
+                  >
+                    Login
+                  </h3>
+                  <GoogleConnectButton
+                    onClick={() => alert('Google Connect button clicked!')}
+                  />
                 </div>
                 <form onSubmit={handleSubmit}>
                   <div className="mb-4">
@@ -124,32 +126,34 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
                       </p>
                     )}
                   </div>
-                  <div className="flex items-center space-x-4">
-                  <label
-                    htmlFor="register"
-                    className="block text-sm font-medium text-gray-700 dark:text-white"
-                  >
-                    Don't have an account ?
-                  </label>
-                  <label
-                    htmlFor="register"
-                    className="block text-sm font-bold text-gray-700 dark:text-white"
-                  >
-                  Register
-                  </label>
+                  <div className="flex flex-col items-center sm:flex-row sm:items-center sm:space-x-4">
+                    <label
+                      htmlFor="register"
+                      className="block text-sm font-medium text-gray-700 dark:text-white"
+                    >
+                      Don't have an account ?
+                    </label>
+                    <label
+                      htmlFor="register"
+                      className="block text-sm font-bold text-gray-700 dark:text-white"
+                    >
+                      Register
+                    </label>
                   </div>
-                  <div className="flex items-center justify-end">
+                  <div className="flex items-center justify-end mt-4">
                     <Button>Login</Button>
                   </div>
                 </form>
               </div>
             </div>
-            <Cards
-              title={data.plugins[1].name}
-              description={data.plugins[1].description}
-              url={data.plugins[1].url}
-              dmUrl={data.plugins[1].dmUrl}
-            />
+            <div className="hidden md:block">
+              <Cards
+                title={data.plugins[1].name}
+                description={data.plugins[1].description}
+                url={data.plugins[1].url}
+                dmUrl={data.plugins[1].dmUrl}
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -6,6 +6,7 @@ export const Footer: React.FC = () => {
       <a
         href="https://github.com/pankod"
         target="_blank"
+        rel="noopener noreferrer"
         className="block mb-3"
       >
         <img
@@ -16,8 +17,8 @@ export const Footer: React.FC = () => {
         />
       </a>
 
-      <ul className="flex justify-center list-none p-0 m-0">
-        <li className="mx-3">
+      <ul className="flex flex-wrap justify-center list-none p-0 m-0">
+        <li className="mx-3 my-2">
           <img
             src="/icons/github-icon.svg"
             alt="github"
@@ -25,7 +26,7 @@ export const Footer: React.FC = () => {
             height="29"
           />
         </li>
-        <li className="mx-3">
+        <li className="mx-3 my-2">
           <img
             src="/icons/twitter-icon.svg"
             alt="twitter"
@@ -33,7 +34,7 @@ export const Footer: React.FC = () => {
             height="28"
           />
         </li>
-        <li className="mx-3">
+        <li className="mx-3 my-2">
           <img
             src="/icons/youtube-icon.svg"
             alt="youtube"
@@ -41,7 +42,7 @@ export const Footer: React.FC = () => {
             height="29"
           />
         </li>
-        <li className="mx-3">
+        <li className="mx-3 my-2">
           <img
             src="/icons/linkedin-icon.svg"
             alt="linkedin"

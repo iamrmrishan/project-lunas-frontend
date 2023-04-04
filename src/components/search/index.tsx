@@ -24,7 +24,7 @@ const SearchBar = () => {
           id="categories"
           value={selectedCategory}
           onChange={handleCategoryChange}
-          className="rounded-full-md rounded-full items-center pl-3 pr-10 py-3 text-white focus:outline-none focus:ring-1 focus:ring-black focus:border-black bg-black font-bold"
+          className="text-sm md:text-base rounded-full-md rounded-full items-center pl-3 pr-8 md:pr-10 py-2 md:py-3 text-white focus:outline-none focus:ring-1 focus:ring-black focus:border-black bg-black font-bold"
         >
           <option value="">Categories</option>
           {categories.map((category, index) => (
@@ -39,7 +39,7 @@ const SearchBar = () => {
         placeholder="Search"
         value={searchTerm}
         onChange={handleSearchChange}
-        className="w-full px-3 py-2 rounded-full focus:none"
+        className="text-sm md:text-base w-full px-3 py-2 rounded-full focus:outline-none focus:ring-1 focus:ring-black focus:border-black"
       />
     </div>
   );

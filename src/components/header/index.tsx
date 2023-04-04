@@ -21,17 +21,21 @@ export const Header: React.FC = () => {
     setIsSignupModalOpen(false);
   };
   return (
-    <div className="text-center flex justify-between items-center bg-black">
-      <Logo />
-      <nav className="flex items-center space-x-10">
+    <div className="text-center flex flex-wrap justify-between items-center bg-black px-4 py-2 md:px-8">
+     <div className="mx-auto md:mx-0">
+        <Logo />
+      </div>
+      <nav className="hidden md:flex items-center space-x-10 mt-4 md:mt-0">
         <Link href="/about">About</Link>
         <Link href="/browse">Browse Product Reviews</Link>
       </nav>
-      <div className="flex items-center space-x-6 mx-5">
-      {/* <Button>Add a product review</Button>
-        <Button>Ask about a product</Button> */}
-        <Button onClick={handleLoginClick}>Login</Button>
-        <Button onClick={handleSignUpClick}>Sign Up</Button>
+      <div className="flex items-center space-x-4 md:space-x-6 mt-4 md:mt-0">
+        <Button onClick={handleLoginClick} className="text-xs md:text-base">
+          Login
+        </Button>
+        <Button onClick={handleSignUpClick} className="text-xs md:text-base">
+          Sign Up
+        </Button>
         <DarkModeToggle></DarkModeToggle>
       </div>
       <LoginModal isOpen={isLoginModalOpen} onClose={handleLoginModalClose} />
@@ -39,6 +43,11 @@ export const Header: React.FC = () => {
         isOpen={isSignupModalOpen}
         onClose={handleSignupModalClose}
       />
+      <div className="md:hidden flex items-center space-x-10 mt-4">
+        <Link href="/about">About</Link>
+        <Link href="/browse">Browse Product Reviews</Link>
+      </div>
     </div>
   );
 };
+

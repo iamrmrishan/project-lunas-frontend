@@ -1,5 +1,12 @@
 import React from "react";
 
 export const Logo: React.FC = () => {
-  return <img src="/icons/react-icon.svg" alt="react" width="80" height="42" />;
+  return (
+    <img
+      src="/icons/react-icon.svg"
+      alt="react"
+      className="w-20 h-auto md:w-32 md:h-12"
+    />
+  );
 };
+
