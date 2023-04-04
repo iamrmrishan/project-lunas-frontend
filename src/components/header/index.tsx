@@ -28,8 +28,8 @@ export const Header: React.FC = () => {
         <Link href="/browse">Browse Product Reviews</Link>
       </nav>
       <div className="flex items-center space-x-6 mx-5">
-      <Button>Add a product review</Button>
-        <Button>Ask about a product</Button>
+      {/* <Button>Add a product review</Button>
+        <Button>Ask about a product</Button> */}
         <Button onClick={handleLoginClick}>Login</Button>
         <Button onClick={handleSignUpClick}>Sign Up</Button>
         <DarkModeToggle></DarkModeToggle>
