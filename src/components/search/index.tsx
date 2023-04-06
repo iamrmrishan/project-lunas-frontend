@@ -15,16 +15,16 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="flex items-center bg-white rounded-full border-2 border-black dark:bg-black">
+    <div className="flex items-center bg- rounded-full border-2 border-transparent">
       <div className="relative inline-flex">
-        <label htmlFor="categories" className="sr-only">
+        <label htmlFor="categories" className="sr-only dark:bg-white">
           Categories
         </label>
         <select
           id="categories"
           value={selectedCategory}
           onChange={handleCategoryChange}
-          className="text-sm md:text-base rounded-full-md rounded-full items-center pl-3 pr-8 md:pr-10 py-2 md:py-3 text-white focus:outline-none focus:ring-1 focus:ring-black focus:border-black bg-black font-bold"
+          className="text-sm md:text-base rounded-full-md rounded-full items-center pl-3 pr-8 md:pr-10 py-2 md:py-3 text-white focus:outline-none focus:ring-1 focus:ring-black focus:border-black bg-black font-bold dark:bg-white dark:text-black"
         >
           <option value="">Categories</option>
           {categories.map((category, index) => (

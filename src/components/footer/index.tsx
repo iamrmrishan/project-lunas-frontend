@@ -4,14 +4,14 @@ export const Footer: React.FC = () => {
   return (
     <div className="text-center py-5 bg-black">
       <a
-        href="https://github.com/pankod"
+        href="https://project-lunas.onrender.com/"
         target="_blank"
         rel="noopener noreferrer"
         className="block mb-3"
       >
         <img
-          src="/icons/pankod-icon.svg"
-          alt="pankod"
+          src="/icons/lunas-logo-icon.svg"
+          alt="lunas"
           width="140"
           height="28"
         />

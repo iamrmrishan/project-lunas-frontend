@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Button, Logo } from 'components';
-import Link from 'components/link';
 import DarkModeToggle from 'components/darkModeToggle';
 import LoginModal from 'components/loginModal';
 import SignupModal from 'components/signupModal';
+import { Link  } from 'react-router-dom';
+
 
 export const Header: React.FC = () => {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
@@ -25,9 +26,9 @@ export const Header: React.FC = () => {
      <div className="mx-auto md:mx-0">
         <Logo />
       </div>
-      <nav className="hidden md:flex items-center space-x-10 mt-4 md:mt-0">
-        <Link href="/about">About</Link>
-        <Link href="/browse">Browse Product Reviews</Link>
+      <nav className="hidden md:flex items-center space-x-10 mt-4 md:mt-0 text-white">
+        <Link to="/about">About</Link>
+        <Link to="/browse">Browse Product Reviews</Link>
       </nav>
       <div className="flex items-center space-x-4 md:space-x-6 mt-4 md:mt-0">
         <Button onClick={handleLoginClick} className="text-xs md:text-base">
@@ -44,8 +45,8 @@ export const Header: React.FC = () => {
         onClose={handleSignupModalClose}
       />
       <div className="md:hidden flex items-center space-x-10 mt-4">
-        <Link href="/about">About</Link>
-        <Link href="/browse">Browse Product Reviews</Link>
+        <Link to="/about">About</Link>
+        <Link to="/browse">Browse Product Reviews</Link>
       </div>
     </div>
   );
