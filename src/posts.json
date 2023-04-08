@@ -1,0 +1,17 @@
+{
+  "name": "project-lunas-frontend",
+  "posts": [
+    {
+      "title": "Answers from actual users",
+      "description": "See what real users say about products."
+    },
+    {
+      "title": "Most suitable answers always on top",
+      "description": "Voting option enables to finds the most suitable answer all the time."
+    },
+    {
+      "title": "Overall idea saves time",
+      "description": "Save more time by seeing the big picture."
+    }
+  ]
+}

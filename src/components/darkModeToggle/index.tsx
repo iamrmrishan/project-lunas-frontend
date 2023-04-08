@@ -9,7 +9,7 @@ const DarkModeToggle: React.FC = () => {
   return (
     <button
       onClick={toggleDarkMode}
-      className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black p-2 rounded-full bg-black hover:bg-white-600 text-white"
+      className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600 dark:bg-gray-800 dark:text-white dark:hover:text-white/75"
     >
        {darkMode ? (
         <SunIcon className="h-6 w-6" aria-hidden="true" />
