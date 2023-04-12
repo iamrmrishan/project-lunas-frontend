@@ -1,17 +1,29 @@
 {
   "name": "project-lunas-frontend",
-  "posts": [
+  "categories": [
     {
-      "title": "Answers from actual users",
-      "description": "See what real users say about products."
+      "id": "1",
+      "createrId": "1",
+      "numberOfMembers": 20,
+      "privacyType": "public",
+      "imageURL": "https://picsum.photos/200",
+      "createdAt": "20.12.12"
     },
     {
-      "title": "Most suitable answers always on top",
-      "description": "Voting option enables to finds the most suitable answer all the time."
+      "id": "2",
+      "createrId": "2",
+      "numberOfMembers": 20,
+      "privacyType": "public",
+      "imageURL": "https://picsum.photos/200",
+      "createdAt": "20.12.12"
     },
     {
-      "title": "Overall idea saves time",
-      "description": "Save more time by seeing the big picture."
+      "id": "3",
+      "createrId": "3",
+      "numberOfMembers": 20,
+      "privacyType": "public",
+      "imageURL": "https://picsum.photos/200",
+      "createdAt": "20.12.12"
     }
   ]
 }

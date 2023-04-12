@@ -1,7 +1,4 @@
-import { Button } from 'components/button';
-import { Cards } from 'components/cards';
 import React, { useState } from 'react';
-import data from 'meta.json';
 import GoogleConnectButton from 'components/googleConnectButton';
 
 interface SignupModalProps {
@@ -92,7 +89,7 @@ const SignupModal: React.FC<SignupModalProps> = ({ isOpen, onClose }) => {
         Welcome to Project LUNAS
       </h2>
 
-      <p className="mt-4 leading-relaxed text-white/90">
+      <p className="mt-4 leading-relaxed text-white/90 dark:text-white">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi nam
         dolorum aliquam, quibusdam aperiam voluptatum.
       </p>

@@ -1,10 +1,10 @@
 module.exports = {
-  purge: ["./pages/**/*.tsx", "./src/**/*.tsx"],
+  purge: ['./pages/**/*.tsx', './src/**/*.tsx'],
   darkMode: 'class', // Enables dark mode
   theme: {
     extend: {
       colors: {
-        'teal': {
+        teal: {
           100: '#ccfbf1',
           200: '#99f6e4',
           300: '#5eead4',
@@ -15,7 +15,7 @@ module.exports = {
           800: '#115e59',
           900: '#134e4a',
         },
-        'rose': {
+        rose: {
           100: '#ffe4e6',
           200: '#fecdd3',
           300: '#fda4af',
@@ -26,7 +26,15 @@ module.exports = {
           800: '#881337',
           900: '#881337',
         },
-      }
+        emerald: {
+          100: '#d1fae5',
+          700: '#047857',
+        },
+        amber: {
+          100: '#fef3c7',
+          700: '#b45309',
+        },
+      },
     },
   },
   variants: {

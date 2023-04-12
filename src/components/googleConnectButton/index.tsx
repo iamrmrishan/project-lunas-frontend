@@ -1,18 +1,25 @@
 import React from 'react';
-import { ReactComponent as GoogleIcon } from '../svgIcons/google-icon.svg'; // Import Google icon
+import { FcGoogle } from 'react-icons/fc';
 
 interface GoogleConnectButtonProps {
   onClick?: () => void;
 }
 
-const GoogleConnectButton: React.FC<GoogleConnectButtonProps> = ({ onClick }) => {
+const GoogleConnectButton: React.FC<GoogleConnectButtonProps> = ({
+  onClick,
+}) => {
   return (
-    <button
-      onClick={onClick}
-      className="flex items-center justify-center bg-white text-gray-700 font-bold py-2 px-4 md:px-4 rounded-full border border-gray-300 shadow hover:shadow-md dark:bg-black dark:text-white"
-    >
-      <GoogleIcon className="w-6 h-6 mr-2" />
-      Connect with Google
+    <button onClick={onClick}>
+      
+      <a
+        className="inline-flex items-center gap-2 rounded border-2 border-[#171515] bg-[#171515] px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-transparent hover:text-[#171515] focus:outline-none focus:ring active:opacity-75"
+        href="/github"
+        target="_blank"
+        rel="noreferrer"
+      >
+            <FcGoogle></FcGoogle>
+        Connet With Google
+      </a>
     </button>
   );
 };

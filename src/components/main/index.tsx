@@ -1,5 +1,4 @@
 import React from 'react';
-import SearchBar from 'components/search';
 
 export const Main: React.FC = () => {
   return (
