@@ -35,6 +35,9 @@ module.exports = {
           700: '#b45309',
         },
       },
+      screens: {
+        'ipad': {'min': '768px', 'max': '1024px'},
+      },
     },
   },
   variants: {

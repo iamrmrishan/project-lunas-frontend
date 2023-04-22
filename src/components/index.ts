@@ -1,4 +1,4 @@
-export { Container } from "./container";
-export { Footer } from "./footer";
-export { Header } from "./header";
+export { Container } from "./atoms/container";
+export { Footer } from "./organisms/footer";
+export { Header } from "./organisms/header";
 export { Main } from "./main";

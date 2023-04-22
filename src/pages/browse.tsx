@@ -1,88 +1,41 @@
 import { Container, Footer, Header } from 'components';
-import Recommendation from 'components/categories';
-import PersonalHome from 'components/createCategory';
-import { CreatePostLink } from 'components/createPost';
-import PostItem, { Post } from 'components/post';
-import Premium from 'components/premiumCard';
-import React from 'react';
+import { SearchPostLink } from 'components/searchPost';
+import PostItem from 'components/postCard';
+import { ProfileTabs } from 'components/ProfileTabs';
+import { UserProfileCard } from 'components/userProfileCard';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectPosts } from 'redux/selectors/postSelector';
+import { postSlice } from 'redux/slices/postSlice';
 
 const BrowsePage: React.FC = () => {
+  const dispatch = useDispatch();
+  const posts = useSelector(selectPosts);
+  useEffect(() => {
+    dispatch(postSlice.actions.searchPosts());
+    console.log(posts, 'myposts');
+  }, [dispatch]);
+
   return (
     <>
       <Header />
       <Container>
         <div className="container mx-auto px-4 py-6">
           <div className="grid grid-cols-4 gap-6">
-            <div className="col-span-4 md:col-span-3">
-              <CreatePostLink />
-              <div className="space-y-4">
-                <PostItem
-                  post={{
-                    id: '1',
-                    communityId: '1',
-                    creatorId: '1',
-                    creatorDisplayName: 'sdsd',
-                    title: 'dsds',
-                    body: 'dsdsdsd',
-                    numberOfComments: 2,
-                    voteStatus: 21,
-                    imageURL: 'https://picsum.photos/200/300',
-                    communityImageURL: 'https://picsum.photos/200/300',
-                    createdAt: '20.12.2022',
-                  }}
-                  onVote={function (
-                    event: React.MouseEvent<SVGElement, MouseEvent>,
-                    post: Post,
-                    vote: number,
-                    communityId: string,
-                    postIdx?: number
-                  ): void {
-                    throw new Error('Function not implemented.');
-                  }}
-                  onDeletePost={function (post: Post): Promise<boolean> {
-                    throw new Error('Function not implemented.');
-                  }}
-                  userIsCreator={false}
-                ></PostItem>
-                  <PostItem
-                  post={{
-                    id: '1',
-                    communityId: '1',
-                    creatorId: '1',
-                    creatorDisplayName: 'sdsd',
-                    title: 'dsds',
-                    body: 'dsdsdsd',
-                    numberOfComments: 2,
-                    voteStatus: 21,
-                    imageURL: 'https://picsum.photos/200/300',
-                    communityImageURL: 'https://picsum.photos/200/300',
-                    createdAt: '20.12.2022',
-                  }}
-                  onVote={function (
-                    event: React.MouseEvent<SVGElement, MouseEvent>,
-                    post: Post,
-                    vote: number,
-                    communityId: string,
-                    postIdx?: number
-                  ): void {
-                    throw new Error('Function not implemented.');
-                  }}
-                  onDeletePost={function (post: Post): Promise<boolean> {
-                    throw new Error('Function not implemented.');
-                  }}
-                  userIsCreator={false}
-                ></PostItem>
-              </div>
+            <div className="col-span-4 md:col-span-3 ipad:col-span-4">
+              <SearchPostLink />
+
+              {posts?.map((post) => (
+                <div key={post.title} className="space-y-4">
+                  <PostItem post={post}></PostItem>
+                </div>
+              ))}
             </div>
-            <div className="hidden md:block">
-    
+            <div className="hidden md:block ipad:hidden">
               <div className="col-span-1 space-y-5">
-              <PersonalHome />
+                <div className="w-full flex items-center"></div>
               </div>
-              <div className="col-span-1 space-y-5 mt=5">
-              <PersonalHome />
-              </div>
-              <Recommendation />
+              <div className="col-span-1 space-y-5 mt=5"></div>
             </div>
           </div>
         </div>
