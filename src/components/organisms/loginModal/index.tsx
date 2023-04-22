@@ -173,8 +173,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
             <p className="mt-4 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
               Don't have an account? 
               <a href="#" className="text-gray-700 underline dark:text-gray-200"
-                >Sign in </a
-              >.
+                >Sign in </a>
             </p>
           </div>
         </form>
