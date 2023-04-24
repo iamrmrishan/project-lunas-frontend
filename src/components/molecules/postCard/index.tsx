@@ -1,3 +1,4 @@
+import Tag from 'components/atoms/tag';
 import LimitedText from 'components/atoms/textLimiter';
 import { IPost } from 'interfaces/post';
 import React, { useState } from 'react';
@@ -80,12 +81,8 @@ const PostItem: React.FC<PostItemProps> = ({ post }) => {
                       />
                     </ReactSwipe>
                     <div className="flex inline-flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 ml-1">
-                      <strong className="rounded-full inline-flex items-center bg-emerald-100 px-3 py-0.5 text-xs font-medium tracking-wide text-emerald-700">
-                        {post.tags[0]}
-                      </strong>
-                      <strong className="rounded-full inline-flex items-center bg-amber-100 px-3 py-0.5 text-xs font-medium tracking-wide text-amber-700">
-                        {post.tags[1]}
-                      </strong>
+                      <Tag name={post.tags[0]}></Tag>
+                      <Tag name={post.tags[1]}></Tag>
                     </div>
                   </div>
                   <div className="static top-0">

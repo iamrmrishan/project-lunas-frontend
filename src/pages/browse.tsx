@@ -1,8 +1,6 @@
 import { Container, Footer, Header } from 'components';
-import { SearchPostLink } from 'components/searchPost';
-import PostItem from 'components/postCard';
-import { ProfileTabs } from 'components/ProfileTabs';
-import { UserProfileCard } from 'components/userProfileCard';
+import { SearchPostLink } from 'components/molecules/searchPost';
+import PostItem from 'components/molecules/postCard';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectPosts } from 'redux/selectors/postSelector';
@@ -13,7 +11,6 @@ const BrowsePage: React.FC = () => {
   const posts = useSelector(selectPosts);
   useEffect(() => {
     dispatch(postSlice.actions.searchPosts());
-    console.log(posts, 'myposts');
   }, [dispatch]);
 
   return (

@@ -4,8 +4,8 @@ import LoginModal from 'components/organisms/loginModal';
 import SignupModal from 'components/organisms/signupModal';
 import Logo from 'components/atoms/logo';
 import NavLink from 'components/atoms/navLink';
-import HamburgerButton from 'components/atoms/hamburgerButton';
 import Button from 'components/atoms/button';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
 export const Header: React.FC = () => {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
@@ -47,10 +47,25 @@ export const Header: React.FC = () => {
             </ul>
           </nav>
           <div className="flex items-center gap-4">
-            <Button onClick={handleLoginClick} text="Login" />
-            <Button onClick={handleSignUpClick} text="Signup" />
+            <div className="hidden sm:flex sm:gap-4">
+              <Button
+                className="btn rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow dark:hover:bg-teal-500"
+                onClick={handleLoginClick}
+                text="Login"
+              />
+              <Button
+                className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600 dark:bg-gray-800 dark:text-white dark:hover:text-white/75"
+                onClick={handleSignUpClick}
+                text="Signup"
+              />
+            </div>
             <DarkModeToggle />
-            <HamburgerButton />
+            <Button
+              className={
+                'block md:hidden rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75 dark:bg-gray-800 dark:text-white dark:hover:text-white/75'
+              }
+              icon={<GiHamburgerMenu></GiHamburgerMenu>}
+            ></Button>
           </div>
         </div>
       </div>

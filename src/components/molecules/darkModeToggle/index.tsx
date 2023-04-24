@@ -7,13 +7,17 @@ const DarkModeToggle: React.FC = () => {
   const { darkMode, toggleDarkMode } = useTheme();
 
   return (
-    <Button onClick={toggleDarkMode}>
-      {darkMode ? (
-        <BsSun className="h-6 w-6" aria-hidden="true" />
-      ) : (
-        <BsMoonStars className="h-6 w-6" aria-hidden="true" />
-      )}
-    </Button>
+    <Button
+      className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600 dark:bg-gray-800 dark:text-white dark:hover:text-white/75"
+      onClick={toggleDarkMode}
+      icon={
+        darkMode ? (
+          <BsSun className="h-5 w-5" aria-hidden="true" />
+        ) : (
+          <BsMoonStars className="h-5 w-5" aria-hidden="true" />
+        )
+      }
+    ></Button>
   );
 };
 

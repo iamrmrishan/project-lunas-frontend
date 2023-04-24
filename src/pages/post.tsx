@@ -1,10 +1,10 @@
 import { Container, Footer, Header } from 'components';
-import { SearchPostLink } from 'components/searchPost';
-import PostItem from 'components/postCard';
-import { ProfileTabs } from 'components/ProfileTabs';
-import { UserProfileCard } from 'components/userProfileCard';
+import { SearchPostLink } from 'components/molecules/searchPost';
+import PostItem from 'components/molecules/postCard';
+import { ProfileTabs } from 'components/organisms/ProfileTabs';
+import { UserProfileCard } from 'components/molecules/userProfileCard';
 import React from 'react';
-import Post from 'components/post';
+import Post from 'components/molecules/post';
 
 const PostPage: React.FC = () => {
   return (

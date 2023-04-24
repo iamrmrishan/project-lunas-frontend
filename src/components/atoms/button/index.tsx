@@ -3,15 +3,14 @@ import React from 'react';
 interface ButtonProps {
   text?: string;
   onClick?: () => void;
-  className?: string;
+  className: string;
+  icon?: React.ReactNode;
 }
 
-const Button: React.FC<ButtonProps> = ({ text, onClick, className }) => {
+const Button: React.FC<ButtonProps> = ({ text, onClick, className, icon }) => {
   return (
-    <button
-      onClick={onClick}
-      className={`btn rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow dark:hover:bg-teal-500 ${className}`}
-    >
+    <button onClick={onClick} className={className}>
+      {text != '' && icon ? icon : icon && <span className="mr-2">{text}</span>}
       {text}
     </button>
   );
