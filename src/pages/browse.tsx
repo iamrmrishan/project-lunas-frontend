@@ -1,10 +1,10 @@
 import { Container, Footer, Header } from 'components';
 import { SearchPostLink } from 'components/molecules/searchPost';
-import PostItem from 'components/molecules/postCard';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectPosts } from 'redux/selectors/postSelector';
 import { postSlice } from 'redux/slices/postSlice';
+import RedditPost from 'components/molecules/postCard';
 
 const BrowsePage: React.FC = () => {
   const dispatch = useDispatch();
@@ -21,10 +21,9 @@ const BrowsePage: React.FC = () => {
           <div className="grid grid-cols-4 gap-6">
             <div className="col-span-4 md:col-span-3 ipad:col-span-4">
               <SearchPostLink />
-
               {posts?.map((post) => (
                 <div key={post.title} className="space-y-4">
-                  <PostItem post={post}></PostItem>
+                  <RedditPost post={post}></RedditPost>
                 </div>
               ))}
             </div>

@@ -43,7 +43,7 @@ export const Header: React.FC = () => {
           <nav aria-label="Site Nav" className="hidden md:block">
             <ul className="flex items-center gap-6 text-sm">
               <NavLink to="/post" label="About" />
-              <NavLink to="/browse" label="Browse Product Reviews" />
+              <NavLink to="/browse" label="Browse" />
             </ul>
           </nav>
           <div className="flex items-center gap-4">

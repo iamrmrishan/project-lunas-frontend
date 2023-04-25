@@ -8,6 +8,7 @@ export interface IPost {
   tags: string[];
   mediaId: string[];
   user:IUser
+  createdAt:string;
 }
 
 export interface IPostRequset {

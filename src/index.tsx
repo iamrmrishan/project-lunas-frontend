@@ -4,19 +4,22 @@ import { BrowserRouter } from 'react-router-dom';
 import PageRoutes from 'routes';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { ThemeProvider } from './themeProvider';
+import { ThemeProvider } from './providers/themeProvider';
 import store from '../src/redux/store';
 import { Provider } from 'react-redux';
+import ScreenSizeProvider from 'providers/screenSizeProvider';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <ThemeProvider>
+      <ScreenSizeProvider>
         <BrowserRouter>
           <PageRoutes>
             <App />
           </PageRoutes>
         </BrowserRouter>
+        </ScreenSizeProvider>
       </ThemeProvider>
     </Provider>
   </React.StrictMode>,

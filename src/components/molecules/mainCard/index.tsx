@@ -65,7 +65,7 @@ export const Main: React.FC = () => {
                 </dt>
 
                 <dd className="text-4xl font-extrabold text-blue-600 md:text-5xl">
-                  4.8m
+                  48
                 </dd>
               </div>
 

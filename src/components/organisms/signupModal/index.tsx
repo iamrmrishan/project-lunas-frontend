@@ -236,8 +236,7 @@ const SignupModal: React.FC<SignupModalProps> = ({ isOpen, onClose }) => {
             </a>
             and
             <a href="#" className="text-gray-700 underline dark:text-gray-200">
-              privacy policy </a
-            >.
+              privacy policy </a>
           </p>
         </div>
 
@@ -251,8 +250,7 @@ const SignupModal: React.FC<SignupModalProps> = ({ isOpen, onClose }) => {
           <p className="mt-4 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
             Already have an account? 
             <a href="#" className="text-gray-700 underline dark:text-gray-200"
-              >Log in </a
-            >.
+              >Log in </a>
           </p>
         </div>
       </form>

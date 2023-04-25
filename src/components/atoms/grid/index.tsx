@@ -3,6 +3,7 @@ import React from 'react';
 interface ResponsiveGridProps {
   children: React.ReactNode;
   desktopColumns?: number;
+  HDdesktopColumns?: number;
   mobileColumns?: number;
   tabletColumns?: number;
   gap?: number;
@@ -10,12 +11,13 @@ interface ResponsiveGridProps {
 
 const ResponsiveGrid: React.FC<ResponsiveGridProps> = ({
   children,
-  desktopColumns = 4,
+  desktopColumns = 1,
+  HDdesktopColumns = 1,
   gap = 5,
-  tabletColumns = 2,
+  tabletColumns = 1,
   mobileColumns = 1,
 }) => {
-  const gridColumnClasses = `sm:grid-cols-${mobileColumns} md:grid-cols-${desktopColumns} ipad:grid-cols-${tabletColumns}`;
+  const gridColumnClasses = `sm:grid-cols-${mobileColumns} md:grid-cols-${desktopColumns} ipad:grid-cols-${tabletColumns} lg:grid-cols-${HDdesktopColumns}`;
   const gridGapClasses = `gap-x-${gap} gap-y-${gap} `;
 
   return (

@@ -1,5 +1,6 @@
 import LogoSvg from 'assets/icons/logo';
 import Button from 'components/atoms/button';
+import Input from 'components/atoms/input';
 import React from 'react';
 
 export const Footer: React.FC = () => {
@@ -32,7 +33,7 @@ export const Footer: React.FC = () => {
                 </label>
 
                 <div className="border border-gray-100 p-2 focus-within:ring dark:border-gray-800 sm:flex sm:items-center sm:gap-4">
-                  <input
+                  <Input
                     type="email"
                     id="UserEmail"
                     placeholder="john@rhcp.com"

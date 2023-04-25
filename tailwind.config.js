@@ -36,7 +36,13 @@ module.exports = {
         },
       },
       screens: {
-        'ipad': {'min': '768px', 'max': '1024px'},
+        ipad: { min: '768px', max: '1024px' },
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
+       
       },
     },
   },

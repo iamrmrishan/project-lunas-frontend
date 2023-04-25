@@ -1,6 +1,5 @@
 import { Container, Footer, Header } from 'components';
 import { SearchPostLink } from 'components/molecules/searchPost';
-import PostItem from 'components/molecules/postCard';
 import { ProfileTabs } from 'components/organisms/ProfileTabs';
 import { UserProfileCard } from 'components/molecules/userProfileCard';
 import React from 'react';

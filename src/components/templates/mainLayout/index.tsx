@@ -8,13 +8,14 @@ interface MainLayoutProps {
   className: string;
 }
 
-export const MainLayout: React.FC<MainLayoutProps> = ({ children, className }) => {
+export const MainLayout: React.FC<MainLayoutProps> = ({
+  children,
+  className,
+}) => {
   return (
     <div className="main-layout">
       <Header />
-      <ResponsiveGrid >
-        <main className={className}>{children}</main>
-      </ResponsiveGrid>
+      <main className={className}>{children}</main>
       <Footer />
     </div>
   );
