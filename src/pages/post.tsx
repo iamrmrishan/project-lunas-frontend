@@ -1,7 +1,7 @@
 import { Container, Footer, Header } from 'components';
-import { SearchPostLink } from 'components/molecules/searchPost';
-import { ProfileTabs } from 'components/organisms/ProfileTabs';
-import { UserProfileCard } from 'components/molecules/userProfileCard';
+import { SearchPostLink } from 'components/molecules/search';
+import { ProfileTabs } from 'components/organisms/Profile-tabs';
+import { UserProfileCard } from 'components/molecules/user-profile-card';
 import React from 'react';
 import Post from 'components/molecules/post';
 

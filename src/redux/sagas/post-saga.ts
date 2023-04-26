@@ -6,9 +6,9 @@ import {
   IPostsFilterAction,
 } from '../../interfaces/post';
 import axios from 'axios';
-import { postSlice } from '../slices/postSlice';
+import { postSlice } from '../slices/post-slice';
 import { IRestApiResponse } from 'interfaces/api-response';
-import API from 'redux/api/postApi';
+import API from 'redux/api/post-api';
 
 export function* searchPostsGenerator({ payload }: IPostsFilterAction): any {
   try {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Main } from 'components';
-import { MainLayout } from 'components/templates/mainLayout';
+import { MainLayout } from 'components/templates/main-layout';
 
 const Home: React.FC = () => {
   return (

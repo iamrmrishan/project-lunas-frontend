@@ -1,6 +1,6 @@
-import LimitedText from 'components/atoms/textLimiter';
+import LimitedText from 'components/atoms/text-limiter';
 import React from 'react';
-import { useScreenSize } from '../../../providers/screenSizeProvider';
+import { useScreenSize } from '../../../providers/screensize-provider';
 import {
   FiArrowUp,
   FiArrowDown,

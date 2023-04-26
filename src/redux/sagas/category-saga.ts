@@ -7,9 +7,9 @@ import {
   ICategoriesFilterAction,
 } from '../../interfaces/category';
 import axios from 'axios';
-import { categorySlice } from '../slices/categorySlice';
+import { categorySlice } from '../slices/category-slice';
 import { IRestApiResponse } from 'interfaces/api-response';
-import API from 'redux/api/postApi';
+import API from 'redux/api/post-api';
 
 export function* searchCategoriesGenerator({
   payload,

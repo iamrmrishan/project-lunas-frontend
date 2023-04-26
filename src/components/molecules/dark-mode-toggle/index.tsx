@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTheme } from '../../../providers/themeProvider';
+import { useTheme } from '../../../providers/theme-provider';
 import { BsMoonStars, BsSun } from 'react-icons/bs';
 import Button from 'components/atoms/button';
 

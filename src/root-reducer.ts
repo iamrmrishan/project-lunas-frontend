@@ -1,7 +1,7 @@
 // src/rootReducer.ts
 import { combineReducers } from '@reduxjs/toolkit';
-import postReducer from './redux/slices/postSlice';
-import categoryReducer from './redux/slices/categorySlice';
+import postReducer from './redux/slices/post-slice';
+import categoryReducer from './redux/slices/category-slice';
 
 const rootReducer = combineReducers({
   'feature/posts': postReducer,

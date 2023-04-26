@@ -1,6 +1,6 @@
 import { all } from 'redux-saga/effects';
-import { PostsSaga } from './redux/sagas/postSaga';
-import { CategoriesSaga } from './redux/sagas/categorySaga';
+import { PostsSaga } from './redux/sagas/post-saga';
+import { CategoriesSaga } from './redux/sagas/category-saga';
 
 
 export default function* rootSaga() {

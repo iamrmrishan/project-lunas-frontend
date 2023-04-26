@@ -1,10 +1,10 @@
 import { Container, Footer, Header } from 'components';
-import { SearchPostLink } from 'components/molecules/searchPost';
+import { SearchPostLink } from 'components/molecules/search';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectPosts } from 'redux/selectors/postSelector';
-import { postSlice } from 'redux/slices/postSlice';
-import RedditPost from 'components/molecules/postCard';
+import { selectPosts } from 'redux/selectors/post-selector';
+import { postSlice } from 'redux/slices/post-slice';
+import RedditPost from 'components/molecules/post-card';
 
 const BrowsePage: React.FC = () => {
   const dispatch = useDispatch();

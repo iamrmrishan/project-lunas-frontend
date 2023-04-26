@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import DarkModeToggle from 'components/molecules/darkModeToggle';
-import LoginModal from 'components/organisms/loginModal';
-import SignupModal from 'components/organisms/signupModal';
+import DarkModeToggle from 'components/molecules/dark-mode-toggle';
+import LoginModal from 'components/organisms/login-modal';
+import SignupModal from 'components/organisms/signup-modal';
 import Logo from 'components/atoms/logo';
-import NavLink from 'components/atoms/navLink';
+import NavLink from 'components/atoms/nav-link';
 import Button from 'components/atoms/button';
 import { GiHamburgerMenu } from 'react-icons/gi';
 

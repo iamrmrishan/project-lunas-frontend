@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { RootState } from 'interfaces/root-state';
-import { initialState } from 'redux/slices/postSlice';
+import { initialState } from 'redux/slices/post-slice';
 
 const selectDomain = (state: RootState) =>
   state['feature/categories'] || initialState;
