@@ -1,12 +1,12 @@
-import Button from 'components/atoms/button';
-import Input from 'components/atoms/input';
-import React from 'react';
-import { AiOutlineArrowRight } from 'react-icons/ai';
+import Button from "components/atoms/button";
+import Input from "components/atoms/input";
+import React from "react";
+import { AiOutlineArrowRight } from "react-icons/ai";
 
 export const Main: React.FC = () => {
   return (
     <>
-      <section className="bg-gray-50 dark:bg-gray-900">
+      <section className="bg-primaryColor dark:bg-secondaryColor">
         <div className="p-8 md:p-12 lg:px-16 lg:py-24">
           <div className="mx-auto max-w-lg text-center">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white md:text-3xl">
@@ -34,7 +34,7 @@ export const Main: React.FC = () => {
               </div>
               <Button
                 className={
-                  'group mt-4 flex w-full items-center justify-center gap-2 rounded-md bg-rose-600 px-5 py-3 text-white transition focus:outline-none focus:ring focus:ring-yellow-400 sm:mt-0 sm:w-auto'
+                  "group mt-4 flex w-full items-center justify-center gap-2 rounded-md bg-rose-600 px-5 py-3 text-white transition focus:outline-none focus:ring focus:ring-yellow-400 sm:mt-0 sm:w-auto"
                 }
                 icon={<AiOutlineArrowRight></AiOutlineArrowRight>}
                 text="Search"
