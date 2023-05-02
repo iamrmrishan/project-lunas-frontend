@@ -29,12 +29,12 @@ export const Main: React.FC = () => {
                 <Input
                   type="search"
                   placeholder="Search Products"
-                  className="w-full rounded-md border-gray-200 bg-white p-3 shadow-sm transition focus:border-white focus:outline-none focus:ring focus:ring-yellow-400 dark:border-gray-700 dark:bg-gray-800 dark:text-white"
+                  className="w-full rounded-md bg-transparent border-primaryText p-3 shadow-sm transition focus:outline-none focus:ring dark:border-gray-700 dark:text-white"
                 ></Input>
               </div>
               <Button
                 className={
-                  "group mt-4 flex w-full items-center justify-center gap-2 rounded-md bg-rose-600 px-5 py-3 text-white transition focus:outline-none focus:ring focus:ring-yellow-400 sm:mt-0 sm:w-auto"
+                  "group mt-4 flex w-full items-center justify-center gap-2 rounded-md bg-primaryBtn dark:bg-secondaryBtn dark:hover:bg-secondaryBtnHover px-5 py-3 text-primaryBtnText dark:text-secondaryBtnText transition focus:outline-none focus:ring focus:ring-yellow-400 sm:mt-0 sm:w-auto"
                 }
                 icon={<AiOutlineArrowRight></AiOutlineArrowRight>}
                 text="Search"
@@ -43,7 +43,7 @@ export const Main: React.FC = () => {
           </div>
         </div>
       </section>
-      <section className="bg-white dark:bg-gray-900">
+      <section className="bg-primaryHeader dark:bg-secondaryHeader">
         <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 md:py-16 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl">
@@ -64,7 +64,7 @@ export const Main: React.FC = () => {
                   Total reviews
                 </dt>
 
-                <dd className="text-4xl font-extrabold text-blue-600 md:text-5xl">
+                <dd className="text-4xl font-extrabold text-primaryText dark:text-secondaryText md:text-5xl">
                   48
                 </dd>
               </div>
@@ -74,7 +74,7 @@ export const Main: React.FC = () => {
                   Total Questions
                 </dt>
 
-                <dd className="text-4xl font-extrabold text-blue-600 md:text-5xl">
+                <dd className="text-4xl font-extrabold text-primaryText dark:text-secondaryText md:text-5xl">
                   24
                 </dd>
               </div>
@@ -84,7 +84,7 @@ export const Main: React.FC = () => {
                   Total Users
                 </dt>
 
-                <dd className="text-4xl font-extrabold text-blue-600 md:text-5xl">
+                <dd className="text-4xl font-extrabold text-primaryText dark:text-secondaryText md:text-5xl">
                   86
                 </dd>
               </div>

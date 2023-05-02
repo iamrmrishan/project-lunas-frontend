@@ -8,7 +8,7 @@ const DarkModeToggle: React.FC = () => {
 
   return (
     <Button
-      className="rounded-md bg-#e7e7e7 px-5 py-2.5 text-sm font-medium text-teal-600 dark:bg-gray-800 dark:text-white dark:hover:text-white/75"
+      className="rounded-md bg-primaryBtn2 px-5 py-2.5 text-sm font-medium text-primaryText dark:bg-secondaryBtn2 dark:text-secondaryText"
       onClick={toggleDarkMode}
       icon={
         darkMode ? (

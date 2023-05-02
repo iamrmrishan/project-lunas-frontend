@@ -1,11 +1,14 @@
-import LogoSvg from 'assets/icons/logo';
-import Button from 'components/atoms/button';
-import Input from 'components/atoms/input';
-import React from 'react';
+import LogoSvg from "assets/icons/logo";
+import Button from "components/atoms/button";
+import Input from "components/atoms/input";
+import React from "react";
 
 export const Footer: React.FC = () => {
   return (
-    <footer aria-label="Site Footer" className="bg-white dark:bg-gray-900">
+    <footer
+      aria-label="Site Footer"
+      className="bg-white dark:bg-secondaryColor"
+    >
       <div className="mx-auto max-w-auto px-4 py-16 sm:px-6 lg:px-8">
         <div className="lg:flex lg:items-start lg:gap-8">
           <div className="text-teal-600 dark:text-teal-300">
@@ -28,8 +31,8 @@ export const Footer: React.FC = () => {
             <div className="col-span-2 lg:col-span-3 lg:flex lg:items-end">
               <form className="w-full">
                 <label htmlFor="UserEmail" className="sr-only">
-                  {' '}
-                  Email{' '}
+                  {" "}
+                  Email{" "}
                 </label>
 
                 <div className="border border-gray-100 p-2 focus-within:ring dark:border-gray-800 sm:flex sm:items-center sm:gap-4">
@@ -37,11 +40,11 @@ export const Footer: React.FC = () => {
                     type="email"
                     id="UserEmail"
                     placeholder="john@rhcp.com"
-                    className="w-full border-none focus:border-transparent focus:ring-transparent dark:bg-gray-900 dark:text-white sm:text-sm"
+                    className="w-full border-none focus:border-transparent focus:ring-transparent dark:bg-transparent dark:text-white sm:text-sm"
                   />
 
                   <Button
-                    className="mt-1 w-full bg-teal-500 px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-none hover:bg-teal-600 sm:mt-0 sm:w-auto sm:flex-shrink-0"
+                    className="mt-1 w-full bg-primaryBtn dark:bg-secondaryBtn px-6 py-3 text-sm font-bold uppercase tracking-wide text-primaryBtnText dark:text-secondaryBtnText transition-none hover:bg-teal-600 sm:mt-0 sm:w-auto sm:flex-shrink-0"
                     text="Sign Up"
                   ></Button>
                 </div>
