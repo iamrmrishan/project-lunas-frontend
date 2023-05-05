@@ -52,15 +52,15 @@ const SignupModal: React.FC<SignupModalProps> = ({ isOpen, onClose }) => {
         &#8203;
       </span>
       <div
-        className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden transform transition-all sm:align-middle sm:max-w-lg md:max-w-7xl sm:w-full dark:bg-black"
+        className="inline-block align-bottom bg-primaryColor rounded-lg text-left overflow-hidden transform transition-all sm:align-middle sm:max-w-lg md:max-w-7xl sm:w-full dark:bg-secondaryColor"
         role="dialog"
         aria-modal="true"
         aria-labelledby="modal-title"
       >
-   <section className="bg-white dark:bg-gray-900">
+   <section className="bg-primaryColor dark:bg-secondaryColor">
 <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
   <section
-    className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6"
+    className="relative flex h-32 items-end bg-secondaryColor lg:col-span-5 lg:h-full xl:col-span-6"
   >
     <img
       alt="Night"
@@ -69,7 +69,7 @@ const SignupModal: React.FC<SignupModalProps> = ({ isOpen, onClose }) => {
     />
 
     <div className="hidden lg:relative lg:block lg:p-12">
-      <a className="block text-white" href="/">
+      <a className="block text-secondaryText" href="/">
         <span className="sr-only">Home</span>
         <svg
           className="h-8 sm:h-10"
@@ -87,7 +87,7 @@ const SignupModal: React.FC<SignupModalProps> = ({ isOpen, onClose }) => {
           Welcome to Project LUNAS
         </h2>
 
-        <p className="mt-4 leading-relaxed text-secondaryText text-opacity-60 dark:text-secondaryText">
+        <p className="mt-4 leading-relaxed text-secondaryText dark:text-opacity-60 text-opacity-60 dark:text-secondaryText">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi nam
           dolorum aliquam, quibusdam aperiam voluptatum.
         </p>
@@ -101,7 +101,7 @@ const SignupModal: React.FC<SignupModalProps> = ({ isOpen, onClose }) => {
     <div className="max-w-xl lg:max-w-3xl">
       <div className="relative -mt-16 block lg:hidden">
         <a
-          className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-white text-blue-600 dark:bg-gray-900 sm:h-20 sm:w-20"
+          className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-white text-secondaryText dark:bg-secondaryColor sm:h-20 sm:w-20"
           href="/"
         >
           <span className="sr-only">Home</span>
@@ -228,11 +228,11 @@ const SignupModal: React.FC<SignupModalProps> = ({ isOpen, onClose }) => {
 
         <div className="col-span-6">
           <p className="text-sm text-primaryText dark:text-gray-400 text-opacity-75">
-            By creating an account, you agree to our
+            By creating an account, you agree to our{" "}
             <a href="#" className="text-primaryText underline dark:text-secondaryText">
               terms and conditions
             </a>
-            and
+            {" "} and{" "}
             <a href="#" className="text-primaryText underline dark:text-secondaryText">
               privacy policy </a>
           </p>
@@ -240,15 +240,15 @@ const SignupModal: React.FC<SignupModalProps> = ({ isOpen, onClose }) => {
 
         <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
           <button
-            className="inline-block shrink-0 rounded-md border border-primaryBtn bg-primaryBtn px-12 py-3 text-sm font-medium text-primaryBtnText transition hover:bg-transparent hover:text-primaryText focus:outline-none focus:ring active:text-primaryText dark:hover:bg-transaparent dark:hover:text-secondaryText"
+            className="inline-block shrink-0 rounded-md border border-primaryBtn bg-primaryBtn dark:border-secondaryBtn dark:bg-secondaryBtn px-12 py-3 text-sm font-medium text-primaryBtnText dark:text-secondaryBtnText transition hover:bg-transparent dark:hover:bg-transparent hover:text-primaryText focus:outline-none focus:ring active:text-primaryText dark:hover:bg-transaparent dark:hover:text-secondaryText"
           >
             Create an account
           </button>
 
           <p className="mt-4 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
-            Already have an account? 
+            Already have an account?{" "}
             <a href="#" className="text-gray-700 underline dark:text-gray-200"
-              >Log in </a>
+              >Log in</a>
           </p>
         </div>
       </form>

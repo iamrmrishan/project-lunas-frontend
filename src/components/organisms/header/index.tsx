@@ -12,7 +12,7 @@ export const Header: React.FC = () => {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
 
-  const isLoggedIn = true;
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLoginClick = () => {
     setIsLoginModalOpen(true);
@@ -77,6 +77,7 @@ export const Header: React.FC = () => {
             <Button
               className="rounded-full font-bold bg-primaryBtn dark:bg-secondaryBtn p-3 text-primaryBtnText dark:text-secondaryBtnText"
               icon={<CiUser />}
+              onClick={() => setIsLoggedIn((e) => !e)}
             />
             <Button
               className={

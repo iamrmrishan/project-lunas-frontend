@@ -165,15 +165,15 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
 
           <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
             <button
-              className="inline-block shrink-0 rounded-md border border-primaryBtn bg-primaryBtn dark:bg-secondaryBtn px-12 py-3 text-sm font-medium text-primaryBtnText dark:text-secondaryBtnText transition hover:bg-transparent hover:text-primaryBtnText focus:outline-none focus:ring active:text-primaryText dark:hover:bg-secondaryBtn dark:hover:text-secondaryBtn"
+              className="inline-block shrink-0 rounded-md border-2 border-primaryBtn dark:border-secondaryBtn bg-primaryBtn dark:bg-secondaryBtn px-12 py-3 text-sm font-medium text-primaryBtnText dark:text-secondaryBtnText transition hover:bg-transparent hover:text-primaryText focus:outline-none focus:ring active:text-primaryText dark:hover:bg-transparent dark:hover:text-secondaryText"
             >
               Login
             </button>
 
             <p className="mt-4 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
-              Don't have an account? 
+              Don't have an account?{" "}
               <a href="#" className="text-gray-700 underline dark:text-gray-200"
-                > Sign in </a>
+                >Sign Up</a>
             </p>
           </div>
         </form>
