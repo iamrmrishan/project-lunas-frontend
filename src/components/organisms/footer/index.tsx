@@ -24,11 +24,11 @@ export const Footer: React.FC = () => {
           <div className="mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
             <div className="col-span-2">
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                <h2 className="text-2xl font-bold text-primaryText dark:text-secondaryText">
                   Get the latest product reviews
                 </h2>
 
-                <p className="mt-4 text-gray-500 dark:text-gray-400">
+                <p className="mt-4 text-primaryText dark:text-secondaryText text-opacity-70 dark:text-opacity-70">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse
                   non cupiditate quae nam molestias.
                 </p>
@@ -42,16 +42,16 @@ export const Footer: React.FC = () => {
                   Email{" "}
                 </label>
 
-                <div className="border border-gray-100 p-2 focus-within:ring dark:border-gray-800 sm:flex sm:items-center sm:gap-4">
+                <div className="border border-primaryBtn p-2 focus-within:ring dark:border-secondaryBtn border-opacity-20 dark:border-opacity-20 sm:flex sm:items-center sm:gap-4">
                   <Input
                     type="email"
                     id="UserEmail"
                     placeholder="john@rhcp.com"
-                    className="w-full border-primaryText border-opacity-20 bg-transparent focus:border-transparent focus:ring-transparent dark:bg-transparent dark:text-white sm:text-sm"
+                    className="w-full border-primaryText border-opacity-5 dark:border-secondaryText dark:border-opacity-5 bg-transparent focus:border-transparent focus:ring-transparent dark:bg-transparent dark:text-white sm:text-sm"
                   />
 
                   <Button
-                    className="mt-1 w-full bg-primaryBtn dark:bg-secondaryBtn px-6 py-3 text-sm font-bold uppercase tracking-wide text-primaryBtnText dark:text-secondaryBtnText transition-none hover:bg-teal-600 sm:mt-0 sm:w-auto sm:flex-shrink-0"
+                    className="mt-1 w-full bg-primaryBtn hover:opacity-80 dark:hover:opacity-80 dark:bg-secondaryBtn px-6 py-3 text-sm font-bold uppercase tracking-wide text-primaryBtnText dark:text-secondaryBtnText transition-none  sm:mt-0 sm:w-auto sm:flex-shrink-0"
                     text="Sign Up"
                   ></Button>
                 </div>
@@ -59,7 +59,7 @@ export const Footer: React.FC = () => {
             </div>
 
             <div className="col-span-2 sm:col-span-1">
-              <p className="font-medium text-gray-900 dark:text-white">
+              <p className="font-medium text-primaryText dark:text-secondaryText">
                 Products
               </p>
 
@@ -68,7 +68,7 @@ export const Footer: React.FC = () => {
                   <li>
                     <a
                       href="#"
-                      className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                      className="text-primaryText transition hover:opacity-75 dark:text-secondaryText text-opacity-75 dark:text-opacity-75 "
                     >
                       Terms
                     </a>
@@ -77,7 +77,7 @@ export const Footer: React.FC = () => {
                   <li>
                     <a
                       href="#"
-                      className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                      className="text-primaryText transition hover:opacity-75 dark:text-secondaryText text-opacity-75 dark:text-opacity-75 "
                     >
                       Advertising
                     </a>
@@ -87,7 +87,7 @@ export const Footer: React.FC = () => {
             </div>
 
             <div className="col-span-2 sm:col-span-1">
-              <p className="font-medium text-gray-900 dark:text-white">
+              <p className="font-medium text-primaryText dark:text-secondaryText">
                 Company
               </p>
 
@@ -96,7 +96,7 @@ export const Footer: React.FC = () => {
                   <li>
                     <a
                       href="#"
-                      className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                      className="text-primaryText transition hover:opacity-75 dark:text-secondaryText text-opacity-75 dark:text-opacity-75 "
                     >
                       About
                     </a>
@@ -105,7 +105,7 @@ export const Footer: React.FC = () => {
                   <li>
                     <a
                       href="#"
-                      className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                      className="text-primaryText transition hover:opacity-75 dark:text-secondaryText text-opacity-75 dark:text-opacity-75 "
                     >
                       Meet the Team
                     </a>
@@ -115,7 +115,7 @@ export const Footer: React.FC = () => {
             </div>
 
             <div className="col-span-2 sm:col-span-1">
-              <p className="font-medium text-gray-900 dark:text-white">
+              <p className="font-medium text-primaryText dark:text-secondaryText">
                 Helpful Links
               </p>
 
@@ -124,7 +124,7 @@ export const Footer: React.FC = () => {
                   <li>
                     <a
                       href="#"
-                      className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                      className="text-primaryText transition hover:opacity-75 dark:text-secondaryText text-opacity-75 dark:text-opacity-75 "
                     >
                       Contact
                     </a>
@@ -133,7 +133,7 @@ export const Footer: React.FC = () => {
                   <li>
                     <a
                       href="#"
-                      className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                      className="text-primaryText transition hover:opacity-75 dark:text-secondaryText text-opacity-75 dark:text-opacity-75 "
                     >
                       FAQs
                     </a>
@@ -143,14 +143,16 @@ export const Footer: React.FC = () => {
             </div>
 
             <div className="col-span-2 sm:col-span-1">
-              <p className="font-medium text-gray-900 dark:text-white">Legal</p>
+              <p className="font-medium text-primaryText dark:text-secondaryText">
+                Legal
+              </p>
 
               <nav aria-label="Footer Navigation - Legal" className="mt-6">
                 <ul className="space-y-4 text-sm">
                   <li>
                     <a
                       href="#"
-                      className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                      className="text-primaryText transition hover:opacity-75 dark:text-secondaryText text-opacity-75 dark:text-opacity-75 "
                     >
                       Accessibility
                     </a>
@@ -159,7 +161,7 @@ export const Footer: React.FC = () => {
                   <li>
                     <a
                       href="#"
-                      className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                      className="text-primaryText transition hover:opacity-75 dark:text-secondaryText text-opacity-75 dark:text-opacity-75 "
                     >
                       Cookies Policy
                     </a>
@@ -167,7 +169,7 @@ export const Footer: React.FC = () => {
                   <li>
                     <a
                       href="#"
-                      className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                      className="text-primaryText transition hover:opacity-75 dark:text-secondaryText text-opacity-75 dark:text-opacity-75 "
                     >
                       Statistics
                     </a>
@@ -181,7 +183,7 @@ export const Footer: React.FC = () => {
                   href="/"
                   rel="noreferrer"
                   target="_blank"
-                  className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                  className="text-primaryText transition hover:opacity-75 dark:text-secondaryText"
                 >
                   <span className="sr-only">Facebook</span>
                   <LogoFacebook />
@@ -193,7 +195,7 @@ export const Footer: React.FC = () => {
                   href="/"
                   rel="noreferrer"
                   target="_blank"
-                  className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                  className="text-primaryText transition hover:opacity-75 dark:text-secondaryText"
                 >
                   <span className="sr-only">Instagram</span>
                   <LogoInstagram />
@@ -205,7 +207,7 @@ export const Footer: React.FC = () => {
                   href="/"
                   rel="noreferrer"
                   target="_blank"
-                  className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                  className="text-primaryText transition hover:opacity-75 dark:text-secondaryText"
                 >
                   <span className="sr-only">Twitter</span>
                   <LogoTwitter />
@@ -217,7 +219,7 @@ export const Footer: React.FC = () => {
                   href="/"
                   rel="noreferrer"
                   target="_blank"
-                  className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                  className="text-primaryText transition hover:opacity-75 dark:text-secondaryText"
                 >
                   <span className="sr-only">GitHub</span>
                   <LogoGitHub />
@@ -229,20 +231,19 @@ export const Footer: React.FC = () => {
                   href="/"
                   rel="noreferrer"
                   target="_blank"
-                  className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
+                  className="text-primaryText transition hover:opacity-75 dark:text-secondaryText "
                 >
                   <span className="sr-only">Dribbble</span>
                   <LogoDribble />
-
                 </a>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-8 border-t border-gray-100 pt-8 dark:border-gray-800">
+        <div className="mt-8 border-t border-secondaryColor pt-8 dark:border-primaryColor border-opacity-20 dark:border-opacity-10">
           <div className="sm:flex sm:justify-between">
-            <p className="text-xs text-gray-500 dark:text-gray-400">
+            <p className="text-xs text-primaryText dark:text-secondaryText text-opacity-60 dark:text-opacity-60">
               &copy; 2023. Project LUNAS. All rights reserved.
             </p>
 
@@ -254,7 +255,7 @@ export const Footer: React.FC = () => {
                 <li>
                   <a
                     href="#"
-                    className="text-gray-500 transition hover:opacity-75 dark:text-gray-400"
+                    className="text-primaryText transition hover:opacity-75 dark:text-secondaryText text-opacity-60 dark:text-opacity-60"
                   >
                     Terms & Conditions
                   </a>
@@ -263,7 +264,7 @@ export const Footer: React.FC = () => {
                 <li>
                   <a
                     href="#"
-                    className="text-gray-500 transition hover:opacity-75 dark:text-gray-400"
+                    className="text-primaryText transition hover:opacity-75 dark:text-secondaryText text-opacity-60 dark:text-opacity-60"
                   >
                     Privacy Policy
                   </a>
@@ -272,7 +273,7 @@ export const Footer: React.FC = () => {
                 <li>
                   <a
                     href="#"
-                    className="text-gray-500 transition hover:opacity-75 dark:text-gray-400"
+                    className="text-primaryText transition hover:opacity-75 dark:text-secondaryText text-opacity-60 dark:text-opacity-60"
                   >
                     Cookies
                   </a>
