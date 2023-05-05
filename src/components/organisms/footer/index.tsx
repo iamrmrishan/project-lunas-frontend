@@ -7,7 +7,7 @@ export const Footer: React.FC = () => {
   return (
     <footer
       aria-label="Site Footer"
-      className="bg-white dark:bg-secondaryColor"
+      className="bg-primaryColor dark:bg-secondaryColor"
     >
       <div className="mx-auto max-w-auto px-4 py-16 sm:px-6 lg:px-8">
         <div className="lg:flex lg:items-start lg:gap-8">
@@ -40,7 +40,7 @@ export const Footer: React.FC = () => {
                     type="email"
                     id="UserEmail"
                     placeholder="john@rhcp.com"
-                    className="w-full border-none focus:border-transparent focus:ring-transparent dark:bg-transparent dark:text-white sm:text-sm"
+                    className="w-full border-primaryText border-opacity-20 bg-transparent focus:border-transparent focus:ring-transparent dark:bg-transparent dark:text-white sm:text-sm"
                   />
 
                   <Button

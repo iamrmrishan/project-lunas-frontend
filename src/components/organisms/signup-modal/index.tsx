@@ -83,15 +83,14 @@ const SignupModal: React.FC<SignupModalProps> = ({ isOpen, onClose }) => {
           />
         </svg>
       </a>
+      <h2 className="mt-6 text-2xl font-bold text-secondaryText sm:text-3xl md:text-4xl">
+          Welcome to Project LUNAS
+        </h2>
 
-      <h2 className="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
-        Welcome to Project LUNAS
-      </h2>
-
-      <p className="mt-4 leading-relaxed text-white/90 dark:text-white">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi nam
-        dolorum aliquam, quibusdam aperiam voluptatum.
-      </p>
+        <p className="mt-4 leading-relaxed text-secondaryText text-opacity-60 dark:text-secondaryText">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi nam
+          dolorum aliquam, quibusdam aperiam voluptatum.
+        </p>
     </div>
   </section>
 
@@ -118,25 +117,24 @@ const SignupModal: React.FC<SignupModalProps> = ({ isOpen, onClose }) => {
             />
           </svg>
         </a>
-
         <h1
-          className="mt-2 text-2xl font-bold text-gray-900 dark:text-white sm:text-3xl md:text-4xl"
-        >
-          Welcome to Project Lunas
-        </h1>
+            className="mt-2 text-2xl font-bold text-primaryText dark:text-secondaryText sm:text-3xl md:text-4xl"
+          >
+            Welcome to Project Lunas
+          </h1>
 
-        <p className="mt-4 leading-relaxed text-gray-500 dark:text-gray-400">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-          nam dolorum aliquam, quibusdam aperiam voluptatum.
-        </p>
+          <p className="mt-4 leading-relaxed text-primaryText dark:text-secondaryText text-opacity-60">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+            nam dolorum aliquam, quibusdam aperiam voluptatum.
+          </p>
       </div>
 
       <form action="#" className="mt-8 grid grid-cols-6 gap-6">
         <div className="col-span-6 sm:col-span-3">
           <label
             htmlFor="FirstName"
-            className="block text-sm font-medium text-gray-700 dark:text-gray-200"
-          >
+            className="block text-sm font-medium text-primaryText dark:text-secondaryText text-opacity-75"
+            >
             First Name
           </label>
 
@@ -144,14 +142,14 @@ const SignupModal: React.FC<SignupModalProps> = ({ isOpen, onClose }) => {
             type="text"
             id="FirstName"
             name="first_name"
-            className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
-          />
+            className="mt-1 w-full rounded-md border-primaryText bg-transparent text-sm text-primaryText shadow-sm dark:border-secondaryText dark:bg-transparent dark:text-secondaryText border-opacity-10 dark:border-opacity-10"
+            />
         </div>
 
         <div className="col-span-6 sm:col-span-3">
           <label
             htmlFor="LastName"
-            className="block text-sm font-medium text-gray-700 dark:text-gray-200"
+            className="block text-sm font-medium text-primaryText dark:text-secondaryText text-opacity-75"
           >
             Last Name
           </label>
@@ -160,8 +158,8 @@ const SignupModal: React.FC<SignupModalProps> = ({ isOpen, onClose }) => {
             type="text"
             id="LastName"
             name="last_name"
-            className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
-          />
+            className="mt-1 w-full rounded-md border-primaryText bg-transparent text-sm text-primaryText shadow-sm dark:border-secondaryText dark:bg-transparent dark:text-secondaryText border-opacity-10 dark:border-opacity-10"
+            />
         </div>
 
         <div className="col-span-6">
@@ -176,8 +174,8 @@ const SignupModal: React.FC<SignupModalProps> = ({ isOpen, onClose }) => {
             type="email"
             id="Email"
             name="email"
-            className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
-          />
+            className="mt-1 w-full rounded-md border-primaryText bg-transparent text-sm text-primaryText shadow-sm dark:border-secondaryText dark:bg-transparent dark:text-secondaryText border-opacity-10 dark:border-opacity-10"
+            />
         </div>
 
         <div className="col-span-6 sm:col-span-3">
@@ -192,8 +190,8 @@ const SignupModal: React.FC<SignupModalProps> = ({ isOpen, onClose }) => {
             type="password"
             id="Password"
             name="password"
-            className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
-          />
+            className="mt-1 w-full rounded-md border-primaryText bg-transparent text-sm text-primaryText shadow-sm dark:border-secondaryText dark:bg-transparent dark:text-secondaryText border-opacity-10 dark:border-opacity-10"
+            />
         </div>
 
         <div className="col-span-6 sm:col-span-3">
@@ -208,8 +206,8 @@ const SignupModal: React.FC<SignupModalProps> = ({ isOpen, onClose }) => {
             type="password"
             id="PasswordConfirmation"
             name="password_confirmation"
-            className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
-          />
+            className="mt-1 w-full rounded-md border-primaryText bg-transparent text-sm text-primaryText shadow-sm dark:border-secondaryText dark:bg-transparent dark:text-secondaryText border-opacity-10 dark:border-opacity-10"
+            />
         </div>
 
         <div className="col-span-6">
@@ -218,10 +216,10 @@ const SignupModal: React.FC<SignupModalProps> = ({ isOpen, onClose }) => {
               type="checkbox"
               id="MarketingAccept"
               name="marketing_accept"
-              className="h-5 w-5 rounded-md border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:focus:ring-offset-gray-900"
+              className="h-5 w-5 rounded-md border-primaryText bg-transparent darK:bg-transparent shadow-sm dark:border-secondaryText border-opacity-10 dark:border-opacity-10  "
             />
 
-            <span className="text-sm text-gray-700 dark:text-gray-200">
+            <span className="text-sm text-primaryText dark:text-secondaryText ">
               I want to receive emails about events and
               company announcements.
             </span>
@@ -229,20 +227,20 @@ const SignupModal: React.FC<SignupModalProps> = ({ isOpen, onClose }) => {
         </div>
 
         <div className="col-span-6">
-          <p className="text-sm text-gray-500 dark:text-gray-400">
+          <p className="text-sm text-primaryText dark:text-gray-400 text-opacity-75">
             By creating an account, you agree to our
-            <a href="#" className="text-gray-700 underline dark:text-gray-200">
+            <a href="#" className="text-primaryText underline dark:text-secondaryText">
               terms and conditions
             </a>
             and
-            <a href="#" className="text-gray-700 underline dark:text-gray-200">
+            <a href="#" className="text-primaryText underline dark:text-secondaryText">
               privacy policy </a>
           </p>
         </div>
 
         <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
           <button
-            className="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500 dark:hover:bg-blue-700 dark:hover:text-white"
+            className="inline-block shrink-0 rounded-md border border-primaryBtn bg-primaryBtn px-12 py-3 text-sm font-medium text-primaryBtnText transition hover:bg-transparent hover:text-primaryText focus:outline-none focus:ring active:text-primaryText dark:hover:bg-transaparent dark:hover:text-secondaryText"
           >
             Create an account
           </button>

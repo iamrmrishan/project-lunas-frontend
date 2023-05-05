@@ -49,15 +49,15 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
           &#8203;
         </span>
         <div
-          className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden transform transition-all sm:align-middle sm:max-w-lg md:max-w-7xl sm:w-full dark:bg-black"
+          className="inline-block align-bottom bg-primaryColor rounded-lg text-left overflow-hidden transform transition-all sm:align-middle sm:max-w-lg md:max-w-7xl sm:w-full dark:bg-secondaryColor"
           role="dialog"
           aria-modal="true"
           aria-labelledby="modal-title"
         >
-     <section className="bg-white dark:bg-gray-900">
+     <section className="bg-primaryColor dark:bg-secondaryColor">
   <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
     <section
-      className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6"
+      className="relative flex h-32 items-end bg-secondaryColor lg:col-span-5 lg:h-full xl:col-span-6"
     >
       <img
         alt="Night"
@@ -66,7 +66,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
       />
 
       <div className="hidden lg:relative lg:block lg:p-12">
-        <a className="block text-white" href="/">
+        <a className="block text-secondaryText" href="/">
           <span className="sr-only">Home</span>
           <svg
             className="h-8 sm:h-10"
@@ -81,11 +81,11 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
           </svg>
         </a>
 
-        <h2 className="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
+        <h2 className="mt-6 text-2xl font-bold text-secondaryText sm:text-3xl md:text-4xl">
           Welcome to Project LUNAS
         </h2>
 
-        <p className="mt-4 leading-relaxed text-white/90 dark:text-white">
+        <p className="mt-4 leading-relaxed text-secondaryText text-opacity-60 dark:text-secondaryText">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi nam
           dolorum aliquam, quibusdam aperiam voluptatum.
         </p>
@@ -99,7 +99,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
       <div className="max-w-xl lg:max-w-3xl">
         <div className="relative -mt-16 block lg:hidden">
           <a
-            className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-white text-blue-600 dark:bg-gray-900 sm:h-20 sm:w-20"
+            className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-primaryColor text-primaryText dark:bg-secondaryColor sm:h-20 sm:w-20"
             href="/"
           >
             <span className="sr-only">Home</span>
@@ -117,12 +117,12 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
           </a>
 
           <h1
-            className="mt-2 text-2xl font-bold text-gray-900 dark:text-white sm:text-3xl md:text-4xl"
+            className="mt-2 text-2xl font-bold text-primaryText dark:text-secondaryText sm:text-3xl md:text-4xl"
           >
             Welcome to Project Lunas
           </h1>
 
-          <p className="mt-4 leading-relaxed text-gray-500 dark:text-gray-400">
+          <p className="mt-4 leading-relaxed text-primaryText dark:text-secondaryText text-opacity-60">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi
             nam dolorum aliquam, quibusdam aperiam voluptatum.
           </p>
@@ -134,7 +134,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
           <div className="col-span-6">
             <label
               htmlFor="Email"
-              className="block text-sm font-medium text-gray-700 dark:text-gray-200"
+              className="block text-sm font-medium text-primaryText dark:text-secondaryText text-opacity-75"
             >
               Email
             </label>
@@ -143,14 +143,14 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
               type="email"
               id="Email"
               name="email"
-              className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
+              className="mt-1 w-full rounded-md border-primaryText bg-primaryColor text-sm text-primaryText shadow-sm dark:border-secondaryText dark:bg-secondaryColor dark:text-secondaryText border-opacity-10 dark:border-opacity-10"
             />
           </div>
 
           <div className="col-span-6">
             <label
               htmlFor="Password"
-              className="block text-sm font-medium text-gray-700 dark:text-gray-200"
+              className="block text-sm font-medium text-primaryText dark:text-secondaryText text-opacity-75"
             >
               Password
             </label>
@@ -159,13 +159,13 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
               type="password"
               id="Password"
               name="password"
-              className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
+              className="mt-1 w-full rounded-md border-primaryText bg-primaryColor text-sm text-primaryText shadow-sm dark:border-secondaryText dark:bg-secondaryColor dark:text-secondaryText border-opacity-10 dark:border-opacity-10"
             />
           </div>
 
           <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
             <button
-              className="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500 dark:hover:bg-blue-700 dark:hover:text-white"
+              className="inline-block shrink-0 rounded-md border border-primaryBtn bg-primaryBtn dark:bg-secondaryBtn px-12 py-3 text-sm font-medium text-primaryBtnText dark:text-secondaryBtnText transition hover:bg-transparent hover:text-primaryBtnText focus:outline-none focus:ring active:text-primaryText dark:hover:bg-secondaryBtn dark:hover:text-secondaryBtn"
             >
               Login
             </button>
@@ -173,7 +173,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
             <p className="mt-4 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
               Don't have an account? 
               <a href="#" className="text-gray-700 underline dark:text-gray-200"
-                >Sign in </a>
+                > Sign in </a>
             </p>
           </div>
         </form>

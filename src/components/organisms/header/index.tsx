@@ -6,10 +6,13 @@ import Logo from "components/atoms/logo";
 import NavLink from "components/atoms/nav-link";
 import Button from "components/atoms/button";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { CiUser } from "react-icons/ci";
 
 export const Header: React.FC = () => {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
+
+  const isLoggedIn = true;
 
   const handleLoginClick = () => {
     setIsLoginModalOpen(true);
@@ -30,7 +33,7 @@ export const Header: React.FC = () => {
   return (
     <header
       aria-label="Site Header"
-      className="bg-primaryHeader dark:bg-secondaryHeader"
+      className="bg-primaryColor dark:bg-secondaryColor"
     >
       <div className="mx-auto max-w-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
@@ -47,27 +50,40 @@ export const Header: React.FC = () => {
             <ul className="flex items-center gap-6 text-sm">
               <NavLink to="/post" label="About" />
               <NavLink to="/browse" label="Browse" />
+              {isLoggedIn && (
+                <>
+                  <NavLink to="/" label="Make a Review" />
+                  <NavLink to="/" label="Ask about a product" />
+                </>
+              )}
             </ul>
           </nav>
           <div className="flex items-center gap-4">
-            <div className="hidden sm:flex sm:gap-4">
-              <Button
-                className="btn rounded-md bg-primaryBtn dark:bg-secondaryBtn px-5 py-2.5 text-sm font-medium text-primaryBtnText dark:text-secondaryBtnText shadow hover:bg-primaryBtnHover dark:hover:bg-secondaryBtnHover"
-                onClick={handleLoginClick}
-                text="Login"
-              />
-              <Button
-                className="rounded-md bg-primaryBtn2 px-5 py-2.5 text-sm font-medium text-primaryText dark:bg-secondaryBtn2 dark:text-primaryBtnText dark:hover:text-white/75"
-                onClick={handleSignUpClick}
-                text="Signup"
-              />
-            </div>
+            {!isLoggedIn && (
+              <div className="hidden sm:flex sm:gap-4">
+                <Button
+                  className="btn rounded-md bg-primaryBtn dark:bg-secondaryBtn px-5 py-2.5 text-sm font-medium text-primaryBtnText dark:text-secondaryBtnText shadow hover:bg-primaryBtnHover dark:hover:bg-secondaryBtnHover"
+                  onClick={handleLoginClick}
+                  text="Login"
+                />
+                <Button
+                  className="rounded-md bg-primaryBtn2 px-5 py-2.5 text-sm font-medium text-primaryText dark:bg-secondaryBtn2 dark:text-primaryBtnText dark:hover:text-white/75"
+                  onClick={handleSignUpClick}
+                  text="Sign Up"
+                />
+              </div>
+            )}
             <DarkModeToggle />
             <Button
+              className="rounded-full font-bold bg-primaryBtn dark:bg-secondaryBtn p-3 text-primaryBtnText dark:text-secondaryBtnText"
+              icon={<CiUser />}
+            />
+            <Button
               className={
-                "block md:hidden rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75 dark:bg-gray-800 dark:text-white dark:hover:text-white/75"
+                "block md:hidden rounded bg-primaryBtn2 p-2 text-primaryText transition hover:text-gray-600/75 dark:bg-secondaryBtn2 dark:text-secondaryText dark:hover:text-white/75"
               }
               icon={<GiHamburgerMenu></GiHamburgerMenu>}
+              // onClick={}
             ></Button>
           </div>
         </div>

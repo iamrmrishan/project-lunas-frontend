@@ -34,21 +34,18 @@ module.exports = {
           100: "#fef3c7",
           700: "#b45309",
         },
-        primaryColor: "#ffffff",
-        secondaryColor: "#1e1e1e",
+        primaryColor: "#fafafa",
+        secondaryColor: "#181818",
 
-        primaryHeader: "#fafafa",
-        secondaryHeader: "#181818",
+        primaryText: "#0f0f0f",
+        secondaryText: "#EAEAEA",
 
-        primaryText: "#000000",
-        secondaryText: "#fafafa",
-
-        primaryBtn: "#000000",
-        primaryBtnHover: "#2B2B2B",
+        primaryBtn: "#2B2B2B",
+        primaryBtnHover: "#0f0f0f",
         primaryBtnText: "#f1f1f1",
         primaryBtn2: "#e7e7e7",
 
-        secondaryBtn: "#d9d9d9",
+        secondaryBtn: "#fafafa",
         secondaryBtnHover: "#f1f1f1",
         secondaryBtnText: "#000000",
         secondaryBtn2: "#212121",
