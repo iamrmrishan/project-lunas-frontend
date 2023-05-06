@@ -11,7 +11,7 @@ import { CiUser } from "react-icons/ci";
 export const Header: React.FC = () => {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
-
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLoginClick = () => {
@@ -31,6 +31,7 @@ export const Header: React.FC = () => {
   };
 
   return (
+
     <header
       aria-label="Site Header"
       className="bg-primaryColor dark:bg-secondaryColor"
@@ -53,7 +54,7 @@ export const Header: React.FC = () => {
               {isLoggedIn && (
                 <>
                   <NavLink to="/" label="Make a Review" />
-                  <NavLink to="/" label="Ask about a product" />
+                  <NavLink to="/" label="Ask about a Product" />
                 </>
               )}
             </ul>
@@ -84,11 +85,12 @@ export const Header: React.FC = () => {
                 "block md:hidden rounded bg-primaryBtn2 p-2 text-primaryText transition hover:text-gray-600/75 dark:bg-secondaryBtn2 dark:text-secondaryText dark:hover:text-white/75"
               }
               icon={<GiHamburgerMenu></GiHamburgerMenu>}
-              // onClick={}
+              onClick={() => setIsMenuOpen((e) => !e)}
             ></Button>
           </div>
         </div>
       </div>
     </header>
+    
   );
 };

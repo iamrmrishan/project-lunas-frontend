@@ -1,11 +1,9 @@
-import {
-  LogoDribble,
-  LogoFacebook,
-  LogoGitHub,
-  LogoHome,
-  LogoInstagram,
-  LogoTwitter,
-} from "assets/icons/logo";
+import { LogoDribble } from "assets/icons/DribbleLogo";
+import {LogoFacebook} from "assets/icons/FacebookLogo";
+import { LogoGitHub } from "assets/icons/GitHubLogo";
+import { LogoInstagram } from "assets/icons/InstagramLogo";
+import { LogoTwitter } from "assets/icons/TwitterLogo";
+import { LogoHome } from "assets/icons/logo";
 import Button from "components/atoms/button";
 import Input from "components/atoms/input";
 import React from "react";
