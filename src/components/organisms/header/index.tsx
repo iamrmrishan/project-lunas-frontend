@@ -63,12 +63,12 @@ export const Header: React.FC = () => {
             {!isLoggedIn && (
               <div className="hidden sm:flex sm:gap-4">
                 <Button
-                  className="btn rounded-md bg-primaryBtn dark:bg-secondaryBtn px-5 py-2.5 text-sm font-medium text-primaryBtnText dark:text-secondaryBtnText shadow hover:bg-primaryBtnHover dark:hover:bg-secondaryBtnHover"
+                  className="btn rounded-md bg-primaryBtn dark:bg-secondaryBtn px-4 py-2 md:px-5 md:py-2.5 text-xs md:text-sm font-medium text-primaryBtnText dark:text-secondaryBtnText shadow hover:bg-primaryBtnHover dark:hover:bg-secondaryBtnHover"
                   onClick={handleLoginClick}
                   text="Login"
                 />
                 <Button
-                  className="rounded-md bg-primaryBtn2 px-5 py-2.5 text-sm font-medium text-primaryText dark:bg-secondaryBtn2 dark:text-primaryBtnText dark:hover:text-white/75"
+                  className="rounded-md bg-primaryBtn2 px-4 py-2 md:px-5 md:py-2.5 text-xs md:text-sm font-medium text-primaryText dark:bg-secondaryBtn2 dark:text-primaryBtnText dark:hover:text-white/75"
                   onClick={handleSignUpClick}
                   text="Sign Up"
                 />
@@ -76,14 +76,14 @@ export const Header: React.FC = () => {
             )}
             <DarkModeToggle />
             <Button
-              className="rounded-full font-bold bg-primaryBtn dark:bg-secondaryBtn p-3 text-primaryBtnText dark:text-secondaryBtnText"
-              icon={<CiUser />}
+              className="rounded-full font-bold bg-primaryBtn dark:bg-secondaryBtn p-2 md:p-3 text-primaryBtnText dark:text-secondaryBtnText"
+              icon={<CiUser size={18} />}
               onClick={() => setIsLoggedIn((e) => !e)}
             />
             {/* <div className="bg-primaryColor flex flex-col"> */}
               <Button
                 className={
-                  "z-10 block md:hidden rounded bg-primaryBtn2 p-2 text-primaryText transition dark:bg-secondaryBtn2 dark:text-secondaryText dark:hover:text-white/75"
+                  "z-10 block md:hidden rounded bg-primaryBtn2 p-2 text-primaryText transition dark:bg-secondaryBtn2 dark:text-secondaryText"
                 }
                 icon={<GiHamburgerMenu></GiHamburgerMenu>}
                 onClick={() => {

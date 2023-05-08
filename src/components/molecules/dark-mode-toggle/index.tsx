@@ -8,13 +8,13 @@ const DarkModeToggle: React.FC = () => {
 
   return (
     <Button
-      className="rounded-md bg-primaryBtn2 px-5 py-2.5 text-sm font-medium text-primaryText dark:bg-secondaryBtn2 dark:text-secondaryText"
+      className="rounded-md bg-primaryBtn2 px-4 py-2 md:px-5 md:py-2.5 text-sm font-medium text-primaryText dark:bg-secondaryBtn2 dark:text-secondaryText"
       onClick={toggleDarkMode}
       icon={
         darkMode ? (
-          <BsSun className="h-5 w-5" aria-hidden="true" />
+          <BsSun className="h-4 w-4 md:h-5 md:w-5" aria-hidden="true"  />
         ) : (
-          <BsMoonStars className="h-5 w-5" aria-hidden="true" />
+          <BsMoonStars className="h-4 w-4 md:h-5 md:w-5" aria-hidden="true"  />
         )
       }
     ></Button>
