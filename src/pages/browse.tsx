@@ -1,10 +1,11 @@
-import { Container, Footer, Header } from 'components';
-import { SearchPostLink } from 'components/molecules/search';
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectPosts } from 'redux/selectors/post-selector';
-import { postSlice } from 'redux/slices/post-slice';
-import RedditPost from 'components/molecules/post-card';
+import { Container, Footer, Header } from "components";
+import { SearchPostLink } from "components/molecules/search";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { selectPosts } from "redux/selectors/post-selector";
+import { postSlice } from "redux/slices/post-slice";
+import RedditPost from "components/molecules/post-card";
+import NetworkQuestions from "components/molecules/NetworkQuestions";
 
 const BrowsePage: React.FC = () => {
   const dispatch = useDispatch();
@@ -90,13 +91,17 @@ const BrowsePage: React.FC = () => {
       <Container>
         <div className="container mx-auto px-4 py-6 dark:bg-secondaryColor bg-primaryColor">
           <div className="grid grid-cols-4 gap-6">
-            <div className="col-span-4 md:col-span-3 ipad:col-span-4">
+            <div className="col-span-4 md:col-span-3 ipad:col-span-4 m-auto">
               <SearchPostLink />
+
               {posts?.map((post) => (
                 <div key={post.title} className="space-y-4">
                   <RedditPost post={post}></RedditPost>
                 </div>
               ))}
+            </div>
+            <div className="col-span-4 lg:col-span-1">
+              <NetworkQuestions />
             </div>
             <div className="hidden md:block ipad:hidden">
               <div className="col-span-1 space-y-5">

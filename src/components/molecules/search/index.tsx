@@ -8,7 +8,7 @@ export const SearchPostLink: React.FC = () => {
       <input
         type="text"
         placeholder="Search"
-        className="text-sm placeholder-secondaryText placeholder-opacity-40 bg-primaryColor dark:bg-secondaryColor border border-primaryText  dark:border-secondaryText border-opacity-10 dark:border-opacity-10 rounded h-9 mr-4 cursor-pointer focus:outline-none focus:bg-white dark:focus:bg-gray-800 focus:border-blue-500 w-full"
+        className="text-sm placeholder-primaryText dark:placeholder-secondaryText placeholder-opacity-40 bg-primaryColor dark:bg-secondaryColor border border-primaryText  dark:border-secondaryText border-opacity-10 dark:border-opacity-10 rounded h-9 mr-4 cursor-pointer focus:outline-none focus:bg-white dark:focus:bg-gray-800 focus:border-blue-500 w-full"
       />
       <Button
         className={

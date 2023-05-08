@@ -83,7 +83,7 @@ export const Header: React.FC = () => {
             {/* <div className="bg-primaryColor flex flex-col"> */}
               <Button
                 className={
-                  "z-10 block md:hidden rounded bg-primaryBtn2 p-2 text-primaryText transition hover:text-gray-600/75 dark:bg-secondaryBtn2 dark:text-secondaryText dark:hover:text-white/75"
+                  "z-10 block md:hidden rounded bg-primaryBtn2 p-2 text-primaryText transition dark:bg-secondaryBtn2 dark:text-secondaryText dark:hover:text-white/75"
                 }
                 icon={<GiHamburgerMenu></GiHamburgerMenu>}
                 onClick={() => {
