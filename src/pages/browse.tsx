@@ -88,7 +88,7 @@ const BrowsePage: React.FC = () => {
     <>
       <Header />
       <Container>
-        <div className="container mx-auto px-4 py-6">
+        <div className="container mx-auto px-4 py-6 dark:bg-secondaryColor bg-primaryColor">
           <div className="grid grid-cols-4 gap-6">
             <div className="col-span-4 md:col-span-3 ipad:col-span-4">
               <SearchPostLink />

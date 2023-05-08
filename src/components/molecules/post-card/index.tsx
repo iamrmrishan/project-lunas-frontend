@@ -19,7 +19,7 @@ const PostCard: React.FC<PostItemProps> = ({ post }) => {
   const screenSize = useScreenSize();
 
   return (
-    <div className="bg-white border rounded-lg p-4 mb-4 w-full mx-auto dark:bg-gray-900 dark:text-white">
+    <div className="bg-primaryColor text-primaryText border dark:border-opacity-20 dark:rounded-lg p-4 mb-4 w-full mx-auto dark:bg-secondaryColor dark:text-secondaryText">
       <div className="flex items-center space-x-2">
         {post.mediaId[0] && (
           <img
@@ -33,11 +33,11 @@ const PostCard: React.FC<PostItemProps> = ({ post }) => {
             href={post.mediaId[0]}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-500 font-bold hover:underline"
+            className="text-primaryText font-bold hover:underline dark:text-secondaryText"
           >
             {post.title}
           </a>
-          <p className="text-gray-600 text-sm mt-1">
+          <p className="text-primaryText dark:text-secondaryText text-opacity-40 dark:text-opacity-40 text-sm mt-1">
             Posted by u/{post.user.userName} in r/sample on {date}
           </p>
         </div>
@@ -54,7 +54,7 @@ const PostCard: React.FC<PostItemProps> = ({ post }) => {
         {post.tags.map((tag, index) => (
           <span
             key={index}
-            className="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs mr-2 mb-2"
+            className="dark:bg-secondaryBtn2 bg-primaryBtn2 dark:text-secondaryText text-primaryText px-2 py-1 rounded-full text-xs mr-2 mb-2"
           >
             {tag}
           </span>
@@ -63,28 +63,28 @@ const PostCard: React.FC<PostItemProps> = ({ post }) => {
       <div className="flex justify-between items-center mt-4">
         <div className="flex space-x-4">
           <div className="flex items-center space-x-2">
-            <button className="text-gray-600 hover:text-blue-500 focus:outline-none">
+            <button className="text-primaryText hover:text-primaryText text-opacity-50 dark:text-secondaryText dark:hover:text-secondaryText dark:text-opacity-50 focus:outline-none">
               <FiArrowUp size={20} />
             </button>
-            <p className="text-gray-600">
+            <p className="text-primaryText dark:text-secondaryText text-opacity-50 dark:text-opacity-50">
               <span className="font-bold">{100}</span>
             </p>
-            <button className="text-gray-600 hover:text-blue-500 focus:outline-none">
+            <button className="text-primaryText hover:text-primaryText text-opacity-50 dark:text-secondaryText dark:hover:text-secondaryText dark:text-opacity-50 focus:outline-none">
               <FiArrowDown size={20} />
             </button>
           </div>
           <div className="flex items-center space-x-2">
-            <button className="text-gray-600 hover:text-blue-500 focus:outline-none">
+          <button className="text-primaryText hover:text-primaryText text-opacity-50 dark:text-secondaryText dark:hover:text-secondaryText dark:text-opacity-50 focus:outline-none">
               <FiMessageCircle size={20} />
             </button>
-            <p className="text-gray-600">
+            <p className="text-primaryText dark:text-secondaryText text-opacity-50 dark:text-opacity-50">
               <span className="font-bold">{0}</span> comments
             </p>
           </div>
-          <button className="text-gray-600 hover:text-blue-500 focus:outline-none">
+          <button className="text-primaryText hover:text-primaryText text-opacity-50 dark:text-secondaryText dark:hover:text-secondaryText dark:text-opacity-50 focus:outline-none">
             <FiShare size={20} />
           </button>
-          <button className="text-gray-600 hover:text-blue-500 focus:outline-none">
+          <button className="text-primaryText hover:text-primaryText text-opacity-50 dark:text-secondaryText dark:hover:text-secondaryText dark:text-opacity-50 focus:outline-none">
             <FiBookmark size={20} />
           </button>
         </div>

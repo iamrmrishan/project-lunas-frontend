@@ -7,12 +7,13 @@ import NavLink from "components/atoms/nav-link";
 import Button from "components/atoms/button";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { CiUser } from "react-icons/ci";
+import Dropdown from "components/molecules/dropdown";
 
 export const Header: React.FC = () => {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isDropdownOpen, setIsDropDownOpen] = useState(false);
 
   const handleLoginClick = () => {
     setIsLoginModalOpen(true);
@@ -31,7 +32,6 @@ export const Header: React.FC = () => {
   };
 
   return (
-
     <header
       aria-label="Site Header"
       className="bg-primaryColor dark:bg-secondaryColor"
@@ -80,17 +80,26 @@ export const Header: React.FC = () => {
               icon={<CiUser />}
               onClick={() => setIsLoggedIn((e) => !e)}
             />
-            <Button
-              className={
-                "block md:hidden rounded bg-primaryBtn2 p-2 text-primaryText transition hover:text-gray-600/75 dark:bg-secondaryBtn2 dark:text-secondaryText dark:hover:text-white/75"
-              }
-              icon={<GiHamburgerMenu></GiHamburgerMenu>}
-              onClick={() => setIsMenuOpen((e) => !e)}
-            ></Button>
+            {/* <div className="bg-primaryColor flex flex-col"> */}
+              <Button
+                className={
+                  "z-10 block md:hidden rounded bg-primaryBtn2 p-2 text-primaryText transition hover:text-gray-600/75 dark:bg-secondaryBtn2 dark:text-secondaryText dark:hover:text-white/75"
+                }
+                icon={<GiHamburgerMenu></GiHamburgerMenu>}
+                onClick={() => {
+                  setIsDropDownOpen((e) => !e);
+                }}
+              ></Button>
+              {/* <div
+                hidden={!isDropdownOpen}
+                className="shadow dark:bg-secondaryColor border"
+              >
+                <Dropdown isLoggedIn={isLoggedIn} />
+              </div> */}
+            {/* </div> */}
           </div>
         </div>
       </div>
     </header>
-    
   );
 };
