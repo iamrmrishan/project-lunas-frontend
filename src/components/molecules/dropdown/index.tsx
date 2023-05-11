@@ -1,34 +1,28 @@
 import NavLink from "components/atoms/nav-link";
 import React from "react";
 
-function Dropdown(isLoggedIn) {
-  // console.log();
+const Dropdown: React.FC = () => {
   const menuItems = [
-    { label: "About", path: "/" },
-    { label: "About", path: "/" },
-    { label: "About", path: "/" },
-    { label: "About", path: "/" },
+    { label: "About", to: "/post" },
+    { label: "Browse", to: "/browse" },
+    { label: "Make Review", to: "/" },
+    { label: "Ask about a product", to: "/" },
   ];
   return (
-    <div className="m-10">
+    <div className="mx-8 my-5">
       {/* <ul>
         {menuItems.map((item) => {
             <NavLink to={item.path} label={item.label} />
         })}
       </ul> */}
-      
-      <ul className="flex flex-col items-center gap-6 text-sm text-primaryBtnText ">
-        <NavLink to="/post" label="About" />
-        <NavLink to="/browse" label="Browse" />
-        {isLoggedIn && (
-          <>
-            <NavLink to="/" label="Make a Review" />
-            <NavLink to="/" label="Ask about a Product" />
-          </>
-        )}
+
+      <ul className="flex flex-col items-left gap-6 text-sm text-primaryBtnText ">
+        {menuItems.map((item) => (
+          <NavLink to={item.to} label={item.label} dropdown={true}/>
+        ))}
       </ul>
     </div>
   );
-}
+};
 
 export default Dropdown;

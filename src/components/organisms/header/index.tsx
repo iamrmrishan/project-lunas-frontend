@@ -7,7 +7,7 @@ import NavLink from "components/atoms/nav-link";
 import Button from "components/atoms/button";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { CiUser } from "react-icons/ci";
-import { GrClose} from "react-icons/gr"
+import { GrClose } from "react-icons/gr";
 import Dropdown from "components/molecules/dropdown";
 
 export const Header: React.FC = () => {
@@ -33,8 +33,8 @@ export const Header: React.FC = () => {
   };
 
   const LogIn = () => {
-    setIsLoggedIn(e => !e)
-  }
+    setIsLoggedIn((e) => !e);
+  };
 
   return (
     <header
@@ -55,12 +55,12 @@ export const Header: React.FC = () => {
           <Logo />
           <nav aria-label="Site Nav" className="hidden md:block">
             <ul className="flex items-center gap-6 text-sm">
-              <NavLink to="/post" label="About" />
-              <NavLink to="/browse" label="Browse" />
+              <NavLink to="/post" label="About" dropdown={false} />
+              <NavLink to="/browse" label="Browse" dropdown={false} />
               {isLoggedIn && (
                 <>
-                  <NavLink to="/" label="Make a Review" />
-                  <NavLink to="/" label="Ask about a Product" />
+                  <NavLink to="/" label="Make a Review" dropdown={false} />
+                  <NavLink to="/" label="Ask about a Product" dropdown={false} />
                 </>
               )}
             </ul>
@@ -87,7 +87,7 @@ export const Header: React.FC = () => {
               onClick={() => setIsLoggedIn(false)}
             />
             {/* <div className="bg-primaryColor flex flex-col"> */}
-            {isDropdownOpen ? (
+            {!isDropdownOpen ? (
               <Button
                 className={
                   "z-10 block md:hidden rounded bg-primaryBtn2 p-2 text-primaryText transition dark:bg-secondaryBtn2 dark:text-secondaryText"
@@ -108,12 +108,12 @@ export const Header: React.FC = () => {
                 }}
               ></Button>
             )}
-            {/* <div
-                hidden={!isDropdownOpen}
-                className="shadow dark:bg-secondaryColor border"
-              >
-                <Dropdown isLoggedIn={isLoggedIn} />
-              </div> */}
+            <div
+              hidden={!isDropdownOpen}
+              className="shadow dark:bg-secondaryBtn2 absolute top-12 right-6 brightness-70 rounded-b-lg"
+            >
+              <Dropdown />
+            </div>
             {/* </div> */}
           </div>
         </div>
