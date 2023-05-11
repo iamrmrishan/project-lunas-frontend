@@ -116,7 +116,7 @@ export const Header: React.FC = () => {
               <>
                 <Button
                   className={
-                    "z-10 block  md:hidden rounded bg-primaryBtn2 p-2 text-primaryText transition dark:bg-secondaryBtn2 dark:text-secondaryText"
+                    "z-10 block md:hidden rounded text-primaryText transition dark:text-secondaryText right-6"
                   }
                   icon={<GrClose color="white" />}
                   onClick={() => {
@@ -125,7 +125,7 @@ export const Header: React.FC = () => {
                 ></Button>
                 <div
                   hidden={!isDropdownOpen}
-                  className="shadow md:hidden dark:bg-secondaryBtn2 absolute top-12 right-6 brightness-70 rounded-b-lg"
+                  className="z-10 shadow md:hidden dark:bg-secondaryBtn2 bg-primaryColor absolute top-14 right-6 dark:brightness-70 brightness-70 rounded-b-lg"
                 >
                   <Dropdown open={handleDropdown} />
                 </div>
