@@ -5,9 +5,10 @@ import React, { useState } from "react";
 interface LoginModalProps {
   isOpen: boolean;
   onClose: () => void;
+  setIsLoggedIn: () => void
 }
 
-const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
+const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose, setIsLoggedIn }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [formErrors, setFormErrors] = useState<{
@@ -141,7 +142,9 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
                     </div>
 
                     <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
-                      <button className="inline-block shrink-0 rounded-md border-2 border-primaryBtn dark:border-secondaryBtn bg-primaryBtn dark:bg-secondaryBtn px-12 py-3 text-sm font-medium text-primaryBtnText dark:text-secondaryBtnText transition hover:bg-transparent hover:text-primaryText focus:outline-none focus:ring active:text-primaryText dark:hover:bg-transparent dark:hover:text-secondaryText">
+                      <button 
+                      onClick={setIsLoggedIn}
+                      className="inline-block shrink-0 rounded-md border-2 border-primaryBtn dark:border-secondaryBtn bg-primaryBtn dark:bg-secondaryBtn px-12 py-3 text-sm font-medium text-primaryBtnText dark:text-secondaryBtnText transition hover:bg-transparent hover:text-primaryText focus:outline-none focus:ring active:text-primaryText dark:hover:bg-transparent dark:hover:text-secondaryText">
                         Login
                       </button>
 

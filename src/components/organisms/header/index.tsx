@@ -32,6 +32,10 @@ export const Header: React.FC = () => {
     setIsSignupModalOpen(false);
   };
 
+  const LogIn = () => {
+    setIsLoggedIn(e => !e)
+  }
+
   return (
     <header
       aria-label="Site Header"
@@ -42,6 +46,7 @@ export const Header: React.FC = () => {
           <LoginModal
             isOpen={isLoginModalOpen}
             onClose={handleLoginModalClose}
+            setIsLoggedIn={LogIn}
           />
           <SignupModal
             isOpen={isSignupModalOpen}
@@ -79,7 +84,7 @@ export const Header: React.FC = () => {
             <Button
               className="rounded-full font-bold bg-primaryBtn dark:bg-secondaryBtn p-2 md:p-3 text-primaryBtnText dark:text-secondaryBtnText"
               icon={<CiUser size={18} />}
-              onClick={() => setIsLoggedIn((e) => !e)}
+              onClick={() => setIsLoggedIn(false)}
             />
             {/* <div className="bg-primaryColor flex flex-col"> */}
             {isDropdownOpen ? (
