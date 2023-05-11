@@ -7,6 +7,7 @@ import NavLink from "components/atoms/nav-link";
 import Button from "components/atoms/button";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { CiUser } from "react-icons/ci";
+import { GrClose} from "react-icons/gr"
 import Dropdown from "components/molecules/dropdown";
 
 export const Header: React.FC = () => {
@@ -81,6 +82,7 @@ export const Header: React.FC = () => {
               onClick={() => setIsLoggedIn((e) => !e)}
             />
             {/* <div className="bg-primaryColor flex flex-col"> */}
+            {isDropdownOpen ? (
               <Button
                 className={
                   "z-10 block md:hidden rounded bg-primaryBtn2 p-2 text-primaryText transition dark:bg-secondaryBtn2 dark:text-secondaryText"
@@ -90,7 +92,18 @@ export const Header: React.FC = () => {
                   setIsDropDownOpen((e) => !e);
                 }}
               ></Button>
-              {/* <div
+            ) : (
+              <Button
+                className={
+                  "z-10 block md:hidden rounded bg-primaryBtn2 p-2 text-primaryText transition dark:bg-secondaryBtn2 dark:text-secondaryText"
+                }
+                icon={<GrClose color="white" />}
+                onClick={() => {
+                  setIsDropDownOpen((e) => !e);
+                }}
+              ></Button>
+            )}
+            {/* <div
                 hidden={!isDropdownOpen}
                 className="shadow dark:bg-secondaryColor border"
               >
