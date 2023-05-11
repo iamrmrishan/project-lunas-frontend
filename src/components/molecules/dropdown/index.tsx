@@ -1,7 +1,12 @@
 import NavLink from "components/atoms/nav-link";
+import LoginModal from "components/organisms/login-modal";
 import React from "react";
 
-const Dropdown: React.FC = () => {
+interface LoginModalProps {
+  open: () => void;
+}
+
+const Dropdown: React.FC<LoginModalProps> = ({open}) => {
   const menuItems = [
     { label: "About", to: "/post" },
     { label: "Browse", to: "/browse" },
@@ -18,7 +23,7 @@ const Dropdown: React.FC = () => {
 
       <ul className="flex flex-col items-left gap-6 text-sm text-primaryBtnText ">
         {menuItems.map((item) => (
-          <NavLink to={item.to} label={item.label} dropdown={true}/>
+          <NavLink to={item.to} label={item.label} dropdown={true} onClick={open} />
         ))}
       </ul>
     </div>

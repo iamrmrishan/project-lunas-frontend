@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DarkModeToggle from "components/molecules/dark-mode-toggle";
 import LoginModal from "components/organisms/login-modal";
 import SignupModal from "components/organisms/signup-modal";
@@ -36,6 +36,17 @@ export const Header: React.FC = () => {
     setIsLoggedIn((e) => !e);
   };
 
+  const handleDropdown = () => {
+    setIsDropDownOpen(false);
+  };
+
+  useEffect(() => {
+    function handleResize() {
+      handleDropdown();
+    }
+    window.addEventListener("resize", handleResize);
+  });
+
   return (
     <header
       aria-label="Site Header"
@@ -60,7 +71,11 @@ export const Header: React.FC = () => {
               {isLoggedIn && (
                 <>
                   <NavLink to="/" label="Make a Review" dropdown={false} />
-                  <NavLink to="/" label="Ask about a Product" dropdown={false} />
+                  <NavLink
+                    to="/"
+                    label="Ask about a Product"
+                    dropdown={false}
+                  />
                 </>
               )}
             </ul>
@@ -98,22 +113,25 @@ export const Header: React.FC = () => {
                 }}
               ></Button>
             ) : (
-              <Button
-                className={
-                  "z-10 block md:hidden rounded bg-primaryBtn2 p-2 text-primaryText transition dark:bg-secondaryBtn2 dark:text-secondaryText"
-                }
-                icon={<GrClose color="white" />}
-                onClick={() => {
-                  setIsDropDownOpen((e) => !e);
-                }}
-              ></Button>
+              <>
+                <Button
+                  className={
+                    "z-10 block  md:hidden rounded bg-primaryBtn2 p-2 text-primaryText transition dark:bg-secondaryBtn2 dark:text-secondaryText"
+                  }
+                  icon={<GrClose color="white" />}
+                  onClick={() => {
+                    setIsDropDownOpen((e) => !e);
+                  }}
+                ></Button>
+                <div
+                  hidden={!isDropdownOpen}
+                  className="shadow md:hidden dark:bg-secondaryBtn2 absolute top-12 right-6 brightness-70 rounded-b-lg"
+                >
+                  <Dropdown open={handleDropdown} />
+                </div>
+              </>
             )}
-            <div
-              hidden={!isDropdownOpen}
-              className="shadow dark:bg-secondaryBtn2 absolute top-12 right-6 brightness-70 rounded-b-lg"
-            >
-              <Dropdown />
-            </div>
+
             {/* </div> */}
           </div>
         </div>
