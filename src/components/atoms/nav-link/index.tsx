@@ -9,7 +9,7 @@ interface NavLinkProps {
 const NavLink: React.FC<NavLinkProps> = ({ to, label }) => {
   return (
     <Link
-      className="text-gray-500 transition hover:text-gray-500/75 dark:text-white font-medium text-lg dark:hover:text-white/75"
+      className="text-primaryText text-opacity-70 dark:text-secondaryText dark:text-opacity-70 transition hover:text-primaryText dark:hover:text-secondaryText font-medium text-lg dark:hover:text-white/75"
       to={to}
     >
       {label}
