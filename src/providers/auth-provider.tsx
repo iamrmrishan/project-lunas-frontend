@@ -23,6 +23,7 @@ const AuthContext = createContext<AuthContextData>({
     createdAt: null,
     updatedAt: null,
   },
+  logout: null,
 });
 
 export const AuthProvider: React.FC<React.PropsWithChildren<{}>> = ({
@@ -56,9 +57,21 @@ export const AuthProvider: React.FC<React.PropsWithChildren<{}>> = ({
     }
   }, [storedToken]);
 
+  const handleLogout = () => {
+    dispatch(logout());
+    localStorage.removeItem('token');
+    setIsLoggedIn(false);
+  };
+
   return (
     <AuthContext.Provider
-      value={{ isAuthenticated: isLoggedIn, expiresIn, token, user }}
+      value={{
+        isAuthenticated: isLoggedIn,
+        expiresIn,
+        token,
+        user,
+        logout: handleLogout,
+      }}
     >
       {children}
     </AuthContext.Provider>

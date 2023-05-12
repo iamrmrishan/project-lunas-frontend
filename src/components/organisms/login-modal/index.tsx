@@ -7,13 +7,13 @@ import { authSlice } from 'redux/slices/auth-slice';
 interface LoginModalProps {
   isOpen: boolean;
   onClose: () => void;
-  setIsLoggedIn: () => void;
+ 
 }
 
 const LoginModal: React.FC<LoginModalProps> = ({
   isOpen,
   onClose,
-  setIsLoggedIn,
+
 }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
