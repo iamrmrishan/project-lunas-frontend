@@ -13,6 +13,7 @@ export interface AuthContextData {
   isAuthenticated: boolean;
   expiresIn: string | null;
   token: string | null;
+  logout: () => void;
   user: ILoggedInUser;
 }
 

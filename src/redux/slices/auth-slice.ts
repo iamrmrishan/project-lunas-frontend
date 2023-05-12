@@ -46,6 +46,9 @@ export const authSlice = createSlice({
     },
     logout: (state) => {
       state.isAuthenticated = false;
+      state.expiresIn = null;
+      state.token = null;
+      state.user = null;
     },
   },
 });
