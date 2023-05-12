@@ -9,7 +9,7 @@ export const useScreenSize = () => {
   return useContext(ScreenSizeContext);
 };
 
-const ScreenSizeProvider: FunctionComponent = ({ children }) => {
+const ScreenSizeProvider: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   const [screenSize, setScreenSize] = useState<ScreenSize>('sm');
 
   const updateScreenSize = () => {

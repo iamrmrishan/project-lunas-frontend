@@ -5,3 +5,12 @@ export interface IUser {
   password: string;
   points: string;
 }
+
+export interface ILoggedInUser {
+  id: string;
+  userName: string;
+  email: string;
+  points: number;
+  createdAt: string,
+  updatedAt: string,
+}
