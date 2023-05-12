@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DarkModeToggle from "components/molecules/dark-mode-toggle";
 import LoginModal from "components/organisms/login-modal";
 import SignupModal from "components/organisms/signup-modal";
@@ -7,10 +7,12 @@ import NavLink from "components/atoms/nav-link";
 import Button from "components/atoms/button";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { CiUser } from "react-icons/ci";
-import { GrClose} from "react-icons/gr"
+import { GrClose } from "react-icons/gr";
 import Dropdown from "components/molecules/dropdown";
+import { useAuth } from "../../../providers/auth-provider";
 
 export const Header: React.FC = () => {
+  const { isAuthenticated } = useAuth();
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -32,6 +34,21 @@ export const Header: React.FC = () => {
     setIsSignupModalOpen(false);
   };
 
+  const LogIn = () => {
+    setIsLoggedIn((e) => !e);
+  };
+
+  const handleDropdown = () => {
+    setIsDropDownOpen(false);
+  };
+
+  useEffect(() => {
+    function handleResize() {
+      handleDropdown();
+    }
+    window.addEventListener("resize", handleResize);
+  });
+
   return (
     <header
       aria-label="Site Header"
@@ -42,6 +59,7 @@ export const Header: React.FC = () => {
           <LoginModal
             isOpen={isLoginModalOpen}
             onClose={handleLoginModalClose}
+            setIsLoggedIn={LogIn}
           />
           <SignupModal
             isOpen={isSignupModalOpen}
@@ -50,12 +68,16 @@ export const Header: React.FC = () => {
           <Logo />
           <nav aria-label="Site Nav" className="hidden md:block">
             <ul className="flex items-center gap-6 text-sm">
-              <NavLink to="/post" label="About" />
-              <NavLink to="/browse" label="Browse" />
+              <NavLink to="/post" label="About" dropdown={false} />
+              <NavLink to="/browse" label="Browse" dropdown={false} />
               {isLoggedIn && (
                 <>
-                  <NavLink to="/" label="Make a Review" />
-                  <NavLink to="/" label="Ask about a Product" />
+                  <NavLink to="/" label="Make a Review" dropdown={false} />
+                  <NavLink
+                    to="/"
+                    label="Ask about a Product"
+                    dropdown={false}
+                  />
                 </>
               )}
             </ul>
@@ -79,10 +101,9 @@ export const Header: React.FC = () => {
             <Button
               className="rounded-full font-bold bg-primaryBtn dark:bg-secondaryBtn p-2 md:p-3 text-primaryBtnText dark:text-secondaryBtnText"
               icon={<CiUser size={18} />}
-              onClick={() => setIsLoggedIn((e) => !e)}
             />
             {/* <div className="bg-primaryColor flex flex-col"> */}
-            {isDropdownOpen ? (
+            {!isDropdownOpen ? (
               <Button
                 className={
                   "z-10 block md:hidden rounded bg-primaryBtn2 p-2 text-primaryText transition dark:bg-secondaryBtn2 dark:text-secondaryText"
@@ -93,22 +114,25 @@ export const Header: React.FC = () => {
                 }}
               ></Button>
             ) : (
-              <Button
-                className={
-                  "z-10 block md:hidden rounded bg-primaryBtn2 p-2 text-primaryText transition dark:bg-secondaryBtn2 dark:text-secondaryText"
-                }
-                icon={<GrClose color="white" />}
-                onClick={() => {
-                  setIsDropDownOpen((e) => !e);
-                }}
-              ></Button>
+              <>
+                <Button
+                  className={
+                    "z-10 block md:hidden rounded text-primaryText transition dark:text-secondaryText right-6"
+                  }
+                  icon={<GrClose color="white" />}
+                  onClick={() => {
+                    setIsDropDownOpen((e) => !e);
+                  }}
+                ></Button>
+                <div
+                  hidden={!isDropdownOpen}
+                  className="z-10 shadow md:hidden dark:bg-secondaryBtn2 bg-primaryColor absolute top-14 right-6 dark:brightness-70 brightness-70 rounded-b-lg"
+                >
+                  <Dropdown open={handleDropdown} />
+                </div>
+              </>
             )}
-            {/* <div
-                hidden={!isDropdownOpen}
-                className="shadow dark:bg-secondaryColor border"
-              >
-                <Dropdown isLoggedIn={isLoggedIn} />
-              </div> */}
+
             {/* </div> */}
           </div>
         </div>

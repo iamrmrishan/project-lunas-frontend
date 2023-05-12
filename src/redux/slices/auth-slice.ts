@@ -39,7 +39,7 @@ export const authSlice = createSlice({
       state.token = action.payload.token;
       state.user = action.payload.user;
     },
-    loginFailure: (state, action: PayloadAction<string>) => {
+    loginFailure: (state, action: PayloadAction<any>) => {
       state.isAuthenticated = false;
       state.loading = false;
       state.error = action.payload;

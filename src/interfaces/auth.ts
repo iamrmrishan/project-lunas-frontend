@@ -9,6 +9,13 @@ export interface IAuthState {
   user: ILoggedInUser;
 }
 
+export interface AuthContextData {
+  isAuthenticated: boolean;
+  expiresIn: string | null;
+  token: string | null;
+  user: ILoggedInUser;
+}
+
 export interface ILoginUserPayload {
   email: string;
   password: string;

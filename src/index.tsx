@@ -5,14 +5,16 @@ import PageRoutes from 'routes';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from './providers/theme-provider';
-import store from '../src/redux/store';
+import store, { persistor } from '../src/redux/store';
 import { Provider } from 'react-redux';
 import ScreenSizeProvider from 'providers/screensize-provider';
 import { AuthProvider } from 'providers/auth-provider';
+import { PersistGate } from 'redux-persist/integration/react';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
     <AuthProvider>
       <ThemeProvider>
         <ScreenSizeProvider>
@@ -24,6 +26,7 @@ ReactDOM.render(
         </ScreenSizeProvider>
       </ThemeProvider>
       </AuthProvider>
+      </PersistGate>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

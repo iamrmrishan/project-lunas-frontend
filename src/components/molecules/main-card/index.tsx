@@ -12,14 +12,13 @@ export const Main: React.FC = () => {
             <h2 className="text-2xl font-bold text-primaryText dark:text-secondaryText md:text-3xl">
               Get to Know About Products in Next Level
             </h2>
-
             <p className="hidden text-primaryText dark:text-secondaryText text-opacity-70 dark:text-opacity-60 sm:mt-4 sm:block">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae
               dolor officia blanditiis repellat in, vero, aperiam porro ipsum
               laboriosam consequuntur exercitationem incidunt tempora nisi?
             </p>
           </div>
-
+          
           <div className="mx-auto mt-8 max-w-xl">
             <form action="#" className="sm:flex sm:gap-4">
               <div className="sm:flex-1">

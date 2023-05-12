@@ -1,34 +1,33 @@
 import NavLink from "components/atoms/nav-link";
+import LoginModal from "components/organisms/login-modal";
 import React from "react";
 
-function Dropdown(isLoggedIn) {
-  // console.log();
+interface DropdownProps {
+  open: () => void;
+}
+
+const Dropdown: React.FC<DropdownProps> = ({open}) => {
   const menuItems = [
-    { label: "About", path: "/" },
-    { label: "About", path: "/" },
-    { label: "About", path: "/" },
-    { label: "About", path: "/" },
+    { label: "About", to: "/post" },
+    { label: "Browse", to: "/browse" },
+    { label: "Make Review", to: "/" },
+    { label: "Ask about a product", to: "/" },
   ];
   return (
-    <div className="m-10">
+    <div className="mx-8 my-5">
       {/* <ul>
         {menuItems.map((item) => {
             <NavLink to={item.path} label={item.label} />
         })}
       </ul> */}
-      
-      <ul className="flex flex-col items-center gap-6 text-sm text-primaryBtnText ">
-        <NavLink to="/post" label="About" />
-        <NavLink to="/browse" label="Browse" />
-        {isLoggedIn && (
-          <>
-            <NavLink to="/" label="Make a Review" />
-            <NavLink to="/" label="Ask about a Product" />
-          </>
-        )}
+
+      <ul className="flex flex-col items-left gap-4 text-sm text-primaryBtnText ">
+        {menuItems.map((item) => (
+          <NavLink to={item.to} label={item.label} dropdown={true} onClick={open} />
+        ))}
       </ul>
     </div>
   );
-}
+};
 
 export default Dropdown;
