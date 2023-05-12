@@ -4,6 +4,7 @@ import HomePage from "./pages/index";
 import BrowsePage from "./pages/browse";
 import ProfilePage from "pages/profie";
 import PostPage from "pages/post";
+import SinglePostPage from "pages/single-post";
 
 const PageRoutes: React.FC = () => {
   return (
@@ -12,6 +13,7 @@ const PageRoutes: React.FC = () => {
       <Route path="/browse" Component={BrowsePage} />
       <Route path="/profile" Component={ProfilePage} />
       <Route path="/post" Component={PostPage} />
+      <Route path="/post1" Component={SinglePostPage} />
     </Routes>
   );
 };
