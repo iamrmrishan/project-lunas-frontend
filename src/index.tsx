@@ -8,10 +8,12 @@ import { ThemeProvider } from './providers/theme-provider';
 import store from '../src/redux/store';
 import { Provider } from 'react-redux';
 import ScreenSizeProvider from 'providers/screensize-provider';
+import { AuthProvider } from 'providers/auth-provider';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
+    <AuthProvider>
       <ThemeProvider>
         <ScreenSizeProvider>
           <BrowserRouter>
@@ -21,6 +23,7 @@ ReactDOM.render(
           </BrowserRouter>
         </ScreenSizeProvider>
       </ThemeProvider>
+      </AuthProvider>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
