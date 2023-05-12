@@ -26,7 +26,7 @@ const BrowsePage: React.FC = () => {
               <SearchPostLink />
 
               {posts?.map((post) => (
-                <div key={post.title} className="space-y-4" onClick={() => navigate("/post1", { state: { post: post} })}>
+                <div key={post.title} className="space-y-4 cursor-pointer" onClick={() => navigate("/post1", { state: { post: post} })} >
                   <RedditPost post={post} ></RedditPost>
                 </div>
               ))}
