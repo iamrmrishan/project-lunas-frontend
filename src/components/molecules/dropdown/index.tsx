@@ -2,11 +2,11 @@ import NavLink from "components/atoms/nav-link";
 import LoginModal from "components/organisms/login-modal";
 import React from "react";
 
-interface LoginModalProps {
+interface DropdownProps {
   open: () => void;
 }
 
-const Dropdown: React.FC<LoginModalProps> = ({open}) => {
+const Dropdown: React.FC<DropdownProps> = ({open}) => {
   const menuItems = [
     { label: "About", to: "/post" },
     { label: "Browse", to: "/browse" },

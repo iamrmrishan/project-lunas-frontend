@@ -1,16 +1,23 @@
-
-import { LogoModal } from "assets/icons/ModalLogo";
-import React, { useState } from "react";
+import { LogoModal } from 'assets/icons/ModalLogo';
+import { ILoginUserPayload } from 'interfaces/auth';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { authSlice } from 'redux/slices/auth-slice';
 
 interface LoginModalProps {
   isOpen: boolean;
   onClose: () => void;
-  setIsLoggedIn: () => void
+  setIsLoggedIn: () => void;
 }
 
-const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose, setIsLoggedIn }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+const LoginModal: React.FC<LoginModalProps> = ({
+  isOpen,
+  onClose,
+  setIsLoggedIn,
+}) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const dispatch = useDispatch();
   const [formErrors, setFormErrors] = useState<{
     email?: string;
     password?: string;
@@ -18,12 +25,16 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose, setIsLoggedIn 
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic
-    console.log("Email:", email, "Password:", password);
+    const credentials: ILoginUserPayload = {
+      email: email,
+      password: password,
+    };
+    dispatch(authSlice.actions.loginRequest(credentials));
+
     // Validate the form inputs
     const errors: { email?: string; password?: string } = {};
-    if (!email) errors.email = "Email is required";
-    if (!password) errors.password = "Password is required";
+    if (!email) errors.email = 'Email is required';
+    if (!password) errors.password = 'Password is required';
 
     // If there are errors, update the formErrors state
     if (Object.keys(errors).length > 0) {
@@ -119,8 +130,10 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose, setIsLoggedIn 
 
                       <input
                         type="email"
-                        id="Email"
+                        id="email"
                         name="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                         className="mt-1 w-full rounded-md border-primaryText bg-primaryColor text-sm text-primaryText shadow-sm dark:border-secondaryText dark:bg-secondaryColor dark:text-secondaryText border-opacity-10 dark:border-opacity-10"
                       />
                     </div>
@@ -137,19 +150,22 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose, setIsLoggedIn 
                         type="password"
                         id="Password"
                         name="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                         className="mt-1 w-full rounded-md border-primaryText bg-primaryColor text-sm text-primaryText shadow-sm dark:border-secondaryText dark:bg-secondaryColor dark:text-secondaryText border-opacity-10 dark:border-opacity-10"
                       />
                     </div>
 
                     <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
-                      <button 
-                      onClick={setIsLoggedIn}
-                      className="inline-block shrink-0 rounded-md border-2 border-primaryBtn dark:border-secondaryBtn bg-primaryBtn dark:bg-secondaryBtn px-12 py-3 text-sm font-medium text-primaryBtnText dark:text-secondaryBtnText transition hover:bg-transparent hover:text-primaryText focus:outline-none focus:ring active:text-primaryText dark:hover:bg-transparent dark:hover:text-secondaryText">
+                      <button
+                        onClick={handleSubmit}
+                        className="inline-block shrink-0 rounded-md border-2 border-primaryBtn dark:border-secondaryBtn bg-primaryBtn dark:bg-secondaryBtn px-12 py-3 text-sm font-medium text-primaryBtnText dark:text-secondaryBtnText transition hover:bg-transparent hover:text-primaryText focus:outline-none focus:ring active:text-primaryText dark:hover:bg-transparent dark:hover:text-secondaryText"
+                      >
                         Login
                       </button>
 
                       <p className="mt-4 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
-                        Don't have an account?{" "}
+                        Don't have an account?{' '}
                         <a
                           href="#"
                           className="text-gray-700 underline dark:text-gray-200"

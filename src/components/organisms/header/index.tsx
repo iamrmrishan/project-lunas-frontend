@@ -9,8 +9,10 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { CiUser } from "react-icons/ci";
 import { GrClose } from "react-icons/gr";
 import Dropdown from "components/molecules/dropdown";
+import { useAuth } from "../../../providers/auth-provider";
 
 export const Header: React.FC = () => {
+  const { isAuthenticated } = useAuth();
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -99,7 +101,6 @@ export const Header: React.FC = () => {
             <Button
               className="rounded-full font-bold bg-primaryBtn dark:bg-secondaryBtn p-2 md:p-3 text-primaryBtnText dark:text-secondaryBtnText"
               icon={<CiUser size={18} />}
-              onClick={() => setIsLoggedIn(false)}
             />
             {/* <div className="bg-primaryColor flex flex-col"> */}
             {!isDropdownOpen ? (

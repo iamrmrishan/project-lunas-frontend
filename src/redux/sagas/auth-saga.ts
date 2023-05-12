@@ -12,16 +12,17 @@ export function* loginGenerator({ payload }: ILoginUserAction) {
       'http://localhost:3000/auth/login',
       payload
     );
+    console.log(response)
     if (response.status === 201) {
       yield put(
         authSlice.actions.loginSuccess({
-          token: response.token,
-          expiresIn: response.expiresIn,
-          user: response.user,
+          token: response.data.Authorization,
+          expiresIn: response.data.expiresIn,
+          user: response.data.data,
         })
       );
     } else {
-      yield put(authSlice.actions.loginFailure());
+      yield put(authSlice.actions.loginFailure(response));
     }
   } catch (error) {
     yield put(authSlice.actions.loginFailure(error.message));
