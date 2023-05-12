@@ -6,7 +6,7 @@ import ProfilePage from "pages/profie";
 import PostPage from "pages/post";
 import SinglePostPage from "pages/single-post";
 
-const PageRoutes: React.FC = () => {
+const PageRoutes: React.FC<React.PropsWithChildren<{}>> = () => {
   return (
     <Routes>
       <Route path="/" Component={HomePage} />
