@@ -15,8 +15,8 @@ export const Header: React.FC = () => {
   const { isAuthenticated } = useAuth();
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isDropdownOpen, setIsDropDownOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLoginClick = () => {
     setIsLoginModalOpen(true);
@@ -34,12 +34,11 @@ export const Header: React.FC = () => {
     setIsSignupModalOpen(false);
   };
 
-  const LogIn = () => {
-    setIsLoggedIn((e) => !e);
-  };
-
   const handleDropdown = () => {
     setIsDropDownOpen(false);
+  };
+  const LogIn = () => {
+    setIsLoggedIn((e) => !e);
   };
 
   useEffect(() => {
@@ -70,7 +69,7 @@ export const Header: React.FC = () => {
             <ul className="flex items-center gap-6 text-sm">
               <NavLink to="/post" label="About" dropdown={false} />
               <NavLink to="/browse" label="Browse" dropdown={false} />
-              {isLoggedIn && (
+              {isAuthenticated && (
                 <>
                   <NavLink to="/" label="Make a Review" dropdown={false} />
                   <NavLink
@@ -83,7 +82,7 @@ export const Header: React.FC = () => {
             </ul>
           </nav>
           <div className="flex items-center gap-4">
-            {!isLoggedIn && (
+            {!isAuthenticated && (
               <div className="hidden sm:flex sm:gap-4">
                 <Button
                   className="btn rounded-md bg-primaryBtn dark:bg-secondaryBtn px-4 py-2 md:px-5 md:py-2.5 text-xs md:text-sm font-medium text-primaryBtnText dark:text-secondaryBtnText shadow hover:bg-primaryBtnHover dark:hover:bg-secondaryBtnHover"
