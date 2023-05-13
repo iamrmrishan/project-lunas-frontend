@@ -1,20 +1,16 @@
 import { LogoModal } from 'assets/icons/ModalLogo';
 import { ILoginUserPayload } from 'interfaces/auth';
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectError, selectLoader } from 'redux/selectors/auth-selector';
 import { authSlice } from 'redux/slices/auth-slice';
 
 interface LoginModalProps {
   isOpen: boolean;
   onClose: () => void;
- 
 }
 
-const LoginModal: React.FC<LoginModalProps> = ({
-  isOpen,
-  onClose,
-
-}) => {
+const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
@@ -22,6 +18,8 @@ const LoginModal: React.FC<LoginModalProps> = ({
     email?: string;
     password?: string;
   }>({});
+  const error = useSelector(selectError);
+  const loading = useSelector(selectLoader);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -34,6 +32,8 @@ const LoginModal: React.FC<LoginModalProps> = ({
     // Validate the form inputs
     const errors: { email?: string; password?: string } = {};
     if (!email) errors.email = 'Email is required';
+    else if (!/\S+@\S+\.\S+/.test(email)) errors.email = 'Email is not valid';
+    else if (error) errors.email = error;
     if (!password) errors.password = 'Password is required';
 
     // If there are errors, update the formErrors state
@@ -41,7 +41,15 @@ const LoginModal: React.FC<LoginModalProps> = ({
       setFormErrors(errors);
       return;
     }
-    onClose();
+    const waitForLoadingToFinish = () => {
+      if (loading) {
+        setTimeout(waitForLoadingToFinish, 100);
+      } else {
+        onClose();
+      }
+    };
+  
+    waitForLoadingToFinish();
   };
 
   if (!isOpen) return null;
@@ -136,6 +144,11 @@ const LoginModal: React.FC<LoginModalProps> = ({
                         onChange={(e) => setEmail(e.target.value)}
                         className="mt-1 w-full rounded-md border-primaryText bg-primaryColor text-sm text-primaryText shadow-sm dark:border-secondaryText dark:bg-secondaryColor dark:text-secondaryText border-opacity-10 dark:border-opacity-10"
                       />
+                      {formErrors.email && (
+                        <p className="mt-1 text-xs text-red-600">
+                          {formErrors.email}
+                        </p>
+                      )}
                     </div>
 
                     <div className="col-span-6">
@@ -154,6 +167,11 @@ const LoginModal: React.FC<LoginModalProps> = ({
                         onChange={(e) => setPassword(e.target.value)}
                         className="mt-1 w-full rounded-md border-primaryText bg-primaryColor text-sm text-primaryText shadow-sm dark:border-secondaryText dark:bg-secondaryColor dark:text-secondaryText border-opacity-10 dark:border-opacity-10"
                       />
+                      {formErrors.password && (
+                        <p className="mt-1 text-xs text-red-600">
+                          {formErrors.password}
+                        </p>
+                      )}
                     </div>
 
                     <div className="col-span-6 sm:flex sm:items-center sm:gap-4">

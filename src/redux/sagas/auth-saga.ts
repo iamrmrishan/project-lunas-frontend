@@ -22,10 +22,10 @@ export function* loginGenerator({ payload }: ILoginUserAction) {
         })
       );
     } else {
-      yield put(authSlice.actions.loginFailure(response));
+      yield put(authSlice.actions.loginFailure('Invalid email or password'));
     }
   } catch (error) {
-    yield put(authSlice.actions.loginFailure(error.message));
+    yield put(authSlice.actions.loginFailure('Invalid email or password'));
   }
 }
 
