@@ -27,7 +27,6 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
       email: email,
       password: password,
     };
-    dispatch(authSlice.actions.loginRequest(credentials));
 
     // Validate the form inputs
     const errors: { email?: string; password?: string } = {};
@@ -36,6 +35,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
     else if (error) errors.email = error;
     if (!password) errors.password = 'Password is required';
 
+    dispatch(authSlice.actions.loginRequest(credentials));
     // If there are errors, update the formErrors state
     if (Object.keys(errors).length > 0) {
       setFormErrors(errors);
@@ -48,7 +48,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
         onClose();
       }
     };
-  
+
     waitForLoadingToFinish();
   };
 

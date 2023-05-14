@@ -21,8 +21,18 @@ export interface ILoginUserPayload {
   email: string;
   password: string;
 }
+export interface ISignupUserPayload {
+  email: string;
+  userName: string;
+  password: string;
+}
 
 export interface ILoginUserAction {
   payload: ILoginUserPayload;
+  type: string;
+}
+
+export interface ISignupUserAction {
+  payload: ISignupUserPayload;
   type: string;
 }
