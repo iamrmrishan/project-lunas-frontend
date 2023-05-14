@@ -1,26 +1,62 @@
-import NavLink from "components/atoms/nav-link";
-import LoginModal from "components/organisms/login-modal";
-import React from "react";
+import React, { useState } from 'react';
+import NavLink from 'components/atoms/nav-link';
+import LoginModal from 'components/organisms/login-modal';
+import { useAuth } from 'providers/auth-provider';
+import SignupModal from 'components/organisms/signup-modal';
 
-interface LoginModalProps {
+interface DropdownProps {
   open: () => void;
 }
 
-const Dropdown: React.FC<LoginModalProps> = ({open}) => {
-  const menuItems = [
-    { label: "About", to: "/post" },
-    { label: "Browse", to: "/browse" },
-    { label: "Make Review", to: "/" },
-    { label: "Ask about a product", to: "/" },
-  ];
+const Dropdown: React.FC<DropdownProps> = ({ open }) => {
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [showSignupModal, setShowSignupModal] = useState(false);
+  const { isAuthenticated, logout } = useAuth();
+
+  const handleLogoutClick = () => {
+    logout();
+  };
+
+  const menuItems = !isAuthenticated
+    ? [
+        { label: 'About', to: '/post' },
+        { label: 'Browse', to: '/browse' },
+        { label: 'Login', onClick: () => setShowLoginModal(true) },
+        { label: 'Signup', onClick: () => setShowSignupModal(true) },
+      ]
+    : [
+        { label: 'About', to: '/post' },
+        { label: 'Browse', to: '/browse' },
+        { label: 'Profile', to: '/profile' },
+        { label: 'Make Review', to: '/' },
+        { label: 'Ask about a product', to: '/' },
+        { label: 'Logout', onClick: () => handleLogoutClick() },
+      ];
+
   return (
-    <div className="mx-8 my-5">
-      <ul className="flex flex-col items-left gap-4 text-sm text-primaryBtnText ">
-        {menuItems.map((item) => (
-          <NavLink to={item.to} label={item.label} dropdown={true} onClick={open} />
-        ))}
-      </ul>
-    </div>
+    <>
+      <LoginModal
+        isOpen={showLoginModal}
+        onClose={() => setShowLoginModal(false)}
+      />
+          <SignupModal
+        isOpen={showSignupModal}
+        onClose={() => setShowSignupModal(false)}
+      />
+      <div className="mx-8 my-5">
+        <ul className="flex flex-col items-left gap-4 text-sm text-primaryBtnText ">
+          {menuItems.map((item, index) => (
+            <NavLink
+              key={index}
+              to={item.to}
+              label={item.label}
+              dropdown={true}
+              onClick={item.onClick || open}
+            />
+          ))}
+        </ul>
+      </div>
+    </>
   );
 };
 

@@ -9,3 +9,28 @@ export const selectLoader = createSelector(
   [selectDomain],
   (IAuthState) => IAuthState.loading
 );
+
+export const selectIsAuthenticated = createSelector(
+  [selectDomain],
+  (IAuthState) => IAuthState.isAuthenticated
+);
+
+export const selectExpiresIn = createSelector(
+  [selectDomain],
+  (IAuthState) => IAuthState.expiresIn
+);
+
+export const selectToken = createSelector(
+  [selectDomain],
+  (IAuthState) => IAuthState.token
+);
+
+export const selectUser = createSelector(
+  [selectDomain],
+  (IAuthState) => IAuthState.user
+);
+
+export const selectError = createSelector(
+  [selectDomain],
+  (IAuthState) => IAuthState.error
+);

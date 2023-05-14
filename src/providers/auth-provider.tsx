@@ -1,52 +1,76 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import jwtDecode, { JwtPayload } from 'jwt-decode';
+import { AuthContextData } from 'interfaces/auth';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  selectExpiresIn,
+  selectIsAuthenticated,
+  selectToken,
+  selectUser,
+} from 'redux/selectors/auth-selector';
+import { isTokenExpired } from 'utils/token-utils';
+import { logout } from 'redux/slices/auth-slice';
 
-interface AuthState {
-  token: string | null;
-  user: JwtPayload | null;
-}
+const AuthContext = createContext<AuthContextData>({
+  isAuthenticated: false,
+  expiresIn: null,
+  token: null,
+  user: {
+    id: null,
+    email: null,
+    userName: null,
+    points: null,
+    createdAt: null,
+    updatedAt: null,
+  },
+  logout: null,
+});
 
-interface AuthContextData {
-  isLoggedIn: boolean;
-  user: JwtPayload | null;
-  login: (token: string) => void;
-  logout: () => void;
-}
-
-const AuthContext = createContext<AuthContextData>({} as AuthContextData);
-
-export const AuthProvider: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
-  const [authState, setAuthState] = useState<AuthState>({
-    token: null,
-    user: null,
-  });
+export const AuthProvider: React.FC<React.PropsWithChildren<{}>> = ({
+  children,
+}) => {
+  const dispatch = useDispatch();
+  const isAuthenticated = useSelector(selectIsAuthenticated);
+  const token = useSelector(selectToken);
+  const expiresIn = useSelector(selectExpiresIn);
+  const user = useSelector(selectUser);
+  const storedToken = localStorage.getItem('token');
+  const initialIsLoggedIn =
+    storedToken && !isTokenExpired(storedToken, expiresIn);
+  const [isLoggedIn, setIsLoggedIn] = useState(initialIsLoggedIn);
 
   useEffect(() => {
-    const token = localStorage.getItem('authToken');
-    if (token) {
-      const decodedToken = jwtDecode<JwtPayload>(token);
-      setAuthState({ token, user: decodedToken });
+    if (isAuthenticated && token) {
+      localStorage.setItem('token', token);
+      setIsLoggedIn(true);
+    } else {
+      localStorage.removeItem('token');
+      setIsLoggedIn(false);
     }
-  }, []);
+  }, [isAuthenticated, token]);
 
-  const login = (token: string) => {
-    const decodedToken = jwtDecode<JwtPayload>(token);
-    setAuthState({ token, user: decodedToken });
-    localStorage.setItem('authToken', token);
-  };
+  useEffect(() => {
+    if (storedToken && !isTokenExpired(storedToken, expiresIn)) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
+  }, [storedToken]);
 
-  const logout = () => {
-    setAuthState({ token: null, user: null });
-    localStorage.removeItem('authToken');
+  const handleLogout = () => {
+    dispatch(logout());
+    localStorage.removeItem('token');
+    setIsLoggedIn(false);
   };
 
   return (
     <AuthContext.Provider
       value={{
-        isLoggedIn: Boolean(authState.token),
-        user: authState.user,
-        login,
-        logout,
+        isAuthenticated: isLoggedIn,
+        expiresIn,
+        token,
+        user,
+        logout: handleLogout,
       }}
     >
       {children}

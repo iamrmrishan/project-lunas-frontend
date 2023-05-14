@@ -1,6 +1,10 @@
 // slices/auth.ts
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IAuthState, ILoginUserPayload } from 'interfaces/auth';
+import {
+  IAuthState,
+  ILoginUserPayload,
+  ISignupUserPayload,
+} from 'interfaces/auth';
 
 export const initialState: IAuthState = {
   isAuthenticated: false,
@@ -44,8 +48,34 @@ export const authSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
     },
+    signupRequest: (
+      state: IAuthState,
+      _action: PayloadAction<ISignupUserPayload>
+    ) => {
+      state.loading = true;
+    },
+    signupSuccess: (
+      state,
+      action: PayloadAction<{ expiresIn: string; token: string; user: any }>
+    ) => {
+      console.log(action.payload);
+      state.isAuthenticated = true;
+      state.loading = false;
+      state.error = null;
+      state.expiresIn = action.payload.expiresIn;
+      state.token = action.payload.token;
+      state.user = action.payload.user;
+    },
+    signupFailure: (state, action: PayloadAction<string>) => {
+      state.isAuthenticated = false;
+      state.loading = false;
+      state.error = action.payload;
+    },
     logout: (state) => {
       state.isAuthenticated = false;
+      state.expiresIn = null;
+      state.token = null;
+      state.user = null;
     },
   },
 });

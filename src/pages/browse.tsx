@@ -2,7 +2,7 @@ import { Container, Footer, Header } from "components";
 import { SearchPostLink } from "components/molecules/search";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectPosts } from "redux/selectors/post-selector";
+import { selectLoader, selectPosts } from "redux/selectors/post-selector";
 import { postSlice } from "redux/slices/post-slice";
 import RedditPost from "components/molecules/post-card";
 import NetworkQuestions from "components/molecules/network-question-card";
