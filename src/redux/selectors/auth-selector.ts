@@ -29,3 +29,8 @@ export const selectUser = createSelector(
   [selectDomain],
   (IAuthState) => IAuthState.user
 );
+
+export const selectError = createSelector(
+  [selectDomain],
+  (IAuthState) => IAuthState.error
+);
