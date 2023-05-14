@@ -1,4 +1,4 @@
-import { LogoModal } from 'assets/icons/ModalLogo';
+import { LogoModal } from 'assets/icons/modal-logo';
 import React, { useState } from 'react';
 
 interface SignupModalProps {

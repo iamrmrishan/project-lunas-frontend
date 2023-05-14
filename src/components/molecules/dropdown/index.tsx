@@ -15,12 +15,6 @@ const Dropdown: React.FC<LoginModalProps> = ({open}) => {
   ];
   return (
     <div className="mx-8 my-5">
-      {/* <ul>
-        {menuItems.map((item) => {
-            <NavLink to={item.path} label={item.label} />
-        })}
-      </ul> */}
-
       <ul className="flex flex-col items-left gap-4 text-sm text-primaryBtnText ">
         {menuItems.map((item) => (
           <NavLink to={item.to} label={item.label} dropdown={true} onClick={open} />
