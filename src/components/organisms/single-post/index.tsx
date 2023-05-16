@@ -16,16 +16,18 @@ import { IPost } from "interfaces/post";
 
 interface PostPageProps {
   post: IPost | null;
+  showPosts: () => void;
 }
 
-const SinglePostPage: React.FC<PostPageProps> = ({ post }) => {
-
+const SinglePostPage: React.FC<PostPageProps> = ({ post, showPosts }) => {
   const date = new Date().toLocaleString();
   const [value, setValue] = useState("");
 
   return (
     <>
-      <div className="bg-primaryColor rounded text-primaryText border dark:border-opacity-10 dark:rounded-lg p-4 mb-4 w-full mx-auto dark:bg-secondaryColor dark:text-secondaryText">
+      <div        
+        className="bg-primaryColor rounded text-primaryText border dark:border-opacity-10 dark:rounded-lg p-4 mb-4 w-full mx-auto dark:bg-secondaryColor dark:text-secondaryText"
+      >
         <div className="flex items-start space-x-2">
           <div className="arrows mr-3">
             <TbArrowBigUp />
