@@ -1,6 +1,7 @@
-import { LogoModal } from 'assets/icons/ModalLogo';
+
+import { LogoModal } from "assets/icons/modal-logo";
+import React, { useState } from "react";
 import { ILoginUserPayload } from 'interfaces/auth';
-import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectError, selectLoader } from 'redux/selectors/auth-selector';
 import { authSlice } from 'redux/slices/auth-slice';

@@ -11,7 +11,11 @@ import { GrClose } from 'react-icons/gr';
 import Dropdown from 'components/molecules/dropdown';
 import { useAuth } from '../../../providers/auth-provider';
 
-export const Header: React.FC = () => {
+interface HeaderProps {
+  showPosts?: () => void;
+}
+
+export const Header: React.FC<HeaderProps> = ({showPosts}) => {
   const { isAuthenticated } = useAuth();
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
@@ -63,7 +67,7 @@ export const Header: React.FC = () => {
           <nav aria-label="Site Nav" className="hidden md:block">
             <ul className="flex items-center gap-6 text-sm">
               <NavLink to="/post" label="About" dropdown={false} />
-              <NavLink to="/browse" label="Browse" dropdown={false} />
+              <NavLink to="/browse" label="Browse" dropdown={false} onClick={showPosts}/>
               {isAuthenticated && (
                 <>
                   <NavLink to="/" label="Make a Review" dropdown={false} />

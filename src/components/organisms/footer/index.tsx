@@ -1,9 +1,10 @@
-import { LogoDribble } from "assets/icons/DribbleLogo";
-import {LogoFacebook} from "assets/icons/FacebookLogo";
-import { LogoGitHub } from "assets/icons/GitHubLogo";
-import { LogoInstagram } from "assets/icons/InstagramLogo";
-import { LogoTwitter } from "assets/icons/TwitterLogo";
+
+import { LogoDribble } from "assets/icons/dribble-logo";
+import { LogoFacebook } from "assets/icons/facebook-logo";
+import { LogoGitHub } from "assets/icons/github-logo";
+import { LogoInstagram } from "assets/icons/instagram-logo";
 import { LogoHome } from "assets/icons/logo";
+import { LogoTwitter } from "assets/icons/twitter-logo";
 import Button from "components/atoms/button";
 import Input from "components/atoms/input";
 import React from "react";

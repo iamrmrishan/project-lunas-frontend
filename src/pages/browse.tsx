@@ -1,35 +1,53 @@
 import { Container, Footer, Header } from "components";
 import { SearchPostLink } from "components/molecules/search";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectLoader, selectPosts } from "redux/selectors/post-selector";
 import { postSlice } from "redux/slices/post-slice";
 import RedditPost from "components/molecules/post-card";
 import NetworkQuestions from "components/molecules/network-question-card";
-import { useNavigate } from "react-router-dom";
+import { IPost } from "interfaces/post";
+import SinglePostPage from "components/organisms/single-post";
 
 const BrowsePage: React.FC = () => {
   const dispatch = useDispatch();
   const posts = useSelector(selectPosts);
+  const loader = useSelector(selectLoader);
   useEffect(() => {
     dispatch(postSlice.actions.searchPosts());
   }, [dispatch]);
 
-  const navigate = useNavigate();
+  const [singlePost, setSinglePost] = useState<IPost | null>(null);
+
+  const showPosts = () => {
+    setSinglePost(null);
+  };
+
   return (
     <>
-      <Header />
+      <Header showPosts={showPosts} />
       <Container>
         <div className="container mx-auto lg:px-8 md:px-6 sm:px-4 py-6 dark:bg-secondaryColor bg-primaryColor">
           <div className="grid grid-cols-4 gap-6">
             <div className="col-span-4 md:col-span-3 ipad:col-span-4 m-auto">
               <SearchPostLink />
 
-              {posts?.map((post) => (
-                <div key={post.title} className="space-y-4 cursor-pointer" onClick={() => navigate("/post1", { state: { post: post} })} >
-                  <RedditPost post={post} ></RedditPost>
-                </div>
-              ))}
+              {singlePost ? (
+                <SinglePostPage post={singlePost} showPosts={showPosts} />
+              ) : (
+                !loader &&
+                posts?.map((post) => (
+                  <div
+                    key={post.title}
+                    className="space-y-4 cursor-pointer"
+                    onClick={() => {
+                      setSinglePost(post);
+                    }}
+                  >
+                    <RedditPost post={post}></RedditPost>
+                  </div>
+                ))
+              )}
             </div>
             <div className="col-span-4 lg:col-span-1 ">
               <NetworkQuestions questions={posts} />
