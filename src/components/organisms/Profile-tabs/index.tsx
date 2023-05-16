@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { FiMoreHorizontal } from "react-icons/fi";
-import { TbCircleDot } from "react-icons/tb";
 
 export const ProfileTabs: React.FC = () => {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -20,7 +19,7 @@ export const ProfileTabs: React.FC = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [windowWidth]);
 
   const tabs = [
     { id: 1, title: "OVERVIEW", link: "/" },
@@ -40,13 +39,13 @@ export const ProfileTabs: React.FC = () => {
   };
 
   return (
-    <nav className="flex justify-between border-b text-sm font-medium dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded overflow-y-hidden">
+    <nav className="flex justify-between border-b text-sm font-medium dark:bg-secondaryColor border border-primaryText dark:border-secondaryText border-opacity-10 dark:border-opacity-10 rounded overflow-y-hidden">
       <div className="flex flex-grow overflow-x-auto no-scrollbar overflow-y-hidden">
         <div className="overflow-hidden w-full">
           <ul className="flex list-none p-0 ">
             {visibleTabs.map((tab) => (
-              <li key={tab.id} className="md:flex-grow float-left">
-                <a href={tab.link} className="block px-4 py-2 text-gray-800">
+              <li key={tab.id} className="md:flex-grow float-left"> 
+                <a href={tab.link} className="block px-4 py-2 text-primaryText dark:text-secondaryText text-opacity-60 dark:text-opacity-60 hover:text-primaryText dark:hover:text-secondaryText">
                   {tab.title}
                 </a>
               </li>
@@ -54,7 +53,7 @@ export const ProfileTabs: React.FC = () => {
             {hiddenTabs.length > 0 && (
               <li className="relative ml-auto">
                 <button
-                  className="block px-4 py-2 text-gray-800 "
+                  className="block px-4 py-2 text-primaryText dark:bg-secondaryText "
                   onClick={toggleDropdown}
                 >
                   <FiMoreHorizontal size={20} />
@@ -63,67 +62,22 @@ export const ProfileTabs: React.FC = () => {
             )}
           </ul>
           {showDropdown && (
-            // <div>
               <ul className="absolute right-5 md:hidden p-3 m-auto w-40 mt-2 bg-white border border-gray-200 rounded shadow-lg">
                 {hiddenTabs.map((tab) => (
                   <li key={tab.id} className="my-2">
                     <a
                       href={tab.link}
-                      className="flex-grow  border-current p-4 text-cyan-500 dark:text-white"
+                      className="flex-grow  border-current p-4 text-primaryText dark:text-secondaryText text-opacity-60 dark:text-opacity-60 hover:text-primaryText dark:hover:text-secondaryText"
                     >
                       {tab.title}
                     </a>
                   </li>
                 ))}
               </ul>
-            // </div>
+
           )}
         </div>
-        {/* <a
-          href="/"
-          className="flex-grow -mb-px border-b border-current p-4 text-cyan-500 dark:text-white"
-        >
-          OVERVIEW
-        </a>
 
-        <a
-          href="/"
-          className="flex-grow -mb-px border-b border-transparent p-4 hover:text-cyan-500 dark:text-white"
-        >
-          POSTS
-        </a>
-
-        <a
-          href="/"
-          className="flex-grow -mb-px border-b border-transparent p-4 hover:text-cyan-500 dark:text-white"
-        >
-          COMMENTS
-        </a>
-
-        <a
-          href="/"
-          className="flex-grow -mb-px border-b border-transparent p-4 hover:text-cyan-500 dark:text-white"
-        >
-          HISTORY
-        </a>
-        <a
-          href="/"
-          className="flex-grow -mb-px border-b border-transparent p-4 hover:text-cyan-500 dark:text-white"
-        >
-          SAVED
-        </a>
-        <a
-          href="/"
-          className="flex-grow -mb-px border-b border-transparent p-4 hover:text-cyan-500 dark:text-white"
-        >
-          UPVOTED
-        </a>
-        <a
-          href="/"
-          className="flex-grow -mb-px border-b border-transparent p-4 hover:text-cyan-500 dark:text-white"
-        >
-          DOWNVOTED
-        </a> */}
       </div>
     </nav>
   );
