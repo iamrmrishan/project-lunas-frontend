@@ -29,7 +29,7 @@ const SinglePostPage: React.FC<PostPageProps> = ({ post, showPosts }) => {
         className="bg-primaryColor rounded text-primaryText border dark:border-opacity-10 dark:rounded-lg p-4 mb-4 w-full mx-auto dark:bg-secondaryColor dark:text-secondaryText"
       >
         <div className="flex items-start space-x-2">
-          <div className="arrows mr-3">
+          <div className="arrows mr-3 text-primaryText dark:text-secondaryText">
             <TbArrowBigUp />
             {34}
             <TbArrowBigDown />

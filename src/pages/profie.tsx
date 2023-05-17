@@ -4,6 +4,7 @@ import { ProfileTabs } from "components/organisms/Profile-tabs";
 import { UserProfileCard } from "components/molecules/user-profile-card";
 import React from "react";
 import ResponsiveGrid from "components/atoms/grid";
+import SlidingPane from "components/organisms/profile-sliding-pane";
 
 const ProfilePage: React.FC = () => {
   const items = Array.from({ length: 12 }, (_, index) => index + 1);
@@ -26,6 +27,7 @@ const ProfilePage: React.FC = () => {
               </div>
           </div>
         </div>
+        <SlidingPane />
         {/* <ResponsiveGrid desktopColumns={4} gap={5}>
           {items.map((item) => (
             // <div
