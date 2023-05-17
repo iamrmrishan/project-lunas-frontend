@@ -32,7 +32,7 @@ const PostCard: React.FC<PostItemProps> = ({ post, loading }) => {
         )}
         <div className="flex-grow">
           {loading ? (
-            <Skeleton style={{width: "100%"}} />
+            <Skeleton width={100}  />
           ) : (
             <a
               href={post.mediaId[0]}
