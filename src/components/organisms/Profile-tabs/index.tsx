@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { FiMoreHorizontal } from "react-icons/fi";
 
-export const ProfileTabs: React.FC = () => {
+interface ProfileTabsProps {
+  tabs: { id: number, title: string, link: string }[]
+}
+
+export const ProfileTabs: React.FC<ProfileTabsProps> = ({tabs}) => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -21,15 +25,7 @@ export const ProfileTabs: React.FC = () => {
     };
   }, [windowWidth]);
 
-  const tabs = [
-    { id: 1, title: "OVERVIEW", link: "/" },
-    { id: 2, title: "POSTS", link: "/" },
-    { id: 3, title: "COMMENTS", link: "/" },
-    { id: 4, title: "HISTORY", link: "/" },
-    { id: 5, title: "SAVED", link: "/" },
-    { id: 6, title: "UPVOTED", link: "/" },
-    { id: 7, title: "DOWNVOTED", link: "/" },
-  ];
+
 
   const visibleTabs = windowWidth >= 768 ? tabs : tabs.slice(0, 3);
   const hiddenTabs = windowWidth >= 768 ? [] : tabs.slice(3);

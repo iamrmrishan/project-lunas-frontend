@@ -8,11 +8,12 @@ import RedditPost from "components/molecules/post-card";
 import NetworkQuestions from "components/molecules/network-question-card";
 import { IPost } from "interfaces/post";
 import SinglePostPage from "components/organisms/single-post";
+import Skeleton from "react-loading-skeleton";
 
 const BrowsePage: React.FC = () => {
   const dispatch = useDispatch();
   const posts = useSelector(selectPosts);
-  const loader = useSelector(selectLoader);
+  const loading = useSelector(selectLoader);
   useEffect(() => {
     dispatch(postSlice.actions.searchPosts());
   }, [dispatch]);
@@ -35,18 +36,18 @@ const BrowsePage: React.FC = () => {
               {singlePost ? (
                 <SinglePostPage post={singlePost} showPosts={showPosts} />
               ) : (
-                !loader &&
-                posts?.map((post) => (
-                  <div
-                    key={post.title}
-                    className="space-y-4 cursor-pointer"
-                    onClick={() => {
-                      setSinglePost(post);
-                    }}
-                  >
-                    <RedditPost post={post}></RedditPost>
-                  </div>
-                ))
+                posts?.map((post) =>
+                    <div
+                      key={post.title}
+                      className="space-y-4 cursor-pointer"
+                      onClick={() => {
+                        setSinglePost(post);
+                      }}
+                    >
+                      <RedditPost post={post} loading={loading}></RedditPost>
+                    </div>
+                  )
+                
               )}
             </div>
             <div className="col-span-4 lg:col-span-1 ">

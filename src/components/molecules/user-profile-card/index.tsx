@@ -3,9 +3,16 @@ import { BsLink45Deg } from 'react-icons/bs';
 import { FaReddit } from 'react-icons/fa';
 import { IoImageOutline } from 'react-icons/io5';
 
-export const UserProfileCard: React.FC = () => {
+interface UserProfileCardProps {
+  shadow?: boolean
+  bgColorLight?: string
+  bgColorDark?: string
+
+}
+
+export const UserProfileCard: React.FC<UserProfileCardProps> = ({shadow,bgColorLight, bgColorDark}) => {
   return (
-    <div className="max-w-md sha mx-auto md:max-w-2xl mt-10 min-w-0 break-words bg-primaryColor shadow-md w-full mb-6 rounded-xl  dark:text-secondaryText dark:bg-secondaryColor">
+    <div className={`max-w-md mx-auto md:max-w-2xl mt-10 min-w-0 break-words bg-${bgColorLight} ${shadow && `shadow-md`} w-full mb-6 rounded-xl  dark:text-secondaryText dark:bg-${bgColorDark}`}>
       <div className="px-6">
         <div className="flex flex-wrap justify-center">
           <div className="w-full flex justify-center mt-5">
