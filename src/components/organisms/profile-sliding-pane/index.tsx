@@ -28,13 +28,13 @@ const SlidingPane: React.FC = () => {
   };
 
   return (
-    <div {...handlers} className='z-20'>
+    <div {...handlers}>
       <div
-        className={`fixed inset-y-0 right-0 w-3/5 bg-white shadow-lg transition-transform duration-300 transform ${
+        className={`fixed inset-y-0 z-20 pt-20 right-0 w-3/5 bg-white dark:bg-secondaryBtn2 brightness-300 dark:bright shadow-lg transition-transform duration-300 transform ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-       <UserProfileCard shadow={false} bgColorLight="white" bgColorDark='' />
+       <UserProfileCard slidingPane={true} />
       </div>
     </div>
   );

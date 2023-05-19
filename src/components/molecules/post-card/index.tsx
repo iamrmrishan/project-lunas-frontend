@@ -1,5 +1,5 @@
 import LimitedText from "components/atoms/text-limiter";
-import React from "react";
+import React, { Children } from "react";
 import { useScreenSize } from "../../../providers/screensize-provider";
 import {
   FiArrowUp,
@@ -32,7 +32,7 @@ const PostCard: React.FC<PostItemProps> = ({ post, loading }) => {
         )}
         <div className="flex-grow">
           {loading ? (
-            <Skeleton width={100}  />
+            <Skeleton count={4}  />
           ) : (
             <a
               href={post.mediaId[0]}
