@@ -66,7 +66,7 @@ export const Header: React.FC<HeaderProps> = ({showPosts}) => {
           <Logo />
           <nav aria-label="Site Nav" className="hidden md:block">
             <ul className="flex items-center gap-6 text-sm">
-              <NavLink to="/post" label="About" dropdown={false} />
+              <NavLink to="/profile" label="About" dropdown={false} />
               <NavLink to="/browse" label="Browse" dropdown={false} onClick={showPosts}/>
               {isAuthenticated && (
                 <>
