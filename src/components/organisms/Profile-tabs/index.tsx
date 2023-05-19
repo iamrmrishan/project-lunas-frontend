@@ -49,7 +49,7 @@ export const ProfileTabs: React.FC<ProfileTabsProps> = ({tabs}) => {
             {hiddenTabs.length > 0 && (
               <li className="relative ml-auto">
                 <button
-                  className="block px-4 py-2 text-primaryText dark:bg-secondaryText "
+                  className="block px-4 py-2 text-primaryText dark:text-secondaryText"
                   onClick={toggleDropdown}
                 >
                   <FiMoreHorizontal size={20} />
