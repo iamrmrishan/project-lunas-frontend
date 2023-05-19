@@ -3,7 +3,6 @@ import { SearchPostLink } from "components/molecules/search";
 import { ProfileTabs } from "components/organisms/Profile-tabs";
 import { UserProfileCard } from "components/molecules/user-profile-card";
 import React from "react";
-import ResponsiveGrid from "components/atoms/grid";
 import SlidingPane from "components/organisms/profile-sliding-pane";
 
 const ProfilePage: React.FC = () => {
