@@ -1,7 +1,7 @@
 // sagas/auth.ts
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { ILoginUserAction, ISignupUserAction } from 'interfaces/auth';
-import { IRestApiResponse } from 'interfaces/api-response';
+import { ILoginUserAction, ISignupUserAction } from 'interfaces/auth-interface';
+import { IRestApiResponse } from 'interfaces/api-response-interface';
 import axios from 'axios';
 import { authSlice } from '../slices/auth-slice';
 

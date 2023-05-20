@@ -1,15 +1,15 @@
-import LimitedText from "components/atoms/text-limiter";
-import React from "react";
-import { useScreenSize } from "../../../providers/screensize-provider";
+import LimitedText from 'components/atoms/text-limiter';
+import React from 'react';
+import { useScreenSize } from '../../../providers/screensize-provider';
 import {
   FiArrowUp,
   FiArrowDown,
   FiMessageCircle,
   FiShare,
   FiBookmark,
-} from "react-icons/fi";
-import { IPost } from "interfaces/post";
-import Skeleton from "react-loading-skeleton";
+} from 'react-icons/fi';
+import { IPost } from 'interfaces/post-interface';
+import Skeleton from 'react-loading-skeleton';
 
 type PostItemProps = {
   post: IPost;
@@ -32,7 +32,7 @@ const PostCard: React.FC<PostItemProps> = ({ post, loading }) => {
         )}
         <div className="flex-grow">
           {loading ? (
-            <Skeleton width={100}  />
+            <Skeleton width={100} />
           ) : (
             <a
               href={post.mediaId[0]}
@@ -59,7 +59,7 @@ const PostCard: React.FC<PostItemProps> = ({ post, loading }) => {
           ) : (
             <LimitedText
               text={post.body}
-              maxLength={screenSize == "sm" ? 100 : 250}
+              maxLength={screenSize == 'sm' ? 100 : 250}
             ></LimitedText>
           )}
         </div>

@@ -1,5 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit';
-import { RootState } from 'interfaces/root-state';
+import { RootState } from 'interfaces/root-state-interface';
 import { initialState } from 'redux/slices/post-slice';
 
 const selectDomain = (state: RootState) =>
@@ -12,4 +12,8 @@ export const selectPosts = createSelector(
 export const selectLoader = createSelector(
   [selectDomain],
   (IPostState) => IPostState.loading
+);
+export const selectSinglePost = createSelector(
+  [selectDomain],
+  (IPostState) => IPostState.post
 );

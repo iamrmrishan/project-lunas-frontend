@@ -1,4 +1,4 @@
-import { ILoggedInUser } from './user';
+import { ILoggedInUser } from './user-interface';
 
 export interface IAuthState {
   isAuthenticated: boolean;

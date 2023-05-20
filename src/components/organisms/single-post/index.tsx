@@ -1,33 +1,28 @@
-import { Container, Footer, Header } from "components";
-import { useLocation } from "react-router-dom";
-import { TbArrowBigDown, TbArrowBigUp } from "react-icons/tb";
-import { BiBell } from "react-icons/bi";
+import { TbArrowBigDown, TbArrowBigUp } from 'react-icons/tb';
+import { BiBell } from 'react-icons/bi';
 import {
   FiArrowUp,
   FiArrowDown,
   FiMessageCircle,
   FiShare,
   FiBookmark,
-} from "react-icons/fi";
-import React, { useState } from "react";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
-import { IPost } from "interfaces/post";
+} from 'react-icons/fi';
+import React, { useState } from 'react';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
+import { IPost } from 'interfaces/post-interface';
 
-interface PostPageProps {
+interface SinglePostProps {
   post: IPost | null;
-  showPosts: () => void;
 }
 
-const SinglePostPage: React.FC<PostPageProps> = ({ post, showPosts }) => {
+const SinglePost: React.FC<SinglePostProps> = ({ post }) => {
   const date = new Date().toLocaleString();
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState('');
 
   return (
     <>
-      <div        
-        className="bg-primaryColor rounded text-primaryText border dark:border-opacity-10 dark:rounded-lg p-4 mb-4 w-full mx-auto dark:bg-secondaryColor dark:text-secondaryText"
-      >
+      <div className="bg-primaryColor rounded text-primaryText border dark:border-opacity-10 dark:rounded-lg p-4 mb-4 w-full mx-auto dark:bg-secondaryColor dark:text-secondaryText">
         <div className="flex items-start space-x-2">
           <div className="arrows mr-3 text-primaryText dark:text-secondaryText">
             <TbArrowBigUp />
@@ -99,4 +94,4 @@ const SinglePostPage: React.FC<PostPageProps> = ({ post, showPosts }) => {
   );
 };
 
-export default SinglePostPage;
+export default SinglePost;
