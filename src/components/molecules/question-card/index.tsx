@@ -1,15 +1,16 @@
 import { IPost } from 'interfaces/post-interface';
 import React from 'react';
 
-type NetworkQuestionProps = {
+type QuestionsCardProps = {
   questions: IPost[];
+  title: string;
 };
 
-const NetworkQuestions: React.FC<NetworkQuestionProps> = ({ questions }) => {
+const QuestionsCard: React.FC<QuestionsCardProps> = ({ questions, title }) => {
   return (
     <div className="border dark:border-opacity-10 rounded px-10 py-5">
       <h1 className="text-lg font-semibold mb-5 text-primaryText dark:text-secondaryText">
-        Hot Network Questions
+        {title}
       </h1>
       {questions.map((item) => (
         <div className="flex items-center my-3">
@@ -29,4 +30,4 @@ const NetworkQuestions: React.FC<NetworkQuestionProps> = ({ questions }) => {
   );
 };
 
-export default NetworkQuestions;
+export default QuestionsCard;

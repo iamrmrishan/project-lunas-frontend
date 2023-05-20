@@ -5,10 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectLoader, selectPosts } from 'redux/selectors/post-selector';
 import { postSlice } from 'redux/slices/post-slice';
 import RedditPost from 'components/molecules/post-card';
-import NetworkQuestions from 'components/molecules/network-question-card';
-import { IPost } from 'interfaces/post-interface';
-import SinglePostPage from 'components/organisms/single-post';
-import Skeleton from 'react-loading-skeleton';
+import NetworkQuestions from 'components/molecules/question-card';
 import { Link } from 'react-router-dom';
 import slugify from 'utils/slugify-utils';
 
@@ -39,7 +36,7 @@ const BrowsePage: React.FC = () => {
               ))}
             </div>
             <div className="col-span-4 lg:col-span-1 ">
-              <NetworkQuestions questions={posts} />
+              <NetworkQuestions questions={posts} title={'Simillar Reviews'} />
             </div>
           </div>
         </div>

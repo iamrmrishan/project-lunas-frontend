@@ -10,7 +10,7 @@ import {
 } from 'redux/selectors/post-selector';
 import { useParams } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
-import NetworkQuestions from 'components/molecules/network-question-card';
+import QuestionsCard from 'components/molecules/question-card';
 
 const PostPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -35,7 +35,7 @@ const PostPage: React.FC = () => {
               )}
             </div>
             <div className="col-span-4 lg:col-span-1 ">
-              <NetworkQuestions questions={posts} />
+              <QuestionsCard questions={posts} title="Top Trending Reviews" />
             </div>
           </div>
         </div>
