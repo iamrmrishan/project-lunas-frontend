@@ -13,7 +13,7 @@ import 'react-quill/dist/quill.snow.css';
 import { IPost } from 'interfaces/post-interface';
 
 interface SinglePostProps {
-  post: IPost | null;
+  post: IPost;
 }
 
 const SinglePost: React.FC<SinglePostProps> = ({ post }) => {

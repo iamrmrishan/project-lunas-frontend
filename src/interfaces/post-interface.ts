@@ -8,7 +8,7 @@ export interface IPost {
   categoryId: string;
   tags: string[];
   mediaId: string[];
-  user?: IUser;
+  user: IUser;
   createdAt: string;
 }
 

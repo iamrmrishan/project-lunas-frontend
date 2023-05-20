@@ -11,7 +11,24 @@ import {
 export const initialState: IPostsState = {
   loading: false,
   posts: [],
-  post: undefined,
+  post: {
+    id:'',
+    userId: '',
+    title: '',
+    body: '',
+    categoryId: '',
+    tags: [],
+    mediaId: [],
+    user: {
+      id: '',
+      userName: '',
+      email: '',
+      password: '',
+      points: '',
+    },
+    createdAt: '',
+
+  },
 };
 
 export const postSlice = createSlice({
@@ -48,6 +65,9 @@ export const postSlice = createSlice({
     },
     getPostByIdFailed(state: IPostsState) {
       state.loading = false;
+    },
+    clearPostById(state: IPostsState) {
+      state.post = undefined;
     },
   },
 });

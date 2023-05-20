@@ -11,16 +11,19 @@ import {
 import { useParams } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
 import QuestionsCard from 'components/molecules/question-card';
+import { NavigationType, useNavigationType } from 'react-router-dom';
 
 const PostPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const dispatch = useDispatch();
+  const navType: NavigationType = useNavigationType(); //wip - when user click back - clear state
   const post = useSelector(selectSinglePost);
   const posts = useSelector(selectPosts);
   const loading = useSelector(selectLoader);
   useEffect(() => {
     dispatch(postSlice.actions.getPostById(id));
-  }, [dispatch, id]);
+  }, [dispatch]);
+
   return (
     <>
       <Header />
