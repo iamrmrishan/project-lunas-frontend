@@ -1,9 +1,25 @@
-import { UserProfileCard } from 'components/molecules/user-profile-card';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
+import { UserProfileCard } from 'components/molecules/user-profile-card';
 
 const SlidingPane: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false); // pane is hidden by default
+  const paneRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (paneRef.current && !paneRef.current.contains(event.target)) {
+        closePane();
+      }
+    }
+
+    // Attach the listeners on component mount.
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      // Detach the listeners on component unmount.
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []); // Empty array ensures effect is only run on mount and unmount
 
   const handleSwipe = (deltaX: number) => {
     if (deltaX > 0) {
@@ -23,21 +39,27 @@ const SlidingPane: React.FC = () => {
     setIsOpen(false);
   };
 
-  const paneStyle = {
-    transform: isOpen ? 'translateX(0)' : 'translateX(-100%)',
-  };
-
   return (
-    <div {...handlers}>
-      <div
-        className={`fixed inset-y-0 z-20 pt-20 right-0 w-3/5 bg-white dark:bg-secondaryBtn2 brightness-300 dark:bright shadow-lg transition-transform duration-300 transform ${
+    <div className='z-20 md:hidden' ref={paneRef}>   
+      <div // md:hidden - only visible on mobile view
+        {...handlers} 
+        className={`fixed inset-y-0 right-0 w-3/5 bg-white shadow-lg transition-transform duration-300 transform ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
+        } ${isOpen ? 'visible' : 'invisible'}`}
+        onClick={e => e.stopPropagation()} // Prevent clicks inside the pane from bubbling up to the document
       >
        <UserProfileCard slidingPane={true} />
       </div>
+      {!isOpen && (
+        <div {...handlers} className="fixed inset-y-0 right-0 w-10"/> // swipe handle area when pane is closed
+      )}
     </div>
   );
 };
 
 export default SlidingPane;
+
+
+
+
+

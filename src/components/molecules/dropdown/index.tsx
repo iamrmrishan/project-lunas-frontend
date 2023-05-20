@@ -19,7 +19,7 @@ const Dropdown: React.FC<DropdownProps> = ({ open }) => {
 
   const menuItems = !isAuthenticated
     ? [
-        { label: 'About', to: '/post' },
+        { label: 'About', to: '/profile' },
         { label: 'Browse', to: '/browse' },
         { label: 'Login', onClick: () => setShowLoginModal(true) },
         { label: 'Signup', onClick: () => setShowSignupModal(true) },
