@@ -4,7 +4,7 @@ import {
   ICategory,
   ICategoriesRequset,
   ICategoriesState,
-} from 'interfaces/category';
+} from 'interfaces/category-interface';
 
 export const initialState: ICategoriesState = {
   loading: false,

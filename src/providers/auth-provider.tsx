@@ -1,6 +1,6 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import jwtDecode, { JwtPayload } from 'jwt-decode';
-import { AuthContextData } from 'interfaces/auth';
+import { AuthContextData } from 'interfaces/auth-interface';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   selectExpiresIn,

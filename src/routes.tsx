@@ -12,7 +12,7 @@ const PageRoutes: React.FC<React.PropsWithChildren<{}>> = () => {
       <Route path="/" Component={HomePage} />
       <Route path="/browse" Component={BrowsePage} />
       <Route path="/profile" Component={ProfilePage} />
-      <Route path="/post" Component={PostPage} />
+      <Route path="/post/:id/:title" Component={PostPage} />
       <Route path="/create-post" Component={CreatePostPage} />
     </Routes>
   );

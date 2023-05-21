@@ -1,5 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit';
-import { RootState } from 'interfaces/root-state';
+import { RootState } from 'interfaces/root-state-interface';
 import { initialState } from 'redux/slices/auth-slice';
 
 const selectDomain = (state: RootState) =>
