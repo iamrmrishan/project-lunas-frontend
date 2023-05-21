@@ -15,7 +15,6 @@ import { NavigationType, useNavigationType } from 'react-router-dom';
 import { Comment } from 'interfaces/comment-interface';
 import Comments from 'components/molecules/comments';
 
-
 const PostPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const dispatch = useDispatch();
