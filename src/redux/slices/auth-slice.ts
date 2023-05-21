@@ -4,7 +4,7 @@ import {
   IAuthState,
   ILoginUserPayload,
   ISignupUserPayload,
-} from 'interfaces/auth';
+} from 'interfaces/auth-interface';
 
 export const initialState: IAuthState = {
   isAuthenticated: false,

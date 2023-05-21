@@ -5,10 +5,10 @@ import {
   IFetchCategoriesFilterPayload,
   ICategory,
   ICategoriesFilterAction,
-} from '../../interfaces/category';
+} from '../../interfaces/category-interface';
 import axios from 'axios';
 import { categorySlice } from '../slices/category-slice';
-import { IRestApiResponse } from 'interfaces/api-response';
+import { IRestApiResponse } from 'interfaces/api-response-interface';
 import API from 'redux/api/post-api';
 
 export function* searchCategoriesGenerator({

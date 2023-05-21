@@ -1,27 +1,24 @@
-import { Container, Footer, Header } from "components";
-import { useLocation } from "react-router-dom";
-import { TbArrowBigDown, TbArrowBigUp } from "react-icons/tb";
-import { BiBell } from "react-icons/bi";
+import { TbArrowBigDown, TbArrowBigUp } from 'react-icons/tb';
+import { BiBell } from 'react-icons/bi';
 import {
   FiArrowUp,
   FiArrowDown,
   FiMessageCircle,
   FiShare,
   FiBookmark,
-} from "react-icons/fi";
-import React, { useState } from "react";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
-import { IPost } from "interfaces/post";
+} from 'react-icons/fi';
+import React, { useState } from 'react';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
+import { IPost } from 'interfaces/post-interface';
 
-interface PostPageProps {
-  post: IPost | null;
-  showPosts: () => void;
+interface SinglePostProps {
+  post: IPost;
 }
 
-const SinglePostPage: React.FC<PostPageProps> = ({ post, showPosts }) => {
+const SinglePost: React.FC<SinglePostProps> = ({ post }) => {
   const date = new Date().toLocaleString();
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState('');
 
   return (
     <>
@@ -98,4 +95,4 @@ const SinglePostPage: React.FC<PostPageProps> = ({ post, showPosts }) => {
   );
 };
 
-export default SinglePostPage;
+export default SinglePost;

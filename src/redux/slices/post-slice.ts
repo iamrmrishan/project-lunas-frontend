@@ -3,13 +3,32 @@ import { access } from 'fs';
 import {
   IFetchPostsFilterPayload,
   IPost,
+  IPostByIdRequset,
   IPostRequset,
   IPostsState,
-} from 'interfaces/post';
+} from 'interfaces/post-interface';
 
 export const initialState: IPostsState = {
   loading: false,
   posts: [],
+  post: {
+    id:'',
+    userId: '',
+    title: '',
+    body: '',
+    categoryId: '',
+    tags: [],
+    mediaId: [],
+    user: {
+      id: '',
+      userName: '',
+      email: '',
+      password: '',
+      points: '',
+    },
+    createdAt: '',
+
+  },
 };
 
 export const postSlice = createSlice({
@@ -33,6 +52,22 @@ export const postSlice = createSlice({
     },
     searchPostsFailed(state: IPostsState) {
       state.loading = false;
+    },
+    getPostById(state: IPostsState, _action: PayloadAction<string>) {
+      state.loading = true;
+    },
+    getPostByIdSucceeded(
+      state: IPostsState,
+      action: PayloadAction<IPostByIdRequset>
+    ) {
+      state.post = action.payload.post;
+      state.loading = false;
+    },
+    getPostByIdFailed(state: IPostsState) {
+      state.loading = false;
+    },
+    clearPostById(state: IPostsState) {
+      state.post = undefined;
     },
   },
 });
