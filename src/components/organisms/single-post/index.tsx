@@ -25,9 +25,7 @@ const SinglePostPage: React.FC<PostPageProps> = ({ post, showPosts }) => {
 
   return (
     <>
-      <div        
-        className="bg-primaryColor rounded text-primaryText border dark:border-opacity-10 dark:rounded-lg p-4 mb-4 w-full mx-auto dark:bg-secondaryColor dark:text-secondaryText"
-      >
+      <div className="bg-primaryColor rounded text-primaryText border dark:border-opacity-10 dark:rounded-lg p-4 mb-4 w-full mx-auto dark:bg-secondaryColor dark:text-secondaryText">
         <div className="flex items-start space-x-2">
           <div className="arrows mr-3 text-primaryText dark:text-secondaryText">
             <TbArrowBigUp />
@@ -38,7 +36,7 @@ const SinglePostPage: React.FC<PostPageProps> = ({ post, showPosts }) => {
             <div className="bell float-right top-0 text-primaryText text-opacity-50">
               <BiBell size={20} />
             </div>
-            <div className="title text-xs mb-1">
+            <div className="text-xs mb-1">
               Posted by u/{post.user.userName} in r/sample on {date}
             </div>
             <div className="title text-lg font-bold mb-3">{post.title}</div>
@@ -51,10 +49,11 @@ const SinglePostPage: React.FC<PostPageProps> = ({ post, showPosts }) => {
               ))}
             </div>
 
-            <div className="post-image py-3 pb-10">
-              <img src={post.mediaId[0]} alt="" />
-            </div>
-            <div className="post-text">{post.body}</div>
+              <div hidden={post.mediaId? true :false} className="post-image py-3 pb-10">
+                <img src={post.mediaId[0]} alt="" />
+              </div>
+
+            <div className="post-text text-primaryText dark:text-secondaryText text-opacity-80 dark:text-opacity-80">{post.body}</div>
             <div className="action-buttons">
               <div className="flex justify-between items-center mt-4">
                 <div className="flex space-x-4">

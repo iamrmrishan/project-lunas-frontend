@@ -52,7 +52,7 @@ const Dropdown: React.FC<DropdownProps> = ({ open }) => {
               label={item.label}
               dropdown={true}
               onClick={item.onClick || open}
-            />
+                          />
           ))}
         </ul>
       </div>

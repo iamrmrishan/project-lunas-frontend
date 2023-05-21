@@ -26,7 +26,7 @@ const BrowsePage: React.FC = () => {
 
   return (
     <>
-      <Header showPosts={showPosts} />
+      <Header showPosts={showPosts} selected="browse" />
       <Container>
         <div className="container mx-auto lg:px-8 md:px-6 sm:px-4 py-6 dark:bg-secondaryColor bg-primaryColor">
           <div className="grid grid-cols-4 gap-6">
