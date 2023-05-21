@@ -16,7 +16,7 @@ const ProfilePage: React.FC = () => {
     { id: 5, title: "SAVED", link: "/" },
     { id: 6, title: "UPVOTED", link: "/" },
     { id: 7, title: "DOWNVOTED", link: "/" },
-  ]
+  ];
   return (
     <>
       <Header />
@@ -31,12 +31,14 @@ const ProfilePage: React.FC = () => {
                 <PostItem post={undefined}></PostItem>
               </div> */}
             </div>
-              <div className="hidden md:block ipad:hidden float-right">
-                <UserProfileCard></UserProfileCard>
-              </div>
+            <div className="hidden md:block ipad:hidden float-right">
+              <UserProfileCard slidingPane={false}></UserProfileCard>
+            </div>
           </div>
         </div>
-        <SlidingPane />
+        <div className="lg:hidden">
+          <SlidingPane />
+        </div>
         {/* <ResponsiveGrid desktopColumns={4} gap={5}>
           {items.map((item) => (
             // <div

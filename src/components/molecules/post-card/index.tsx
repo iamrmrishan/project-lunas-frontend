@@ -55,7 +55,9 @@ const PostCard: React.FC<PostItemProps> = ({ post, loading }) => {
       {post.body && (
         <div className="mt-4">
           {loading ? (
-            <Skeleton />
+            
+            <Skeleton className="col-span-3" />
+
           ) : (
             <LimitedText
               text={post.body}

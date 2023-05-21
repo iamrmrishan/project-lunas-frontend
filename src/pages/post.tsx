@@ -15,6 +15,7 @@ import { NavigationType, useNavigationType } from 'react-router-dom';
 import { Comment } from 'interfaces/comment-interface';
 import Comments from 'components/molecules/comments';
 
+
 const PostPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const dispatch = useDispatch();
@@ -54,7 +55,7 @@ const PostPage: React.FC = () => {
 
   return (
     <>
-      <Header />
+      <Header selected='Ask About a Product' />
       <Container>
         <div className="container mx-auto lg:px-8 md:px-6 sm:px-4 py-6 dark:bg-secondaryColor bg-primaryColor">
           <div className="grid grid-cols-4 gap-6">

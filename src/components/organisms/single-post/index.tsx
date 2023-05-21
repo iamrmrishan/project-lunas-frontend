@@ -33,7 +33,7 @@ const SinglePost: React.FC<SinglePostProps> = ({ post }) => {
             <div className="bell float-right top-0 text-primaryText text-opacity-50">
               <BiBell size={20} />
             </div>
-            <div className="title text-xs mb-1">
+            <div className="text-xs mb-1">
               Posted by u/{post.user.userName} in r/sample on {date}
             </div>
             <div className="title text-lg font-bold mb-3">{post.title}</div>
@@ -46,10 +46,11 @@ const SinglePost: React.FC<SinglePostProps> = ({ post }) => {
               ))}
             </div>
 
-            <div className="post-image py-3 pb-10">
-              <img src={post.mediaId[0]} alt="" />
-            </div>
-            <div className="post-text">{post.body}</div>
+              <div hidden={post.mediaId? true :false} className="post-image py-3 pb-10">
+                <img src={post.mediaId[0]} alt="" />
+              </div>
+
+            <div className="post-text text-primaryText dark:text-secondaryText text-opacity-80 dark:text-opacity-80">{post.body}</div>
             <div className="action-buttons">
               <div className="flex justify-between items-center mt-4">
                 <div className="flex space-x-4">

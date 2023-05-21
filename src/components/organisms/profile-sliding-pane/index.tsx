@@ -48,7 +48,7 @@ const SlidingPane: React.FC = () => {
         } ${isOpen ? 'visible' : 'invisible'}`}
         onClick={e => e.stopPropagation()} // Prevent clicks inside the pane from bubbling up to the document
       >
-        <UserProfileCard shadow={false} bgColorLight="white" bgColorDark='' />
+       <UserProfileCard slidingPane={true} />
       </div>
       {!isOpen && (
         <div {...handlers} className="fixed inset-y-0 right-0 w-10"/> // swipe handle area when pane is closed
