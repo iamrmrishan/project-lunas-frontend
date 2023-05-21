@@ -36,7 +36,7 @@ const BrowsePage: React.FC = () => {
               ))}
             </div>
             <div className="col-span-4 lg:col-span-1 ">
-              <NetworkQuestions questions={posts} title={'Simillar Reviews'} />
+              <NetworkQuestions questions={posts} title={'Trending Reviews'} />
             </div>
           </div>
         </div>
