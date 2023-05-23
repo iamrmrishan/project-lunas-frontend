@@ -70,13 +70,11 @@ export const Header: React.FC = ({}) => {
                     to="/"
                     label="Make a Review"
                     dropdown={false}
-                    selected={selected == "Make a Review"}
                   />
                   <NavLink
                     to="/create-post"
                     label="Ask about a Product"
                     dropdown={false}
-                    selected={selected?.toLowerCase() == "Ask about a Product".toLowerCase()}
                   />
                 </>
               )}

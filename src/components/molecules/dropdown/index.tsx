@@ -29,7 +29,7 @@ const Dropdown: React.FC<DropdownProps> = ({ open }) => {
         { label: 'Browse', to: '/browse' },
         { label: 'Profile', to: '/profile' },
         { label: 'Make Review', to: '/' },
-        { label: 'Ask about a product', to: '/' },
+        { label: 'Ask about a product', to: '/create-post' },
         { label: 'Logout', onClick: () => handleLogoutClick() },
       ];
 

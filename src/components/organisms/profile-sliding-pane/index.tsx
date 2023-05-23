@@ -43,7 +43,7 @@ const SlidingPane: React.FC = () => {
     <div className='z-20 md:hidden' ref={paneRef}>   
       <div // md:hidden - only visible on mobile view
         {...handlers} 
-        className={`fixed inset-y-0 right-0 w-3/5 bg-white shadow-lg transition-transform duration-300 transform ${
+        className={`fixed inset-y-0 right-0 w-3/5 bg-primaryColor dark:bg-secondaryColor brightness-200 shadow-lg transition-transform duration-300 transform ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         } ${isOpen ? 'visible' : 'invisible'}`}
         onClick={e => e.stopPropagation()} // Prevent clicks inside the pane from bubbling up to the document
