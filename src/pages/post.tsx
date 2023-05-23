@@ -12,7 +12,8 @@ import { useParams } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
 import QuestionsCard from 'components/molecules/question-card';
 import { NavigationType, useNavigationType } from 'react-router-dom';
-
+import { Comment } from 'interfaces/comment-interface';
+import Comments from 'components/molecules/comments';
 
 const PostPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -25,6 +26,32 @@ const PostPage: React.FC = () => {
     dispatch(postSlice.actions.getPostById(id));
   }, [dispatch]);
 
+  // useEffect(() => {
+  //   console.log(navType);
+  //   if (navType === 'POP') {
+  //     // If the user clicks the back button, clear the state
+  //     dispatch(postSlice.actions.clearPostById());
+  //   }
+  // }, [navType]);
+
+  const initialComments: Comment[] = [
+    {
+      id: '1',
+      author: 'User 1',
+      content: 'This is the first comment',
+      voteCount: 0,
+      children: [
+        {
+          id: '2',
+          author: 'User 2',
+          content: 'This is a child comment',
+          voteCount: 0,
+          children: [],
+        },
+      ],
+    },
+  ];
+
   return (
     <>
       <Header  />
@@ -33,13 +60,16 @@ const PostPage: React.FC = () => {
           <div className="grid grid-cols-4 gap-6">
             <div className="col-span-4 md:col-span-3 ipad:col-span-4 m-auto">
               {!loading ? (
-                <SinglePost post={post}></SinglePost>
+                <>
+                  <SinglePost post={post}></SinglePost>
+                  <Comments comments={initialComments} />
+                </>
               ) : (
                 <Skeleton></Skeleton>
               )}
             </div>
             <div className="col-span-4 lg:col-span-1 ">
-              <QuestionsCard questions={posts} title="Top Trending Reviews" />
+              <QuestionsCard questions={posts} title={'Simillar Reviews'} />
             </div>
           </div>
         </div>
