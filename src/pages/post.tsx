@@ -26,6 +26,9 @@ const PostPage: React.FC = () => {
     dispatch(postSlice.actions.getPostById(id));
   }, [dispatch]);
 
+  console.log(post);
+  
+
   // useEffect(() => {
   //   console.log(navType);
   //   if (navType === 'POP') {

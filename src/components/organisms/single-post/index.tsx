@@ -34,7 +34,8 @@ const SinglePost: React.FC<SinglePostProps> = ({ post }) => {
               <BiBell size={20} />
             </div>
             <div className="text-xs mb-1">
-              Posted by u/{post.user.userName} in r/sample on {date}
+              Posted by in r/sample on {date}
+              {/* Posted by u/{post.user.userName} in r/sample on {date} */}
             </div>
             <div className="title text-lg font-bold mb-3">{post.title}</div>
 
