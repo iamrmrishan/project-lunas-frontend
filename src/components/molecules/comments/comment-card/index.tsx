@@ -54,32 +54,32 @@ const CommentComponent: React.FC<CommentProps> = ({
   return (
     <div className="pl-4 border-l-2">
       <div className="flex flex-row ">
-        <div className="text-xs text-secondaryText ">{comment.author}</div>
-        <BsDot className='text-primaryBtn-2 dark:secondaryBtn2' />
-        <div className="text-xs text-primaryText text-opacity-50 dark:secondaryText dark:text-opacity-50 font-medium">{"Posted on 43 min ago"}</div>
+        <div className="text-xs text-primaryText dark:text-secondaryText ">{comment.author}</div>
+        <BsDot className='text-primaryBtn-2 dark:text-secondaryBtn2' />
+        <div className="text-xs text-primaryText text-opacity-50 dark:text-secondaryText dark:text-opacity-50 font-medium">{"Posted on 43 min ago"}</div>
       </div>
 
-      <div className='py-2'>{comment.content}</div>
+      <div className='py-2 text-primaryText dark:text-secondaryText'>{comment.content}</div>
       <div className="flex items-center space-x-2 mb-4 gap-2">
         <button
           className={`focus:outline-none ${
-            isUpvoted ? "text-green-500" : "text-primaryText dark:secondaryText text-opacity-50 dark:text-opacity-50"
+            isUpvoted ? "text-green-500" : "text-primaryText dark:text-secondaryText text-opacity-50 dark:text-opacity-50"
           }`}
           onClick={handleUpvote}
         >
           <FaArrowUp />
         </button>
-        <span>{comment.voteCount}</span>
+        <span className='text-primaryText dark:text-secondaryText'>{comment.voteCount}</span>
         <button
           className={`focus:outline-none ${
-            isDownvoted ? "text-red-500" : "text-primaryText dark:secondaryText text-opacity-50 dark:text-opacity-50"
+            isDownvoted ? "text-red-500" : "text-primaryText dark:text-secondaryText text-opacity-50 dark:text-opacity-50"
           }`}
           onClick={handleDownvote}
         >
           <FaArrowDown />
         </button>
         <button
-          className="focus:outline-none text-primaryText dark:secondaryText text-opacity-50 dark:text-opacity-50 "
+          className="focus:outline-none text-primaryText dark:text-secondaryText text-opacity-50 dark:text-opacity-50 "
           onClick={() => setShowReplyForm(!showReplyForm)}
         >
           <FaReply />
@@ -93,7 +93,7 @@ const CommentComponent: React.FC<CommentProps> = ({
             value={replyContent}
             onChange={(event) => setReplyContent(event)}
           />
-          <button className="mr-2 rounded bg-primaryBtn text-primaryBtnText dark:secondaryBtn dark:text-secondaryBtnText text-sm px-4 py-2 " type="submit">
+          <button className="mr-2 rounded bg-primaryBtn text-primaryBtnText dark:bg-secondaryBtn dark:text-secondaryBtnText text-sm px-4 py-2 " type="submit">
             Submit Reply
           </button>
         </form>

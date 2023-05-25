@@ -35,7 +35,7 @@ const SinglePost: React.FC<SinglePostProps> = ({ post }) => {
             </div>
             <div className="text-xs mb-1">
               Posted by in r/sample on {date}
-              {/* Posted by u/{post.user.userName} in r/sample on {date} */}
+              Posted by u/{post.user.userName} in r/sample on {date}
             </div>
             <div className="title text-lg font-bold mb-3">{post.title}</div>
 
@@ -47,7 +47,7 @@ const SinglePost: React.FC<SinglePostProps> = ({ post }) => {
               ))}
             </div>
 
-              <div hidden={post.mediaId? true :false} className="post-image py-3 pb-10">
+              <div className={`${post.mediaId.length > 0 ? "py-3 pb-10" : "" }`}>
                 <img src={post.mediaId[0]} alt="" />
               </div>
 
