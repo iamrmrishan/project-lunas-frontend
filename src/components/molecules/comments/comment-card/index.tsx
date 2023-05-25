@@ -59,7 +59,7 @@ const CommentComponent: React.FC<CommentProps> = ({
         <div className="text-xs text-primaryText text-opacity-50 dark:secondaryText dark:text-opacity-50 font-medium">{"Posted on 43 min ago"}</div>
       </div>
 
-      <div className='py-2'>{'save all thejokey oure gonna mke while i see how mucchdrink i can mek then be my mistake so dont wait outside my hotel room wiat till i gshouldnt have claled, cuz we shouldnt speak tyou do make me hard but she makes me weak so dont wait outside my hotel room jsut wait till i give you a sign cuz i get lonesome sometimessave all the jokes youre gonna make while i see how much drink i can take then be my mistake'}</div>
+      <div className='py-2'>{comment.content}</div>
       <div className="flex items-center space-x-2 mb-4 gap-2">
         <button
           className={`focus:outline-none ${
