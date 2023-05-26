@@ -49,7 +49,7 @@ export const postSlice = createSlice({
         ...post,
       }));
       state.loading = false;
-      state.post = action.payload.posts[0];
+      // state.post = action.payload.posts[0];
     },
     searchPostsFailed(state: IPostsState) {
       state.loading = false;

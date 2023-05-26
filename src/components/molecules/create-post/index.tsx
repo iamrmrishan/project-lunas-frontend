@@ -15,7 +15,7 @@ const CreatePostForm = () => {
 
   return (
     <section>
-      <div className="relative mx-auto max-w-screen-xl px-4 py-8">
+      <div className="relative mx-auto max-w-screen-xl px-4 sm:py-8 py-2">
         <div className="grid grid-cols-4 md:gap-12 gap-2">
           <div className="md:col-span-3 col-span-4  text-primaryText dark:text-secondaryText">
             <div className="flex flex-col p-4 my-4 bg-white dark:bg-secondaryBtn2 border rounded  border-primaryText  dark:border-secondaryText border-opacity-10 dark:border-opacity-10">
@@ -26,9 +26,9 @@ const CreatePostForm = () => {
                 Introduce the problem and expand on what you put in the title.
                 Minimum 20 characters.
               </div>
-              <div className="my-5 h-48">
+              <div className="my-5">
                 <ReactQuill
-                  className="h-36 mb-auto"
+                  // className="mb-auto"
                   theme="snow"
                   value={value.introduction}
                   onChange={(v) =>
@@ -92,9 +92,9 @@ const CreatePostForm = () => {
                 Describe what you tried, what you expected to happen, and what
                 actually resulted. Minimum 20 characters.
               </div>
-              <div className="my-5 h-48">
+              <div className="my-5">
                 <ReactQuill
-                  className="h-36 dark:text-" 
+
                   theme="snow"
                   value={value.details}
                   onChange={(v) =>

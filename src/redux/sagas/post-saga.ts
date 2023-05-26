@@ -1,20 +1,20 @@
-import { call, put, takeEvery } from 'redux-saga/effects';
-import { PayloadAction } from '@reduxjs/toolkit';
+import { call, put, takeEvery } from "redux-saga/effects";
+import { PayloadAction } from "@reduxjs/toolkit";
 import {
   IFetchPostsFilterPayload,
   IPost,
   IPostsFilterAction,
-} from '../../interfaces/post-interface';
-import axios from 'axios';
-import { postSlice } from '../slices/post-slice';
-import { IRestApiResponse } from 'interfaces/api-response-interface';
-import API from 'redux/api/post-api';
+} from "../../interfaces/post-interface";
+import axios from "axios";
+import { postSlice } from "../slices/post-slice";
+import { IRestApiResponse } from "interfaces/api-response-interface";
+import API from "redux/api/post-api";
 
 export function* searchPostsGenerator({ payload }: IPostsFilterAction): any {
   try {
     const response: IRestApiResponse = yield call(
       axios.get,
-      'http://localhost:3000/posts/search'
+      "http://localhost:3000/posts/search"
     );
     if (response.status === 200) {
       yield put(
@@ -43,9 +43,12 @@ export function* getPostsByIdGenerator({ payload }: any): any {
         })
       );
     } else {
+      console.log("12");
+
       yield put(postSlice.actions.getPostByIdFailed());
     }
   } catch (error) {
+    console.log(error);
     yield put(postSlice.actions.getPostByIdFailed(error.message));
   }
 }
