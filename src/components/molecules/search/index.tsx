@@ -4,7 +4,7 @@ import { BiSearchAlt } from 'react-icons/bi';
 
 export const SearchPostLink: React.FC = () => {
   return (
-    <div className="flex justify-between items-center bg-primaryColor dark:bg-secondaryColor border border-primaryText dark:border-secondaryText border-opacity-5 dark:border-opacity-5 rounded p-2 mb-4">
+    <div className="flex justify-between items-center bg-white dark:bg-secondaryBtn2 dark:bg-opacity-20 border border-primaryText dark:border-secondaryText border-opacity-5 dark:border-opacity-5 rounded p-2 mb-4">
       <input
         type="text"
         placeholder="Search"

@@ -8,7 +8,7 @@ type QuestionsCardProps = {
 
 const QuestionsCard: React.FC<QuestionsCardProps> = ({ questions, title }) => {
   return (
-    <div className="border dark:border-opacity-10 rounded px-10 py-5">
+    <div className="bg-white dark:bg-secondaryBtn2 dark:bg-opacity-20 border dark:border-opacity-5 shadow rounded px-10 py-5">
       <h1 className="text-lg font-semibold mb-5 text-primaryText dark:text-secondaryText">
         {title}
       </h1>

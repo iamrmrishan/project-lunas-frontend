@@ -21,7 +21,7 @@ const PostCard: React.FC<PostItemProps> = ({ post, loading }) => {
   const screenSize = useScreenSize();
 
   return (
-    <div className="bg-primaryColor rounded text-primaryText border dark:border-opacity-10 dark:rounded-lg p-4 mb-4 w-full mx-auto dark:bg-secondaryColor dark:text-secondaryText">
+    <div className="bg-white dark:bg-secondaryBtn2 dark:bg-opacity-20  rounded text-primaryText border dark:border-opacity-5 shadow dark:rounded-lg p-4 mb-4 w-full mx-auto  dark:text-secondaryText">
       <div className="flex items-center space-x-2">
         {post.mediaId[0] && (
           <img

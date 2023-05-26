@@ -18,7 +18,7 @@ const CreatePostForm = () => {
       <div className="relative mx-auto max-w-screen-xl px-4 sm:py-8 py-2">
         <div className="grid grid-cols-4 md:gap-12 gap-2">
           <div className="md:col-span-3 col-span-4  text-primaryText dark:text-secondaryText">
-            <div className="flex flex-col p-4 my-4 bg-white dark:bg-secondaryBtn2 border rounded  border-primaryText  dark:border-secondaryText border-opacity-10 dark:border-opacity-10">
+            <div className="flex flex-col p-4 my-4 bg-white dark:bg-secondaryBtn2 dark:bg-opacity-20 border rounded  border-primaryText  dark:border-secondaryText border-opacity-10 dark:border-opacity-10">
               <div className="text-lg font-bold">
                 What are the details of your problem?
               </div>
@@ -66,7 +66,7 @@ const CreatePostForm = () => {
               hidden={!show || focused != 0}
               className="my-4 rounded bg-white dark:bg-secondaryBtn2 shadow border-primaryText h-auto"
             >
-              <div className="font-bold text-sm p-4 text-primaryText dark:text-secondaryText bg-primaryBtn2 dark:bg-transparent dark:bg-brightnness- ">
+              <div className="font-bold text-sm p-4 text-primaryText dark:text-secondaryText dark:bg-black dark:bg-opacity-20 bg-primaryBtn2 ">
                  Proof-read before posting
               </div>
               <div>
@@ -84,7 +84,7 @@ const CreatePostForm = () => {
 
         <div className="grid grid-cols-4 md:gap-12 gap-2">
           <div className="md:col-span-3 col-span-4  text-primaryText dark:text-secondaryText">
-            <div className="flex flex-col p-4 my-4 bg-white dark:bg-secondaryBtn2  border rounded  border-primaryText  dark:border-secondaryText border-opacity-10 dark:border-opacity-10">
+            <div className="flex flex-col p-4 my-4 bg-white dark:bg-secondaryBtn2 dark:bg-opacity-20 border rounded  border-primaryText  dark:border-secondaryText border-opacity-10 dark:border-opacity-10">
               <div className="text-lg font-bold">
                 What did you try and what were you expecting?
               </div>
@@ -131,9 +131,9 @@ const CreatePostForm = () => {
           <div className="col-span-4 md:col-span-1">
           <div
               hidden={!show || focused != 1}
-              className="my-4 rounded bg-white dark:bg-secondaryBtn2 shadow border-primaryText h-auto"
+              className="my-4 rounded bg-white dark:bg-secondaryBtn2 dark:bg-opacity-20  shadow border-primaryText h-auto"
             >
-              <div className="font-bold text-sm p-4 text-primaryText dark:text-secondaryText bg-primaryBtn2 dark:bg-transparent dark:bg-brightnness- ">
+              <div className="font-bold text-sm p-4 text-primaryText dark:text-secondaryText dark:bg-black dark:bg-opacity-20 bg-primaryBtn2 ">
                 Expand on the problem
               </div>
               <div>
@@ -153,7 +153,7 @@ const CreatePostForm = () => {
         </div>
         <div className="grid grid-cols-4 md:gap-12 gap-2">
           <div className="md:col-span-3 col-span-4  text-primaryText dark:text-secondaryText">
-            <div className="flex flex-col p-4 my-4 bg-white dark:bg-secondaryBtn2  border rounded  border-primaryText  dark:border-secondaryText border-opacity-10 dark:border-opacity-10">
+            <div className="flex flex-col p-4 my-4 bg-white dark:bg-secondaryBtn2 dark:bg-opacity-20  border rounded  border-primaryText  dark:border-secondaryText border-opacity-10 dark:border-opacity-10">
               <div className="text-lg font-bold">Tags</div>
               <div className='text-primaryText dark:text-secondaryText text-sm text-opacity-80 dark:text-opacity-80'>
                 Add up to 5 tags to describe what your question is about. Start
@@ -187,7 +187,7 @@ const CreatePostForm = () => {
               hidden={!show || focused != 2}
               className="my-4 rounded bg-white dark:bg-secondaryBtn2 shadow border-primaryText h-auto"
             >
-              <div className="font-bold text-sm p-4 text-primaryText dark:text-secondaryText bg-primaryBtn2 dark:bg-transparent dark:bg-brightnness- ">
+              <div className="font-bold text-sm p-4 text-primaryText dark:text-secondaryText dark:bg-black dark:bg-opacity-20 bg-primaryBtn2 ">
                 Adding tags
               </div>
               <div>
@@ -205,7 +205,7 @@ const CreatePostForm = () => {
 
         <div className="grid grid-cols-4 md:gap-12 gap-2">
           <div className="md:col-span-3 col-span-4  text-primaryText dark:text-secondaryText">
-            <div className="flex flex-col p-4 my-4 bg-white dark:bg-secondaryBtn2  border rounded  border-primaryText  dark:border-secondaryText border-opacity-10 dark:border-opacity-10">
+            <div className="flex flex-col p-4 my-4 bg-white dark:bg-secondaryBtn2 dark:bg-opacity-20  border rounded  border-primaryText  dark:border-secondaryText border-opacity-10 dark:border-opacity-10">
               <div className="text-lg font-bold">Title</div>
               <div className='text-primaryText dark:text-secondaryText text-sm text-opacity-80 dark:text-opacity-80'>
                 Be specific and imagine you’re asking a question to another
@@ -248,9 +248,9 @@ const CreatePostForm = () => {
           <div className="col-span-4 md:col-span-1">
           <div
               hidden={!show || focused != 3}
-              className="my-4 rounded bg-white dark:bg-secondaryBtn2 shadow border-primaryText h-auto"
+              className="my-4 rounded bg-white dark:bg-secondaryBtn2 dark:bg-opacity-20 shadow border-primaryText h-auto"
             >
-              <div className="font-bold text-sm p-4 text-primaryText dark:text-secondaryText bg-primaryBtn2 dark:bg-transparent dark:bg-brightnness- ">
+              <div className="font-bold text-sm p-4 text-primaryText dark:text-secondaryText dark:bg-black dark:bg-opacity-20 bg-primaryBtn2 ">
                 Writing a good title
               </div>
               <div>
