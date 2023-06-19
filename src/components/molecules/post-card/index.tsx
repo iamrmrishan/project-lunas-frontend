@@ -1,15 +1,16 @@
-import LimitedText from 'components/atoms/text-limiter';
-import React from 'react';
-import { useScreenSize } from '../../../providers/screensize-provider';
+import LimitedText from "components/atoms/text-limiter";
+import React from "react";
+import { useScreenSize } from "../../../providers/screensize-provider";
 import {
   FiArrowUp,
   FiArrowDown,
   FiMessageCircle,
   FiShare,
   FiBookmark,
-} from 'react-icons/fi';
-import { IPost } from 'interfaces/post-interface';
-import Skeleton from 'react-loading-skeleton';
+} from "react-icons/fi";
+import { IPost } from "interfaces/post-interface";
+import Skeleton from "react-loading-skeleton";
+import { removeHtmlTags } from "utils/html-utils";
 
 type PostItemProps = {
   post: IPost;
@@ -19,6 +20,8 @@ type PostItemProps = {
 const PostCard: React.FC<PostItemProps> = ({ post, loading }) => {
   const date = new Date().toLocaleString();
   const screenSize = useScreenSize();
+
+  console.log(removeHtmlTags(post.body));
 
   return (
     <div className="bg-white dark:bg-secondaryBtn2 dark:bg-opacity-20  rounded text-primaryText border dark:border-opacity-5 shadow dark:rounded-lg p-4 mb-4 w-full mx-auto  dark:text-secondaryText">
@@ -55,13 +58,11 @@ const PostCard: React.FC<PostItemProps> = ({ post, loading }) => {
       {post.body && (
         <div className="mt-4">
           {loading ? (
-            
             <Skeleton className="col-span-3" />
-
           ) : (
             <LimitedText
-              text={post.body}
-              maxLength={screenSize == 'sm' ? 100 : 250}
+              text={removeHtmlTags(post.body)}
+              maxLength={screenSize === "sm" ? 100 : 250}
             ></LimitedText>
           )}
         </div>
