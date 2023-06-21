@@ -1,16 +1,17 @@
-import { TbArrowBigDown, TbArrowBigUp } from 'react-icons/tb';
-import { BiBell } from 'react-icons/bi';
+import { TbArrowBigDown, TbArrowBigUp } from "react-icons/tb";
+import { BiBell } from "react-icons/bi";
 import {
   FiArrowUp,
   FiArrowDown,
   FiMessageCircle,
   FiShare,
   FiBookmark,
-} from 'react-icons/fi';
-import React, { useState } from 'react';
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
-import { IPost } from 'interfaces/post-interface';
+} from "react-icons/fi";
+import React, { useState } from "react";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
+import { IPost } from "interfaces/post-interface";
+import DOMPurify from "dompurify";
 
 interface SinglePostProps {
   post: IPost;
@@ -18,7 +19,24 @@ interface SinglePostProps {
 
 const SinglePost: React.FC<SinglePostProps> = ({ post }) => {
   const date = new Date().toLocaleString();
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState("");
+
+  const htmlString = post.body;
+  const sanitizedHTML = DOMPurify.sanitize(htmlString);
+
+  const styles = {
+    h1: {
+      fontSize: "24px",
+      fontWeight: "bold",
+    },
+    h2: {
+      fontSize: "18px",
+      fontWeight: "bold",
+    },
+    p: {
+      fontSize: "14px",
+    },
+  };
 
   return (
     <>
@@ -47,11 +65,33 @@ const SinglePost: React.FC<SinglePostProps> = ({ post }) => {
               ))}
             </div>
 
-              <div className={`${post.mediaId.length > 0 ? "py-3 pb-10" : "" }`}>
-                <img src={post.mediaId[0]} alt="" />
-              </div>
+            <div className={`${post.mediaId.length > 0 ? "py-3 pb-10" : ""}`}>
+              <img src={post.mediaId[0]} alt="" />
+            </div>
 
-            <div className="post-text text-primaryText dark:text-secondaryText text-opacity-80 dark:text-opacity-80">{post.body}</div>
+            <div
+              className="post-text text-primaryText dark:text-secondaryText text-opacity-80 dark:text-opacity-80"
+              // dangerouslySetInnerHTML={{ __html: sanitizedHTML }}
+            >
+              {/* <style>
+                {`
+          h1 {
+            font-size: ${styles.h1.fontSize};
+            font-weight: ${styles.h1.fontWeight};
+          }
+
+          h2 {
+            font-size: ${styles.h2.fontSize};
+            font-weight: ${styles.h2.fontWeight};
+          }
+
+          p {
+            font-size: ${styles.p.fontSize};
+          }
+        `}
+              </style> */}
+              {post.body}
+            </div>
             <div className="action-buttons">
               <div className="flex justify-between items-center mt-4">
                 <div className="flex space-x-4">
