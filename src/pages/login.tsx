@@ -52,7 +52,7 @@ const Login: React.FC = () => {
   return (
     <>
     <Container>
-      <Header />
+      <Header login={true} />
       <div className="sm:bg-white sm:dark:bg-secondaryBtn2 px-20 py-30 shadow-md rounded-sm m-auto md:mx-auto">
         <form action="#" className="mt-10 mb-10 grid grid-cols-6 gap-6">
           <div className="col-span-6">

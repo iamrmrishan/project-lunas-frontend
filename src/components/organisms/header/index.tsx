@@ -12,7 +12,12 @@ import Dropdown from "components/molecules/dropdown";
 import { useAuth } from "../../../providers/auth-provider";
 import { Link } from 'react-router-dom';
 
-export const Header: React.FC = ({}) => {
+interface HeaderProps {
+login?: boolean
+
+}
+
+export const Header: React.FC<HeaderProps> = ({login}) => {
   const { isAuthenticated } = useAuth();
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
@@ -58,7 +63,7 @@ export const Header: React.FC = ({}) => {
             </ul>
           </nav>
           <div className="flex items-center gap-4">
-            {!isAuthenticated && (
+            {!isAuthenticated && !login && (
               <div className="hidden sm:flex sm:gap-4"> 
               <Link to={'/login'}>
               
