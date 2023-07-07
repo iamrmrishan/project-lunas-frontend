@@ -5,7 +5,7 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 
 export const Main: React.FC = () => {
   return (
-    <>
+    <div className='z-0'>
       <section className="bg-primaryColor dark:bg-secondaryColor">
         <div className="p-8 md:p-12 lg:px-16 lg:py-24">
           <div className="mx-auto max-w-lg text-center">
@@ -91,6 +91,6 @@ export const Main: React.FC = () => {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };

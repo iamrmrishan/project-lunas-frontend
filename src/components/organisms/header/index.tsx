@@ -10,21 +10,24 @@ import { CiUser } from "react-icons/ci";
 import { GrClose } from "react-icons/gr";
 import Dropdown from "components/molecules/dropdown";
 import { useAuth } from "../../../providers/auth-provider";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import Notifications from "components/molecules/notifications";
+import { BiBell } from "react-icons/bi";
 
 interface HeaderProps {
-login?: boolean
-
+  login?: boolean;
 }
 
-export const Header: React.FC<HeaderProps> = ({login}) => {
+export const Header: React.FC<HeaderProps> = ({ login }) => {
   const { isAuthenticated } = useAuth();
-  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-  const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
   const [isDropdownOpen, setIsDropDownOpen] = useState(false);
+  const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
 
   const handleDropdown = () => {
     setIsDropDownOpen(false);
+  };
+  const handleNotifications = () => {
+    setIsNotificationsOpen((prev) => !prev);
   };
 
   useEffect(() => {
@@ -48,11 +51,7 @@ export const Header: React.FC<HeaderProps> = ({login}) => {
               <NavLink to="/browse" label="Browse" dropdown={false} />
               {isAuthenticated && (
                 <>
-                  <NavLink
-                    to="/"
-                    label="Make a Review"
-                    dropdown={false}
-                  />
+                  <NavLink to="/" label="Make a Review" dropdown={false} />
                   <NavLink
                     to="/create-post"
                     label="Ask about a Product"
@@ -64,30 +63,41 @@ export const Header: React.FC<HeaderProps> = ({login}) => {
           </nav>
           <div className="flex items-center gap-4">
             {!isAuthenticated && !login && (
-              <div className="hidden sm:flex sm:gap-4"> 
-              <Link to={'/login'}>
-              
-                <button
-                  className="btn rounded-md bg-primaryBtn dark:bg-secondaryBtn px-4 py-2 md:px-5 md:py-2.5 text-xs md:text-sm font-medium text-primaryBtnText dark:text-secondaryBtnText shadow hover:bg-primaryBtnHover dark:hover:bg-secondaryBtnHover"
-                  
-                >Login</button>
-              </Link>             
-              <Link to={'/signup'}>              
-                <button
-                  className="btn rounded-md bg-primaryBtn dark:bg-secondaryBtn px-4 py-2 md:px-5 md:py-2.5 text-xs md:text-sm font-medium text-primaryBtnText dark:text-secondaryBtnText shadow hover:bg-primaryBtnHover dark:hover:bg-secondaryBtnHover"
-                  
-                >Sign Up</button>
-              </Link>             
-
-
+              <div className="hidden sm:flex sm:gap-4">
+                <Link to={"/login"}>
+                  <button className="btn rounded-md bg-primaryBtn dark:bg-secondaryBtn px-4 py-2 md:px-5 md:py-2.5 text-xs md:text-sm font-medium text-primaryBtnText dark:text-secondaryBtnText shadow hover:bg-primaryBtnHover dark:hover:bg-secondaryBtnHover">
+                    Login
+                  </button>
+                </Link>
+                <Link to={"/signup"}>
+                  <button className="btn rounded-md bg-primaryBtn dark:bg-secondaryBtn px-4 py-2 md:px-5 md:py-2.5 text-xs md:text-sm font-medium text-primaryBtnText dark:text-secondaryBtnText shadow hover:bg-primaryBtnHover dark:hover:bg-secondaryBtnHover">
+                    Sign Up
+                  </button>
+                </Link>
               </div>
             )}
+            <div className='relative'>
+              
+              <Button
+                className="z-10 rounded-md bg-primaryBtn2 px-4 py-2 md:px-5 md:py-2.5 text-sm font-medium text-primaryText dark:bg-secondaryBtn2 dark:text-secondaryText"
+                icon={
+                  <BiBell
+                    className="h-4 w-4 md:h-5 md:w-5"
+                    aria-hidden="true"
+                  />
+                }
+                onClick={handleNotifications}
+              ></Button>
+              <div hidden={!isNotificationsOpen} className='z-10 absolute -left-60'>
+                <Notifications />
+              </div>
+            </div>
+
             <DarkModeToggle />
             <Button
               className="rounded-full lg:block hidden font-bold bg-primaryBtn dark:bg-secondaryBtn p-2 md:p-3 text-primaryBtnText dark:text-secondaryBtnText"
               icon={<CiUser size={18} />}
             />
-            {/* <div className="bg-primaryColor flex flex-col"> */}
             {!isDropdownOpen ? (
               <Button
                 className={

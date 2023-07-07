@@ -7,6 +7,7 @@ import PostPage from "pages/post";
 import CreatePostPage from "pages/create-post";
 import Login from 'pages/login';
 import Signup from 'pages/signup';
+import NotificationsPage from 'pages/notifications';
 
 const PageRoutes: React.FC<React.PropsWithChildren<{}>> = () => (
   <Routes>
@@ -17,6 +18,7 @@ const PageRoutes: React.FC<React.PropsWithChildren<{}>> = () => (
     <Route path="/create-post" Component={CreatePostPage} />
     <Route path="/login" Component={Login} />
     <Route path="/signup" Component={Signup} />
+    <Route path="/notifications" Component={NotificationsPage} />
   </Routes>
 );
 

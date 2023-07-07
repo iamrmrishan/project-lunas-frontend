@@ -35,14 +35,6 @@ const Dropdown: React.FC<DropdownProps> = ({ open }) => {
 
   return (
     <>
-      {/* <LoginModal
-        isOpen={showLoginModal}
-        onClose={() => setShowLoginModal(false)}
-      />
-          <SignupModal
-        isOpen={showSignupModal}
-        onClose={() => setShowSignupModal(false)}
-      /> */}
       <div className="mx-8 my-5">
         <ul className="flex flex-col items-left gap-4 text-sm text-primaryBtnText ">
           {menuItems.map((item, index) => (
