@@ -130,8 +130,8 @@ const Notifications: React.FC = () => {
 
   ];
   return (
-    <div className="absolute t-4 sm:left-0 left-20 shadow-lg rounded w-80 z-10 bg-white dark:bg-secondary">
-      <div className="p-4 flex justify-between  bg-primaryBtn2 dark:bg-secondaryBtn2 rounded" >
+    <div className="absolute t-4 sm:left-0 left-20 shadow-lg rounded w-80 z-10 bg-white dark:bg-secondaryBtn2 text-primaryText dark:text-secondaryText ">
+      <div className="p-4 flex justify-between  bg-primaryBtn2 dark:bg-secondaryColor bg-opacity-70 rounded" >
         <div>Notifications</div>
         <div className="flex gap-3">
           <div>Messages</div>
@@ -144,22 +144,22 @@ const Notifications: React.FC = () => {
         </div>
       </div>
       <div
-        className="px-4 h-60 overflow-y-scroll mt-2"
+        className=" h-60 overflow-y-scroll mt-2"
         >
         {data.slice(0,5).map((item) => (
-          <div className="flex py-4">
+          <div className="flex p-4 hover:bg-primaryBtn2 dark:hover:bg-secondaryColor dark:hover:bg-opacity-20 hover:bg-opacity-40 ">
             <div className="mr-2">
               <img src={item.image} />
             </div>
-            <div>
-              <div >{item.title}</div>
-              <div className='-z-1 text-opacity-70 dark:text-opacity-50' >{item.message}</div>
+            <div className='opacity-80'>
+              <div className='font-semibold'>{item.title}</div>
+              <div className='-z-1 text-opacity-70 dark:text-opacity-30' >{item.message}</div>
             </div>
           </div>
         ))}
       </div>
       <div className='flex'>
-        <button className='p-2 m-2 bg-primaryBtn2 dark:bg-secondaryBtn2 w-full font-bold rounded' onClick={() => navigate("/notifications", {state: {data: data }})}
+        <button className='opacity-80 p-2 m-2 bg-primaryBtn2 dark:bg-secondaryColor text-primaryText dark:text-secondaryText w-full font-bold rounded' onClick={() => navigate("/notifications", {state: {data: data }})}
         >SEE ALL</button>
       </div>
     </div>
