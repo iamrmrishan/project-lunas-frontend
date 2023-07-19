@@ -9,7 +9,7 @@ import Post from "components/molecules/create-post";
 const CreatePostPage: React.FC = () => {
   return (
     <>
-      <Header selected="Ask About a Product" />
+      <Header />
       <Container>
         <div className="container mx-auto px-4 py-6">
           <CreatePostForm />

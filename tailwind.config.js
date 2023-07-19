@@ -48,7 +48,7 @@ module.exports = {
         secondaryBtn: "#fafafa",
         secondaryBtnHover: "#f1f1f1",
         secondaryBtnText: "#000000",
-        secondaryBtn2: "#212121",
+        secondaryBtn2: "#303030",
       },
       screens: {
         ipad: { min: "768px", max: "1024px" },
@@ -63,5 +63,8 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [require("@tailwindcss/forms")],
+  plugins:
+    [
+      require("@tailwindcss/forms"),
+    ],
 };

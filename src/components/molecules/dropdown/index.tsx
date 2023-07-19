@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import NavLink from 'components/atoms/nav-link';
-import LoginModal from 'components/organisms/login-modal';
+import LoginModal from 'pages/login';
 import { useAuth } from 'providers/auth-provider';
-import SignupModal from 'components/organisms/signup-modal';
+import SignupModal from 'pages/signup';
 
 interface DropdownProps {
   open: () => void;
@@ -21,28 +21,20 @@ const Dropdown: React.FC<DropdownProps> = ({ open }) => {
     ? [
         { label: 'About', to: '/profile' },
         { label: 'Browse', to: '/browse' },
-        { label: 'Login', onClick: () => setShowLoginModal(true) },
-        { label: 'Signup', onClick: () => setShowSignupModal(true) },
+        { label: 'Login', to: '/login' },
+        { label: 'Signup', to: '/signup'},
       ]
     : [
         { label: 'About', to: '/post' },
         { label: 'Browse', to: '/browse' },
         { label: 'Profile', to: '/profile' },
         { label: 'Make Review', to: '/' },
-        { label: 'Ask about a product', to: '/' },
+        { label: 'Ask about a product', to: '/create-post' },
         { label: 'Logout', onClick: () => handleLogoutClick() },
       ];
 
   return (
     <>
-      <LoginModal
-        isOpen={showLoginModal}
-        onClose={() => setShowLoginModal(false)}
-      />
-          <SignupModal
-        isOpen={showSignupModal}
-        onClose={() => setShowSignupModal(false)}
-      />
       <div className="mx-8 my-5">
         <ul className="flex flex-col items-left gap-4 text-sm text-primaryBtnText ">
           {menuItems.map((item, index) => (

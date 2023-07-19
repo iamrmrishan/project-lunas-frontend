@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
-import { Comment } from 'interfaces/comment-interface';
-import { FaArrowUp, FaArrowDown, FaReply } from 'react-icons/fa';
+import React, { useState } from "react";
+import { Comment } from "interfaces/comment-interface";
+import { FaArrowUp, FaArrowDown, FaReply } from "react-icons/fa";
+import { BsDot } from 'react-icons/bs';
+import ReactQuill from 'react-quill';
 
 interface CommentProps {
   comment: Comment;
@@ -9,11 +11,16 @@ interface CommentProps {
   onReply: (commentId: string, replyContent: string) => void;
 }
 
-const CommentComponent: React.FC<CommentProps> = ({ comment, onUpvote, onDownvote, onReply }) => {
+const CommentComponent: React.FC<CommentProps> = ({
+  comment,
+  onUpvote,
+  onDownvote,
+  onReply,
+}) => {
   const [isUpvoted, setIsUpvoted] = useState(false);
   const [isDownvoted, setIsDownvoted] = useState(false);
   const [showReplyForm, setShowReplyForm] = useState(false);
-  const [replyContent, setReplyContent] = useState('');
+  const [replyContent, setReplyContent] = useState("");
 
   const handleUpvote = () => {
     if (isUpvoted) {
@@ -40,47 +47,53 @@ const CommentComponent: React.FC<CommentProps> = ({ comment, onUpvote, onDownvot
   const handleReply = (event: React.FormEvent) => {
     event.preventDefault();
     onReply(comment.id, replyContent);
-    setReplyContent('');
+    setReplyContent("");
     setShowReplyForm(false);
   };
 
   return (
     <div className="pl-4 border-l-2">
-      <h4 className="text-lg">{comment.author}</h4>
-      <p>{comment.content}</p>
-      <p className="text-sm text-gray-500">
-       {'Posted on 43 min ago'}
-      </p>
-      <div className="flex items-center space-x-2">
+      <div className="flex flex-row ">
+        <div className="text-xs text-primaryText dark:text-secondaryText ">{comment.author}</div>
+        <BsDot className='text-primaryBtn-2 dark:text-secondaryBtn2' />
+        <div className="text-xs text-primaryText text-opacity-50 dark:text-secondaryText dark:text-opacity-50 font-medium">{"Posted on 43 min ago"}</div>
+      </div>
+
+      <div className='py-2 text-primaryText dark:text-secondaryText'>{comment.content}</div>
+      <div className="flex items-center space-x-2 mb-4 gap-2">
         <button
-          className={`mr-2 focus:outline-none ${isUpvoted ? 'text-green-500' : ''}`}
+          className={`focus:outline-none ${
+            isUpvoted ? "text-green-500" : "text-primaryText dark:text-secondaryText text-opacity-50 dark:text-opacity-50"
+          }`}
           onClick={handleUpvote}
         >
           <FaArrowUp />
         </button>
-        <span>{comment.voteCount}</span>
+        <span className='text-primaryText dark:text-secondaryText'>{comment.voteCount}</span>
         <button
-          className={`mr-2 focus:outline-none ${isDownvoted ? 'text-red-500' : ''}`}
+          className={`focus:outline-none ${
+            isDownvoted ? "text-red-500" : "text-primaryText dark:text-secondaryText text-opacity-50 dark:text-opacity-50"
+          }`}
           onClick={handleDownvote}
         >
           <FaArrowDown />
         </button>
         <button
-          className="mr-2 focus:outline-none"
+          className="focus:outline-none text-primaryText dark:text-secondaryText text-opacity-50 dark:text-opacity-50 "
           onClick={() => setShowReplyForm(!showReplyForm)}
         >
           <FaReply />
         </button>
       </div>
       {showReplyForm && (
-        <form className="mt-2" onSubmit={handleReply}>
-          <textarea
+        <form className="mt-2 flex flex-col items-end" onSubmit={handleReply}>
+          <ReactQuill
             className="w-full p-2 mb-2"
             placeholder="Reply to this comment..."
             value={replyContent}
-            onChange={(event) => setReplyContent(event.target.value)}
+            onChange={(event) => setReplyContent(event)}
           />
-          <button className="bg-blue-500 text-white px-4 py-2" type="submit">
+          <button className="mr-2 rounded bg-primaryBtn text-primaryBtnText dark:bg-secondaryBtn dark:text-secondaryBtnText text-sm px-4 py-2 " type="submit">
             Submit Reply
           </button>
         </form>

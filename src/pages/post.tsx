@@ -26,6 +26,9 @@ const PostPage: React.FC = () => {
     dispatch(postSlice.actions.getPostById(id));
   }, [dispatch]);
 
+  console.log(post);
+  
+
   // useEffect(() => {
   //   console.log(navType);
   //   if (navType === 'POP') {
@@ -54,7 +57,7 @@ const PostPage: React.FC = () => {
 
   return (
     <>
-      <Header selected='Ask About a Product' />
+      <Header  />
       <Container>
         <div className="container mx-auto lg:px-8 md:px-6 sm:px-4 py-6 dark:bg-secondaryColor bg-primaryColor">
           <div className="grid grid-cols-4 gap-6">

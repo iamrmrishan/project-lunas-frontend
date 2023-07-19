@@ -8,6 +8,7 @@ import RedditPost from 'components/molecules/post-card';
 import NetworkQuestions from 'components/molecules/question-card';
 import { Link } from 'react-router-dom';
 import slugify from 'utils/slugify-utils';
+import TrendingToday from 'components/organisms/trending-today';
 
 const BrowsePage: React.FC = () => {
   const dispatch = useDispatch();
@@ -19,12 +20,14 @@ const BrowsePage: React.FC = () => {
 
   return (
     <>
-      <Header selected="browse"  />
+      <Header />
       <Container>
         <div className="container mx-auto lg:px-8 md:px-6 sm:px-4 py-6 dark:bg-secondaryColor bg-primaryColor">
           <div className="grid grid-cols-4 gap-6">
-            <div className="col-span-4 md:col-span-3 ipad:col-span-4 m-auto">
+            <div className="col-span-4 md:col-span-3 ipad:col-span-4 m-auto w-full">
               <SearchPostLink />
+
+              <TrendingToday />
 
               {posts?.map((post) => (
                 <Link
